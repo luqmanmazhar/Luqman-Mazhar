@@ -12,70 +12,100 @@ body {
   background: #f8f9fb;
 }
 
-/* HEADER */
-.header {
-  background: #0d2b45;
+/* MENU BUTTON */
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  font-size: 28px;
   color: white;
-  padding: 20px;
-  text-align: center;
+  z-index: 2000;
+  cursor: pointer;
 }
 
-/* CONTAINER */
+/* OVERLAY */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1400;
+}
+
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background: white;
+  padding-top: 80px;
+  transition: 0.3s ease;
+  z-index: 1500;
+}
+
+.sidebar a {
+  display: block;
+  padding: 18px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #0d2b45;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-book {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  background: #1abc9c;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 100px 20px 60px;
+  background: #0d2b45;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.2em;
+}
+
+/* CONTENT */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* PROFILE */
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* PHOTO */
 .profile {
   text-align: center;
   margin-bottom: 30px;
 }
 
 .profile img {
-  width: 160px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #0d2b45;
-}
-
-h2 {
-  color: #0d2b45;
-  margin-top: 40px;
-}
-
-/* CARD */
-.card {
-  background: white;
-  padding: 20px;
+  width: 150px;
   border-radius: 12px;
-  margin-top: 15px;
-}
-
-/* LIST */
-ul {
-  padding-left: 20px;
-}
-
-li {
-  margin-bottom: 10px;
-}
-
-/* BUTTON */
-.btn {
-  display: inline-block;
-  background: #1abc9c;
-  color: white;
-  padding: 14px 28px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-top: 30px;
-  font-weight: bold;
 }
 
 /* FOOTER */
@@ -84,75 +114,86 @@ footer {
   color: white;
   text-align: center;
   padding: 30px;
-  margin-top: 50px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-  <h1>About Primus Physio</h1>
+<!-- MENU -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About us</a>
+  <a href="services.html">Our services</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="menu-book">Book Appointment</a>
 </div>
 
+<!-- HERO -->
+<div class="hero">
+  <h1>About Primus Physio</h1>
+  <p>Expert physiotherapy you can trust</p>
+</div>
+
+<!-- CONTENT -->
 <div class="container">
 
-  <!-- PROFILE -->
+  <!-- PHOTO -->
   <div class="profile">
     <img src="luqman.jpg" alt="Physiotherapist">
-    <h2>Your Physiotherapist</h2>
   </div>
 
   <!-- INTRO -->
   <div class="card">
+    <h2>Who I Am</h2>
     <p>
-      I am an experienced MSK physiotherapist with over 5 years of clinical experience, 
-      helping patients overcome pain, recover from injury, and return to the activities they love.
+      I am an experienced MSK physiotherapist with over 5 years of experience helping people recover from pain, injury, and improve their performance.
     </p>
   </div>
 
   <!-- EXPERIENCE -->
-  <h2>Professional Experience</h2>
   <div class="card">
-    <ul>
-      <li>5+ years experience in musculoskeletal physiotherapy</li>
-      <li>Band 6 MSK Physiotherapist within the NHS</li>
-      <li>First Contact Practitioner in GP settings</li>
-      <li>Worked across multiple private MSK clinics</li>
-      <li>Head Academy Physiotherapist at Port Vale FC</li>
-      <li>Managed and treated over 120 athletes aged 8–18</li>
-    </ul>
+    <h2>Experience</h2>
+    <p>✔ 5+ years MSK physiotherapy experience</p>
+    <p>✔ Band 6 MSK physiotherapist in the NHS</p>
+    <p>✔ First Contact Practitioner in GP practice</p>
+    <p>✔ Worked across multiple private MSK clinics</p>
+    <p>✔ Head Academy Physiotherapist at Port Vale FC</p>
+    <p>✔ Managed over 120 athletes aged 8–18</p>
   </div>
 
   <!-- APPROACH -->
-  <h2>My Approach</h2>
   <div class="card">
+    <h2>My Approach</h2>
     <p>
-      My approach is simple — identify the root cause of your pain and provide 
-      clear, effective treatment to get you back to full function as quickly as possible.
+      I focus on identifying the root cause of your problem, not just treating symptoms. Every treatment plan is tailored to your goals — whether that's getting out of pain, returning to sport, or improving long-term health.
     </p>
-    <p>
-      Every patient receives a tailored plan combining hands-on treatment, rehabilitation, 
-      and practical advice to ensure long-term results.
-    </p>
-  </div>
-
-  <!-- CTA -->
-  <div style="text-align:center;">
-    <a href="index.html#contact" class="btn">Book Your Appointment</a>
   </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2026 Primus Physio</p>
-  <p>
-    Follow us:
-    <a href="https://www.instagram.com/primusphysio" target="_blank" style="color:#1abc9c;">
-      @primusphysio
-    </a>
-  </p>
 </footer>
+
+<script>
+function toggleMenu() {
+  var sidebar = document.getElementById("sidebar");
+  var overlay = document.getElementById("overlay");
+
+  if (sidebar.style.right === "0px") {
+    sidebar.style.right = "-300px";
+    overlay.style.display = "none";
+  } else {
+    sidebar.style.right = "0px";
+    overlay.style.display = "block";
+  }
+}
+</script>
 
 </body>
 </html>
