@@ -14,6 +14,7 @@ body {
   background: #f8f9fb;
 }
 
+/* MENU */
 .menu-btn {
   position: fixed;
   top: 18px;
@@ -81,7 +82,7 @@ body {
   color: white;
 }
 
-/* ✅ FINAL LOGO FIX */
+/* LOGO */
 .logo-hero {
   width: 60px;
   max-height: 60px;
@@ -100,6 +101,7 @@ h1 {
   font-size: 1.1em;
 }
 
+/* BUTTON */
 .btn {
   background: #1abc9c;
   color: white;
@@ -112,17 +114,20 @@ h1 {
   box-shadow: 0 4px 10px rgba(26,188,156,0.3);
 }
 
+/* SECTIONS */
 section {
   padding: 70px 20px;
   max-width: 1000px;
   margin: auto;
+  box-sizing: border-box;
 }
 
-section:nth-child(even) {
+/* ✅ FIXED */
+section:nth-of-type(even) {
   background: #ffffff;
 }
 
-section:nth-child(odd) {
+section:nth-of-type(odd) {
   background: #f1f4f8;
 }
 
@@ -132,6 +137,7 @@ h2 {
   padding-left: 10px;
 }
 
+/* CARDS */
 .card {
   background: white;
   padding: 20px;
@@ -140,8 +146,9 @@ h2 {
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-#pricing .card {
-  text-align: center;
+/* spacing fix */
+.card br {
+  line-height: 1.8;
 }
 
 footer {
@@ -156,7 +163,6 @@ footer {
 
   .logo-hero {
     width: 50px;
-    max-height: 50px;
   }
 
   .hero {
@@ -184,10 +190,10 @@ footer {
 <div id="sidebar" class="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About Us</a>
-  <a href="services.html">Our Services & Treatments</a>
+  <a href="services.html">Our Services</a>
   <a href="index.html#contact">Contact</a>
 
-  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="menu-book">
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
     Book Now
   </a>
 </div>
@@ -195,21 +201,15 @@ footer {
 <!-- HERO -->
 <div class="hero">
 
-  <img src="logo.jpg" class="logo-hero" alt="Primus Physio Stoke-on-Trent physiotherapy clinic">
+  <img src="logo.jpg" class="logo-hero">
 
   <h1>Physiotherapy for Back Pain, Sports Injuries & Joint Pain</h1>
 
   <p>Expert physiotherapy in Stoke-on-Trent to get you out of pain and back to doing what you love</p>
 
-  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
     Book Your Appointment
   </a>
-
-  <p style="margin-top:10px; font-size:0.9em; opacity:0.8;">
-    ✔ Same week appointments<br>
-    ✔ Trusted by local patients<br>
-    ✔ 5+ years experience
-  </p>
 
 </div>
 
@@ -217,11 +217,11 @@ footer {
 <section>
   <h2>Our Services & Treatments</h2>
 
-  <div class="card">💪 Back & Neck Pain<br><small>Reduce pain and restore movement</small></div>
-  <div class="card">🏃 Sports Injuries<br><small>Rehab to get you back to sport safely</small></div>
-  <div class="card">🦴 Joint Pain<br><small>Targeted treatment for joints and mobility</small></div>
-  <div class="card">🧠 Sciatica & Nerve Pain<br><small>Relieve nerve-related symptoms</small></div>
-  <div class="card">🧍 Posture & Desk Pain<br><small>Fix pain from sitting and work habits</small></div>
+  <div class="card">💪 Back & Neck Pain</div>
+  <div class="card">🏃 Sports Injuries</div>
+  <div class="card">🦴 Joint Pain</div>
+  <div class="card">🧠 Sciatica & Nerve Pain</div>
+  <div class="card">🧍 Postural Pain</div>
 </section>
 
 <!-- SEO -->
@@ -229,39 +229,47 @@ footer {
   <h2>Physiotherapy in Stoke-on-Trent</h2>
 
   <p>
-  At Primus Physio, we provide expert physiotherapy in Stoke-on-Trent, helping individuals recover from injury, reduce pain, and improve movement.
+  At Primus Physio, we help you recover from injury, reduce pain, and improve movement.
   </p>
 
   <p>
-  We treat a wide range of conditions including back pain, neck pain, sports injuries, joint pain, and postural issues.
-  </p>
-
-  <p>
-  Our approach combines hands-on treatment with tailored rehabilitation plans.
-  </p>
-
-  <p>
-  Learn more <a href="about.html">about our physiotherapy approach</a> or 
+  Learn more <a href="about.html">about our approach</a> or 
   <a href="index.html#contact"><strong>book your appointment here</strong></a>.
   </p>
 </section>
 
 <!-- PRICING -->
 <section id="pricing">
-  <h2>Pricing</h2>
+  <h2>Pricing & Treatments</h2>
 
   <div class="card">
-    <strong>Initial Assessment & Treatment (60 minutes)</strong><br>
+    <strong>Initial Assessment & Treatment (60 mins)</strong><br>
     £60
   </div>
 
   <div class="card">
-    <strong>Follow-Up Treatment Session</strong><br>
+    <strong>Follow-Up Treatment (30 mins)</strong><br>
     £40
   </div>
 
+  <div class="card">
+    <strong>Physio MOT & Service (60 mins)</strong><br>
+    £60
+  </div>
+
+  <!-- ✅ UPDATED CUPPING -->
+  <div class="card">
+    <strong>Cupping Therapy (Dry & Hijama)</strong><br>
+    <small>Helps reduce muscle tension and improve recovery</small><br><br>
+
+    5 Cups – £35<br>
+    10 Cups – £40<br>
+    15 Cups – £45<br>
+    20 Cups – £50
+  </div>
+
   <div style="text-align:center;">
-    <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
       Book Your Appointment
     </a>
   </div>
