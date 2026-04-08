@@ -1,69 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Primus Physio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f8f9fb;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  font-size: 28px;
+  color: white;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1400;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background: white;
+  padding-top: 80px;
+  transition: 0.3s ease;
+  z-index: 1500;
+}
+
+.sidebar a {
+  display: block;
+  padding: 18px 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #0d2b45;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-book {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  background: #1abc9c;
+  color: white;
+  text-align: center;
+  padding: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
+              url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.logo-hero {
+  width: 140px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+.hero p {
+  font-size: 1.1em;
+}
+
+.btn {
+  background: #1abc9c;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 25px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(26,188,156,0.3);
+}
+
+section {
+  padding: 70px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section:nth-child(even) {
+  background: #ffffff;
+}
+
+section:nth-child(odd) {
+  background: #f1f4f8;
+}
+
+h2 {
+  color: #0d2b45;
+  border-left: 4px solid #1abc9c;
+  padding-left: 10px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+#pricing .card {
+  text-align: center;
+}
+
+footer {
+  background: #0d2b45;
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="menu-btn" onclick="toggleMenu()" id="menuIcon">☰</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Our Services & Treatments</a>
+  <a href="index.html#contact">Contact</a>
+
+  <!-- FIXED -->
+  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="menu-book">
+    Book Now
+  </a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="logo.jpg" class="logo-hero">
+
+  <h1>Physiotherapy for Back Pain, Sports Injuries & Joint Pain</h1>
+  <p><strong>Primus Physio</strong></p>
+  <p>Expert physiotherapy in Stoke-on-Trent to get you out of pain and back to doing what you love</p>
+
+  <!-- FIXED -->
+  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">
+    Book Your Appointment
+  </a>
+
+  <p style="margin-top:15px; font-size:0.9em; opacity:0.8;">
+    ✔ Same week appointments<br>
+    ✔ Trusted by local patients<br>
+    ✔ 5+ years experience
+  </p>
+</div>
+
 <!-- SERVICES -->
 <section>
   <h2>Our Services & Treatments</h2>
 
-  <div class="card">
-    💪 <strong>Back & Neck Pain Treatment</strong><br>
-    <small>Reduce pain, restore movement, and return to normal daily activity</small>
-  </div>
-
-  <div class="card">
-    🏃 <strong>Sports & Exercise Injuries</strong><br>
-    <small>Rehabilitation to get you back training safely and confidently</small>
-  </div>
-
-  <div class="card">
-    🦴 <strong>Joint Pain Treatment</strong><br>
-    <small>Targeted treatment for hips, knees, shoulders and other joints</small>
-  </div>
-
-  <div class="card">
-    🧠 <strong>Sciatica & Nerve Pain</strong><br>
-    <small>Relieve nerve-related symptoms and improve function</small>
-  </div>
-
-  <div class="card">
-    🧍 <strong>Postural & Desk Pain</strong><br>
-    <small>Fix pain caused by prolonged sitting and work habits</small>
-  </div>
-
-  <div class="card">
-    🔄 <strong>Injury Rehabilitation</strong><br>
-    <small>Structured rehab plans to help you recover and prevent re-injury</small>
-  </div>
-
-  <p style="margin-top:20px;">
-    Providing physiotherapy in Stoke-on-Trent including Fenton, Hanley and surrounding areas.
-  </p>
-</section>
-
-<!-- SEO SECTION -->
-<section>
-  <h2>Physiotherapy in Stoke-on-Trent</h2>
-
-  <p>
-  At Primus Physio, we provide expert physiotherapy in Stoke-on-Trent, helping individuals recover from injury, reduce pain, and improve movement.
-  </p>
-
-  <p>
-  We treat a wide range of conditions including back pain, neck pain, sports injuries, joint pain, and postural issues.
-  </p>
-
-  <p>
-  Our approach combines hands-on treatment with tailored rehabilitation plans to help you return to work, sport, and daily life as quickly as possible.
-  </p>
-
-  <p>
-  Evening and weekend appointments are available, making it easier to access physiotherapy around your schedule.
-  </p>
-
-  <p>
-  Book your 
-  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012">
-    physiotherapy appointment here
-  </a>.
-  </p>
+  <div class="card">💪 Back & Neck Pain<br><small>Reduce pain and restore movement</small></div>
+  <div class="card">🏃 Sports Injuries<br><small>Rehab to get you back to sport safely</small></div>
+  <div class="card">🦴 Joint Pain<br><small>Targeted treatment for joints and mobility</small></div>
+  <div class="card">🧠 Sciatica & Nerve Pain<br><small>Relieve nerve-related symptoms</small></div>
+  <div class="card">🧍 Posture & Desk Pain<br><small>Fix pain from sitting and work habits</small></div>
 </section>
 
 <!-- PRICING -->
 <section id="pricing">
+  <h2>Pricing</h2>
+
+  <div class="card">
+    <strong>Initial Assessment & Treatment (60 minutes)</strong><br>
+    <small>Full assessment, diagnosis and treatment in your first session.</small><br><br>
+    £60
+  </div>
+
+  <div class="card">
+    <strong>Follow-Up Treatment Session</strong><br>
+    <small>Manual therapy and progressive rehab.</small><br><br>
+    £40
+  </div>
+
+  <div class="card">
+    <strong>Physio MOT & Service</strong><br>
+    <small>Improve mobility and prevent injury.</small><br><br>
+    £60
+  </div>
+
+  <div class="card">
+    <strong>Cupping Therapy</strong><br><br>
+    5 Cups – £35<br>
+    10 Cups – £40<br>
+    15 Cups – £45<br>
+    20 Cups – £50
+  </div>
+
+  <!-- FIXED -->
+  <div style="text-align:center;">
+    <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">
+      Book Your Appointment
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Book Your Appointment</h2>
+
+  <p>Book online in less than 60 seconds.</p>
+
+  <!-- NEW CTA -->
+  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">
+    Book Now
+  </a>
+
+  <p style="margin-top:20px;">📍 234 Victoria Road, Fenton, Stoke-on-Trent</p>
+  <p>📞 07867782786</p>
+  <p>📧 info@primusphysio.co.uk</p>
+</section>
+
+<footer>
+  <p>© 2026 Primus Physio</p>
+</footer>
+
+<script>
+function toggleMenu() {
+  var sidebar = document.getElementById("sidebar");
+  var overlay = document.getElementById("overlay");
+  var icon = document.getElementById("menuIcon");
+
+  if (sidebar.style.right === "0px") {
+    sidebar.style.right = "-300px";
+    overlay.style.display = "none";
+    icon.innerHTML = "☰";
+  } else {
+    sidebar.style.right = "0px";
+    overlay.style.display = "block";
+    icon.innerHTML = "✕";
+  }
+}
+</script>
+
+</body>
+</html>
