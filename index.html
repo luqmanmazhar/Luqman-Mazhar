@@ -140,6 +140,26 @@ footer {
   text-decoration: none;
   z-index: 2000;
 }
+
+.sticky-book {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #1abc9c;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 2000;
+}
+
+iframe {
+  border-radius: 10px;
+  margin-top: 20px;
+}
 </style>
 </head>
 
@@ -153,7 +173,7 @@ footer {
   <a href="services.html">Our Services & Treatments</a>
   <a href="#contact">Contact</a>
 
-  <a href="https://YOUR-CLINIKO-LINK" class="menu-book">Book Now</a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="menu-book">Book Now</a>
 </div>
 
 <!-- HERO -->
@@ -162,19 +182,15 @@ footer {
 
   <h1>Physiotherapy in Stoke-on-Trent for Pain Relief, Injury Recovery & Better Movement</h1>
 
-  <p style="font-weight:bold; margin-top:10px;">Primus Physio</p>
+  <p style="font-weight:bold;">Primus Physio</p>
 
   <p>Helping you recover from injury, reduce pain, and get back to doing what you enjoy — with evening and weekend appointments available.</p>
 
   <p>Trusted by patients across Stoke-on-Trent</p>
 
-  <a href="https://YOUR-CLINIKO-LINK" class="btn">Book Your Initial Assessment</a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">Book Your Initial Assessment</a>
 
-  <p style="margin-top:15px; font-size:0.9em; opacity:0.8;">
-    ✔ Same week appointments<br>
-    ✔ Trusted by local patients<br>
-    ✔ 5+ years experience
-  </p>
+  <p style="font-size:0.9em;">Takes less than 60 seconds to book</p>
 
   <p style="margin-top:10px; font-size:0.9em;">
     Evening appointments: Mon–Fri<br>
@@ -182,61 +198,74 @@ footer {
   </p>
 </div>
 
-<!-- EVENING USP -->
-<section>
-  <h2>Evening & Weekend Appointments</h2>
-  <p>We offer physiotherapy appointments in Stoke-on-Trent during evenings and Sundays — ideal for busy professionals and individuals who can’t attend during the day.</p>
-</section>
-
 <!-- SERVICES -->
 <section id="services">
   <h2>What We Help With</h2>
+  <div class="card">Back & Neck Pain Treatment</div>
+  <div class="card">Knee Pain Treatment</div>
+  <div class="card">Shoulder Pain Treatment</div>
+  <div class="card">Sports & Exercise Injuries</div>
+  <div class="card">Postural Pain</div>
+  <div class="card">Injury Rehabilitation</div>
 
-  <div class="card">💪 Back & Neck Pain</div>
-  <div class="card">🦵 Knee Pain (running, walking & lifting)</div>
-  <div class="card">💥 Shoulder Pain</div>
-  <div class="card">🏃 Sports & Exercise Injuries</div>
-  <div class="card">🧑‍💻 Desk & Postural Pain</div>
-  <div class="card">🦶 Ankle & Foot Injuries</div>
-  <div class="card">🔄 Injury Rehabilitation & Return to Activity</div>
+  <p style="margin-top:20px;">
+    Helping patients across Stoke-on-Trent including Fenton, Hanley, and surrounding areas.
+  </p>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Primus Physio</h2>
-  <p>Experienced MSK physiotherapist helping individuals recover from injury, reduce pain, and improve movement.</p>
+<!-- TESTIMONIALS -->
+<section>
+  <h2>What Clients Say</h2>
+
+  <div class="card">
+    “Fixed my back pain and got me moving again within a few sessions. Highly recommend.”
+  </div>
+
+  <div class="card">
+    “Professional, clear plan, and evening appointments made it easy to attend.”
+  </div>
+
+  <div class="card">
+    “Best physio I’ve used in Stoke — actually solved the problem.”
+  </div>
 </section>
 
 <!-- BOOK -->
 <section id="contact">
-  <h2>Book Your Initial Assessment</h2>
+  <h2>Book Your Appointment</h2>
 
-  <p>Limited evening and weekend appointments available — book now to secure your slot.</p>
-
-  <a href="https://YOUR-CLINIKO-LINK" class="btn">Book Now</a>
-
-  <p style="margin-top:20px;">📍 234 Victoria Road, Fenton</p>
-  <p>📞 07867782786</p>
-  <p>📧 info@primusphysio.co.uk</p>
-</section>
-
-<!-- SEO SECTION -->
-<section>
-  <h2>Physiotherapy in Stoke-on-Trent</h2>
-  <p>Primus Physio provides expert physiotherapy in Stoke-on-Trent, helping individuals recover from injury, reduce pain, and improve movement — whether from sport, work, or everyday life.</p>
-</section>
-
-<footer>
-  <p>© 2026 Primus Physio</p>
   <p>
-    Follow us:
-    <a href="https://www.instagram.com/primusphysio" target="_blank" style="color:#1abc9c;">
-      @primusphysio
-    </a>
+    ✔ Choose a time that suits you<br>
+    ✔ Evening & Sunday appointments<br>
+    ✔ Takes less than 60 seconds
   </p>
-</footer>
 
-<a href="https://www.instagram.com/primusphysio" target="_blank" class="insta-btn">📸</a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="btn">
+    Book Now
+  </a>
+
+  <iframe id='cliniko-95801482'
+    src='https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012&embedded=true'
+    frameborder='0'
+    width='100%'
+    height='1000'>
+  </iframe>
+
+  <script>
+    window.addEventListener('message', function(e) {
+      var iframe = document.getElementById('cliniko-95801482');
+      if (typeof e.data !== 'string') return;
+      if (e.data.indexOf('cliniko-bookings-resize') > -1) {
+        iframe.style.height = e.data.split(':')[1] + 'px';
+      }
+    });
+  </script>
+</section>
+
+<!-- STICKY BUTTON -->
+<a href="https://primus-physio.uk3.cliniko.com/bookings?business_id=1922745774282647846&practitioner_id=1922745769006214012" class="sticky-book">
+  Book Appointment
+</a>
 
 <script>
 function toggleMenu() {
