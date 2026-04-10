@@ -12,7 +12,7 @@ body {
   background: #f8f9fb;
 }
 
-/* MENU BUTTON */
+/* MENU */
 .menu-btn {
   position: fixed;
   top: 18px;
@@ -23,7 +23,6 @@ body {
   cursor: pointer;
 }
 
-/* OVERLAY */
 #overlay {
   position: fixed;
   top: 0;
@@ -35,7 +34,6 @@ body {
   z-index: 1400;
 }
 
-/* SIDEBAR */
 .sidebar {
   position: fixed;
   top: 0;
@@ -56,11 +54,19 @@ body {
   color: #0d2b45;
   border-bottom: 1px solid #eee;
 }
+
+.sidebar a:hover {
+  background: #f1f4f8;
+  padding-left: 30px;
+  transition: 0.2s;
+}
+
 .sidebar a.active {
   background: #f1f4f8;
   font-weight: bold;
   border-left: 4px solid #1abc9c;
 }
+
 .menu-book {
   position: absolute;
   bottom: 30px;
@@ -75,40 +81,73 @@ body {
   font-weight: bold;
 }
 
-/* HERO */
+/* HERO (MATCHED) */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
-  background: #0d2b45;
+  padding: 90px 20px 70px;
+  background: linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
+              url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+  background-size: cover;
+  background-position: center;
   color: white;
 }
 
-.hero h1 {
-  font-size: 2.2em;
+/* LOGO */
+.logo-hero {
+  width: 80px;
+  max-height: 80px;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 8px;
 }
 
-/* CONTENT */
-.container {
-  max-width: 900px;
+/* TYPO */
+h1 {
+  font-size: 2.3em;
+}
+
+.hero p {
+  font-size: 1.1em;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 20px;
+  max-width: 1000px;
   margin: auto;
-  padding: 40px 20px;
 }
 
+section:nth-of-type(even) {
+  background: #ffffff;
+}
+
+section:nth-of-type(odd) {
+  background: #f1f4f8;
+}
+
+h2 {
+  color: #0d2b45;
+  border-left: 4px solid #1abc9c;
+  padding-left: 10px;
+}
+
+/* CARDS */
 .card {
   background: white;
   padding: 25px;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
 
-/* PHOTO */
+/* PROFILE */
 .profile {
   text-align: center;
   margin-bottom: 30px;
 }
 
 .profile img {
-  width: 150px;
+  width: 140px;
   border-radius: 12px;
 }
 
@@ -119,39 +158,50 @@ footer {
   text-align: center;
   padding: 30px;
 }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .logo-hero {
+    width: 60px;
+  }
+
+  h1 {
+    font-size: 1.7em;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 <div id="overlay" onclick="toggleMenu()"></div>
 
 <div id="sidebar" class="sidebar">
   <a href="index.html">Home</a>
-<a href="about.html" class="active">About us</a>
+  <a href="about.html" class="active">About us</a>
   <a href="services.html">Our Services & Treatments</a>
   <a href="faq.html">FAQ</a>
   <a href="index.html#contact">Contact</a>
 
   <a href="index.html#contact" class="menu-book">Book Appointment</a>
 </div>
+
 <!-- HERO -->
 <div class="hero">
+  <img src="logo.jpg" class="logo-hero">
+
   <h1>About Primus Physio</h1>
   <p>Expert physiotherapy you can trust</p>
 </div>
 
 <!-- CONTENT -->
-<div class="container">
+<section>
 
-  <!-- PHOTO -->
   <div class="profile">
     <img src="luqman.jpg" alt="Physiotherapist">
   </div>
 
-  <!-- INTRO -->
   <div class="card">
     <h2>Who I Am</h2>
     <p>
@@ -159,7 +209,6 @@ footer {
     </p>
   </div>
 
-  <!-- EXPERIENCE -->
   <div class="card">
     <h2>Experience</h2>
     <p>✔ 5+ years MSK physiotherapy experience</p>
@@ -170,7 +219,6 @@ footer {
     <p>✔ Managed over 120 athletes aged 8–18</p>
   </div>
 
-  <!-- APPROACH -->
   <div class="card">
     <h2>My Approach</h2>
     <p>
@@ -178,9 +226,8 @@ footer {
     </p>
   </div>
 
-</div>
+</section>
 
-<!-- FOOTER -->
 <footer>
   <p>© 2026 Primus Physio</p>
 </footer>
