@@ -14,15 +14,90 @@ body {
   background:#f8f9fb;
 }
 
+/* MENU */
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  right: 20px;
+  color: white;
+  font-size: 28px;
+  z-index: 2000;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 1400;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  max-width: 85%;
+  height: 100%;
+  background: white;
+  padding-top: 80px;
+  transition: 0.3s ease;
+  z-index: 1500;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  min-height: 70px;
+  padding: 0 25px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #0d2b45;
+  border-bottom: 1px solid #eee;
+}
+
+.sidebar a:hover {
+  background: #f1f4f8;
+}
+
+.sidebar a.active {
+  background: #f1f4f8;
+  font-weight: bold;
+  border-left: 4px solid #1abc9c;
+}
+
+.menu-book {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  background: #1abc9c;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  padding: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: none;
+}
+
+/* HERO */
 .hero {
   text-align:center;
   padding:100px 20px;
   background:linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
   url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
   background-size:cover;
+  background-position:center;
   color:white;
 }
 
+/* SECTIONS */
 section {
   padding:60px 20px;
   max-width:1000px;
@@ -56,6 +131,7 @@ h2 {
   background:#159a80;
 }
 
+/* SOCIAL */
 .social-icons {
   text-align:center;
 }
@@ -70,6 +146,7 @@ h2 {
   height:50px;
 }
 
+/* FOOTER */
 footer {
   background:#0d2b45;
   color:white;
@@ -77,6 +154,7 @@ footer {
   padding:30px;
 }
 
+/* MOBILE CTA */
 .sticky-book {
   position:fixed;
   bottom:20px;
@@ -89,6 +167,7 @@ footer {
   border-radius:10px;
   text-decoration:none;
   font-weight:bold;
+  z-index:2000;
 }
 
 @media (min-width:768px){
@@ -100,6 +179,26 @@ footer {
 </head>
 
 <body>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<!-- OVERLAY -->
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="athletes.html">Sports Rehab</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html" class="active">Contact</a>
+
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+    Book Appointment
+  </a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -122,7 +221,6 @@ footer {
 <!-- PUREGYM PARTNERSHIP -->
 <section>
   <div class="card" style="text-align:center; border:2px solid #1abc9c;">
-
     <h2>Official Partner of PureGym Stoke East</h2>
 
     <img 
@@ -143,11 +241,10 @@ footer {
     <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
       Claim Discount
     </a>
-
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT DETAILS -->
 <section>
   <h2>Get In Touch</h2>
 
@@ -186,16 +283,10 @@ footer {
 
     <p>⭐️⭐️⭐️⭐️⭐️</p>
     <p>"Best physio I've used in Stoke."</p>
-
-    <div style="text-align:center;">
-      <a href="YOUR_GOOGLE_REVIEW_LINK" class="btn">
-        View All Reviews
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- SOCIAL MEDIA -->
+<!-- SOCIAL -->
 <section>
   <h2>Follow Primus Physio</h2>
 
@@ -211,10 +302,6 @@ footer {
       <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
     </a>
 
-    <a href="https://www.linkedin.com/in/luqman-mazhar-862034117" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/3536/3536505.png" alt="LinkedIn">
-    </a>
-
   </div>
 </section>
 
@@ -224,10 +311,25 @@ footer {
   <p>HCPC Registered | CSP Member | PureGym Stoke East Partner</p>
 </footer>
 
-<!-- MOBILE BUTTON -->
+<!-- MOBILE BOOK BUTTON -->
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">
   Book Appointment
 </a>
+
+<script>
+function toggleMenu() {
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+
+    if (sidebar.style.right === "0px") {
+        sidebar.style.right = "-300px";
+        overlay.style.display = "none";
+    } else {
+        sidebar.style.right = "0px";
+        overlay.style.display = "block";
+    }
+}
+</script>
 
 </body>
 </html>
