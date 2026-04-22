@@ -13,11 +13,11 @@
 <style>
 body {
     margin:0;
-    font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     background:#f8f9fb;
 }
 
-/* UPDATED MENU */
+/* MENU */
 .menu-btn {
     position: fixed;
     top: 18px;
@@ -52,36 +52,38 @@ body {
 }
 
 .sidebar a {
-    display: block;
-    padding: 18px 25px;
-    text-decoration: none;
-    font-size: 18px;
-    color: #0d2b45;
-    border-bottom: 1px solid #eee;
+    display:block;
+    padding:18px 25px;
+    text-decoration:none;
+    font-size:18px;
+    color:#0d2b45;
+    border-bottom:1px solid #eee;
 }
 
 .sidebar a:hover {
-    background: #f1f4f8;
-    padding-left: 30px;
-    transition: 0.2s;
+    background:#f1f4f8;
+    padding-left:30px;
+    transition:0.2s;
 }
+
 .sidebar a.active {
-    background: #f1f4f8;
-    font-weight: bold;
-    border-left: 4px solid #1abc9c;
+    background:#f1f4f8;
+    font-weight:bold;
+    border-left:4px solid #1abc9c;
 }
+
 .menu-book {
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
-    right: 20px;
-    background: #1abc9c;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+    position:absolute;
+    bottom:30px;
+    left:20px;
+    right:20px;
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* HERO */
@@ -105,6 +107,10 @@ h1 {
     font-size:2.3em;
 }
 
+h2 {
+    color:#0d2b45;
+}
+
 .btn {
     background:#1abc9c;
     color:white;
@@ -120,10 +126,6 @@ section {
     padding:70px 20px;
     max-width:1000px;
     margin:auto;
-}
-
-h2 {
-    color:#0d2b45;
 }
 
 .card {
@@ -171,21 +173,21 @@ footer {
 
 <body>
 
-<!-- UPDATED MENU -->
+<!-- MENU -->
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 <div id="overlay" onclick="toggleMenu()"></div>
 
 <div id="sidebar" class="sidebar">
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="sports-injury-physio.html">Sports Rehab</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="sports-injury-physio.html">Sports Rehab</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
 
-  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
-    Book Appointment
-  </a>
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+        Book Appointment
+    </a>
 </div>
 
 <!-- HERO -->
@@ -195,17 +197,11 @@ footer {
 
     <h1>Expert Physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme</h1>
 
-    <p>
-        Helping you recover from pain, injuries and movement limitations.
-    </p>
+    <p>Helping you recover from pain, injuries and movement limitations.</p>
 
-    <p>
-        ⭐ 4.9 Google Rating | 32 Reviews
-    </p>
+    <p>⭐ 4.9 Google Rating | 32 Reviews</p>
 
-    <p>
-        Evening, Saturday & Sunday appointments available
-    </p>
+    <p>Evening, Saturday & Sunday appointments available</p>
 
     <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
         Book Your Initial Assessment
@@ -229,6 +225,39 @@ footer {
 <p>
 Helping patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Longton, Tunstall, Burslem and surrounding areas.
 </p>
+</section>
+
+<!-- PUREGYM PARTNERSHIP -->
+<section>
+<h2>Official Partner of PureGym Stoke East</h2>
+
+<div class="card" style="text-align:center; border:2px solid #1abc9c;">
+
+    <img 
+        src="./IMG_1214.jpeg"
+        alt="Primus Physio official partner of PureGym Stoke East"
+        style="width:100%; max-width:500px; border-radius:12px; margin-bottom:20px;"
+    >
+
+    <p>
+        Primus Physio proudly supports members of PureGym Stoke East 
+        with injury rehab, pain treatment and performance recovery.
+    </p>
+
+    <p>
+        Whether you're dealing with gym injuries, running injuries, back pain or recovery issues —
+        we help you return stronger.
+    </p>
+
+    <p>
+        <strong>PureGym members receive 10% off treatment.</strong>
+    </p>
+
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+        Claim Your Discount
+    </a>
+
+</div>
 </section>
 
 <!-- REVIEWS -->
