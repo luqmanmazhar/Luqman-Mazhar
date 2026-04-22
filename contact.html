@@ -1,305 +1,507 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Contact | Primus Physio</title>
+
+<title>Contact Primus Physio | Physiotherapy in Stoke-on-Trent</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Contact Primus Physio in Stoke-on-Trent and Newcastle-under-Lyme. Book your physiotherapy appointment or get in touch today.">
+<meta name="description" content="Contact Primus Physio for expert physiotherapy in Stoke-on-Trent and Newcastle-under-Lyme. Book online, call today or get in touch.">
 
 <style>
+
 body {
+
   margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
   background: #f8f9fb;
+
 }
 
-/* MENU */
 .menu-btn {
+
   position: fixed;
+
   top: 18px;
+
   right: 20px;
+
   font-size: 28px;
+
   color: white;
+
   z-index: 2000;
+
   cursor: pointer;
+
 }
 
 #overlay {
+
   position: fixed;
+
   top: 0;
+
   left: 0;
+
   width: 100%;
+
   height: 100%;
+
   background: rgba(0,0,0,0.5);
+
   display: none;
+
   z-index: 1400;
+
 }
 
 .sidebar {
+
   position: fixed;
+
   top: 0;
+
   right: -300px;
+
   width: 280px;
+
   height: 100%;
+
   background: white;
+
   padding-top: 80px;
+
   transition: 0.3s ease;
+
   z-index: 1500;
+
 }
 
 .sidebar a {
+
   display: block;
+
   padding: 18px 25px;
+
   text-decoration: none;
+
   font-size: 18px;
+
   color: #0d2b45;
+
   border-bottom: 1px solid #eee;
+
 }
 
 .sidebar a.active {
+
   background: #f1f4f8;
+
   font-weight: bold;
+
   border-left: 4px solid #1abc9c;
+
 }
 
 .menu-book {
+
   position: absolute;
+
   bottom: 30px;
+
   left: 20px;
+
   right: 20px;
+
   background: #1abc9c;
+
   color: white;
+
   text-align: center;
+
   padding: 14px;
+
   border-radius: 8px;
+
   text-decoration: none;
+
   font-weight: bold;
+
 }
 
-/* HERO */
 .hero {
+
   text-align: center;
+
   padding: 100px 20px;
+
   background: linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
+
               url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+
   background-size: cover;
+
   background-position: center;
+
   color: white;
+
 }
 
 h1 {
+
   font-size: 2.3em;
+
 }
 
-.hero p {
-  font-size: 1.1em;
-}
-
-/* SECTIONS */
 section {
+
   padding: 70px 20px;
+
   max-width: 1000px;
+
   margin: auto;
+
 }
 
 section:nth-of-type(even) {
+
   background: #ffffff;
+
 }
 
 section:nth-of-type(odd) {
+
   background: #f1f4f8;
+
 }
 
 h2 {
+
   color: #0d2b45;
+
   border-left: 4px solid #1abc9c;
+
   padding-left: 10px;
+
 }
 
-/* CARDS */
 .card {
+
   background: white;
+
   padding: 25px;
+
   border-radius: 12px;
+
   margin-bottom: 20px;
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
 }
 
-/* BUTTON */
 .btn {
+
   background: #1abc9c;
+
   color: white;
+
   padding: 14px 28px;
+
   border-radius: 8px;
+
   text-decoration: none;
+
   display: inline-block;
+
   margin-top: 15px;
+
   font-weight: bold;
+
 }
 
-/* MAP */
-iframe {
-  border-radius: 10px;
-}
-
-/* FOOTER */
 footer {
+
   background: #0d2b45;
+
   color: white;
+
   text-align: center;
+
   padding: 30px;
+
 }
 
-/* STICKY BUTTON */
-.sticky-book {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background: #1abc9c;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  border-radius: 10px;
-  font-weight: bold;
-  text-decoration: none;
-  z-index: 2000;
+.social-links {
+
+  margin-top: 20px;
+
 }
+
+.social-links a {
+
+  color: white;
+
+  text-decoration: none;
+
+  margin: 0 10px;
+
+  font-weight: bold;
+
+}
+
+.social-links a:hover {
+
+  color: #1abc9c;
+
+}
+
+.sticky-book {
+
+  position: fixed;
+
+  bottom: 20px;
+
+  left: 20px;
+
+  right: 20px;
+
+  background: #1abc9c;
+
+  color: white;
+
+  text-align: center;
+
+  padding: 16px;
+
+  border-radius: 10px;
+
+  font-weight: bold;
+
+  text-decoration: none;
+
+  z-index: 2000;
+
+}
+
+@media (min-width: 768px) {
+
+  .sticky-book {
+
+    display: none;
+
+  }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
 <div id="overlay" onclick="toggleMenu()"></div>
 
 <div id="sidebar" class="sidebar">
+
   <a href="index.html">Home</a>
+
   <a href="about.html">About</a>
+
   <a href="services.html">Services</a>
+
   <a href="sports-injury-physio.html">Sports Rehab</a>
+
   <a href="faq.html">FAQ</a>
+
   <a href="contact.html" class="active">Contact</a>
 
   <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+
     Book Appointment
+
   </a>
-</div>
-  
-<!-- HERO -->
-<div class="hero">
-  <h1>Contact Primus Physio</h1>
-  <p>Book your appointment or get in touch with any questions</p>
+
 </div>
 
-<!-- BOOKING -->
+<div class="hero">
+
+  <h1>Contact Primus Physio</h1>
+
+  <p>Book your appointment or get in touch today</p>
+
+</div>
+
 <section>
+
   <div class="card" style="text-align:center;">
+
     <h2>Book Your Appointment</h2>
-    <p>Fast and easy online booking available</p>
+
+    <p>Fast online booking available</p>
 
     <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+
       Book Now
+
     </a>
+
   </div>
+
 </section>
 
-<!-- CONTACT DETAILS -->
 <section>
+
+  <div class="card" style="text-align:center; border:2px solid #1abc9c;">
+
+    <h2>Official Partner of PureGym Stoke East</h2>
+
+    <p>All PureGym Stoke East members receive <strong>10% off treatment</strong></p>
+
+    <p>Simply mention your membership when booking.</p>
+
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+
+      Claim Discount
+
+    </a>
+
+  </div>
+
+</section>
+
+<section>
+
   <h2>Get In Touch</h2>
 
   <div class="card">
-    <p>
-      <strong>Phone:</strong> 
-      <a href="tel:07867782786" style="color:#1abc9c; text-decoration:none;">
-        07867 782786
-      </a>
-    </p>
 
-    <p>
-      <strong>Email:</strong> 
-      <a href="mailto:info@primusphysio.co.uk" style="color:#1abc9c; text-decoration:none;">
-        info@primusphysio.co.uk
-      </a>
-    </p>
+    <p><strong>Phone:</strong> 07867 782786</p>
 
-    <p>
-      <strong>Areas Covered:</strong> 
-      Stoke-on-Trent, Newcastle-under-Lyme and surrounding areas
-    </p>
+    <p><strong>Email:</strong> info@primusphysio.co.uk</p>
+
+    <p><strong>Areas Covered:</strong> Stoke-on-Trent, Newcastle-under-Lyme</p>
+
   </div>
+
 </section>
 
-<!-- MAP -->
 <section>
-  <h2>Find Us</h2>
+
+  <h2>Professional Credentials</h2>
 
   <div class="card">
-    <iframe 
-      src="https://www.google.com/maps?q=Stoke-on-Trent,+UK&output=embed"
-      width="100%" 
-      height="350" 
-      style="border:0;" 
-      loading="lazy">
-    </iframe>
 
-    <p style="margin-top:15px;">
-      Covering Stoke-on-Trent, Newcastle-under-Lyme and surrounding areas.
-    </p>
+    <p>✔ HCPC Registered Physiotherapist</p>
+
+    <p>✔ Member of the CSP</p>
+
+    <p>✔ Sports Injury Rehabilitation Specialist</p>
+
   </div>
+
 </section>
 
-<!-- REVIEWS -->
 <section>
-  <h2>What Patients Say</h2>
+
+  <h2>Reviews</h2>
 
   <div class="card">
 
     <p>⭐️⭐️⭐️⭐️⭐️</p>
-    <p>“Fixed my back pain and got me moving again within a few sessions. Highly recommend.”</p>
+
+    <p>"Fixed my back pain and got me moving again quickly."</p>
 
     <hr>
 
     <p>⭐️⭐️⭐️⭐️⭐️</p>
-    <p>“Professional, clear plan, and evening appointments made it easy to attend.”</p>
 
-    <hr>
-
-    <p>⭐️⭐️⭐️⭐️⭐️</p>
-    <p>“Best physio I’ve used in Stoke — actually solved the problem.”</p>
+    <p>"Very professional and easy booking process."</p>
 
     <div style="text-align:center;">
-      <a href="https://share.google/KjfVbEp5jEKVUhOh5" class="btn">
-        View All Reviews on Google
+
+      <a href="YOUR_GOOGLE_REVIEW_LINK" class="btn">
+
+        View Google Reviews
+
       </a>
+
     </div>
 
   </div>
+
 </section>
 
 <footer>
+
   <p>© 2026 Primus Physio</p>
+
+  <p>HCPC Registered | CSP Member</p>
+
+  <div class="social-links">
+
+    <a href="https://www.instagram.com/primusphysio/" target="_blank">
+
+      Instagram
+
+    </a>
+
+    <a href="https://www.facebook.com/share/18aqfURHKw/?mibextid=wwXIfr" target="_blank">
+
+      Facebook
+
+    </a>
+
+    <a href="https://www.linkedin.com/in/luqman-mazhar-862034117" target="_blank">
+
+      LinkedIn
+
+    </a>
+
+  </div>
+
 </footer>
 
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">
+
   Book Appointment
+
 </a>
 
 <script>
+
 function toggleMenu() {
+
   var sidebar = document.getElementById("sidebar");
+
   var overlay = document.getElementById("overlay");
 
   if (sidebar.style.right === "0px") {
+
     sidebar.style.right = "-300px";
+
     overlay.style.display = "none";
+
   } else {
+
     sidebar.style.right = "0px";
+
     overlay.style.display = "block";
+
   }
+
 }
+
 </script>
 
 </body>
+
 </html>
