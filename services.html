@@ -1,320 +1,557 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<title>Primus Physio</title>
+
+<title>Physiotherapy Services | Primus Physio Stoke-on-Trent & Newcastle-under-Lyme</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Physiotherapy in Stoke-on-Trent for back pain, sports injuries and rehabilitation. Evening and weekend appointments available. Book online today.">
+<meta name="description" content="Explore physiotherapy treatments at Primus Physio including back pain, sciatica, sports injuries, knee pain, shoulder pain and rehabilitation in Stoke-on-Trent and Newcastle-under-Lyme.">
 
 <style>
+
 body {
+
   margin: 0;
+
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
   background: #f8f9fb;
+
 }
 
 /* MENU */
+
 .menu-btn {
+
   position: fixed;
+
   top: 18px;
+
   right: 20px;
+
   font-size: 28px;
+
   color: white;
+
   z-index: 2000;
+
   cursor: pointer;
+
 }
 
 #overlay {
+
   position: fixed;
+
   top: 0;
+
   left: 0;
+
   width: 100%;
+
   height: 100%;
+
   background: rgba(0,0,0,0.5);
+
   display: none;
+
   z-index: 1400;
+
 }
 
 .sidebar {
+
   position: fixed;
+
   top: 0;
+
   right: -300px;
+
   width: 280px;
+
   height: 100%;
+
   background: white;
+
   padding-top: 80px;
+
   transition: 0.3s ease;
+
   z-index: 1500;
+
 }
 
 .sidebar a {
+
   display: block;
+
   padding: 18px 25px;
+
   text-decoration: none;
+
   font-size: 18px;
+
   color: #0d2b45;
+
   border-bottom: 1px solid #eee;
+
 }
+
 .sidebar a.active {
+
   background: #f1f4f8;
+
   font-weight: bold;
+
   border-left: 4px solid #1abc9c;
+
 }
+
 .menu-book {
+
   position: absolute;
+
   bottom: 30px;
+
   left: 20px;
+
   right: 20px;
+
   background: #1abc9c;
+
   color: white;
+
   text-align: center;
+
   padding: 14px;
+
   border-radius: 8px;
+
   text-decoration: none;
+
   font-weight: bold;
+
 }
 
 /* HERO */
+
 .hero {
+
   text-align: center;
+
   padding: 70px 20px 60px;
+
   background: linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
+
               url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+
   background-size: cover;
+
   background-position: center;
+
   color: white;
+
 }
 
-/* LOGO */
 .logo-hero {
+
   width: 60px;
+
   max-height: 60px;
-  height: auto;
+
   display: block;
+
   margin: 0 auto 8px auto;
+
   border-radius: 8px;
-  object-fit: contain;
+
 }
 
 h1 {
+
   font-size: 2.3em;
+
 }
 
 .hero p {
+
   font-size: 1.1em;
+
 }
 
 /* BUTTON */
+
 .btn {
+
   background: #1abc9c;
+
   color: white;
+
   padding: 14px 28px;
+
   border-radius: 8px;
+
   text-decoration: none;
+
   display: inline-block;
+
   margin-top: 25px;
+
   font-weight: bold;
+
   box-shadow: 0 4px 10px rgba(26,188,156,0.3);
+
 }
 
 /* SECTIONS */
+
 section {
+
   padding: 70px 20px;
+
   max-width: 1000px;
+
   margin: auto;
+
   box-sizing: border-box;
+
 }
 
-/* ✅ FIXED */
 section:nth-of-type(even) {
+
   background: #ffffff;
+
 }
 
 section:nth-of-type(odd) {
+
   background: #f1f4f8;
+
 }
 
 h2 {
+
   color: #0d2b45;
+
   border-left: 4px solid #1abc9c;
+
   padding-left: 10px;
+
 }
 
 /* CARDS */
+
 .card {
+
   background: white;
+
   padding: 20px;
+
   border-radius: 12px;
+
   margin-bottom: 15px;
+
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+
 }
 
-/* spacing fix */
-.card br {
-  line-height: 1.8;
+.card-link {
+
+  text-decoration: none;
+
+  color: inherit;
+
+  display: block;
+
+}
+
+.card-link:hover .card {
+
+  transform: translateY(-3px);
+
+  transition: 0.3s ease;
+
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.08);
+
 }
 
 footer {
+
   background: #0d2b45;
+
   color: white;
+
   text-align: center;
+
   padding: 30px;
+
 }
 
 /* MOBILE */
+
 @media (max-width: 600px) {
 
   .logo-hero {
+
     width: 50px;
+
   }
 
   .hero {
+
     padding: 60px 15px 50px;
+
   }
 
   h1 {
+
     font-size: 1.6em;
+
   }
 
   .btn {
+
     padding: 12px 18px;
+
     font-size: 0.9em;
+
   }
 
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="menu-btn" onclick="toggleMenu()" id="menuIcon">☰</div>
+
 <div id="overlay" onclick="toggleMenu()"></div>
 
 <div id="sidebar" class="sidebar">
+
   <a href="index.html">Home</a>
+
   <a href="about.html">About</a>
+
   <a href="services.html" class="active">Services</a>
-  <a href="sports-injury-physio.html">Sports Rehab</a>
+
   <a href="faq.html">FAQ</a>
+
   <a href="contact.html">Contact</a>
 
   <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+
     Book Appointment
+
   </a>
+
 </div>
 
 <!-- HERO -->
+
 <div class="hero">
 
-  <img src="logo.jpg" class="logo-hero">
+  <img src="logo.jpg" class="logo-hero" alt="Primus Physio logo">
 
-  <h1>Physiotherapy for Back Pain, Sports Injuries & Joint Pain</h1>
+  <h1>Physiotherapy Treatments We Offer</h1>
 
-  <p>Expert physiotherapy in Stoke-on-Trent to get you out of pain and back to doing what you love</p>
+  <p>
+
+    Expert treatment for pain, injuries and rehabilitation in Stoke-on-Trent & Newcastle-under-Lyme
+
+  </p>
 
   <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+
     Book Your Appointment
+
   </a>
 
 </div>
 
 <!-- SERVICES -->
+
 <section>
+
   <h2>Our Services & Treatments</h2>
 
-  <div class="card">
-    💪 <strong>Back & Neck Pain</strong><br>
-    <small>Reduce pain and restore normal movement</small>
-  </div>
+  <a href="back-pain-physio.html" class="card-link">
 
-  <div class="card">
-    🏃 <strong>Sports Injuries</strong><br>
-    <small>Rehabilitation to get you back training safely</small>
-  </div>
+    <div class="card">💪 Back Pain Treatment</div>
 
-  <div class="card">
-    🦴 <strong>Joint Pain</strong><br>
-    <small>Treatment for knees, shoulders, hips and more</small>
-  </div>
+  </a>
 
-  <div class="card">
-    🧠 <strong>Sciatica & Nerve Pain</strong><br>
-    <small>Relieve nerve-related symptoms and improve function</small>
-  </div>
+  <a href="neck-pain-physio.html" class="card-link">
 
-  <div class="card">
-    🧍 <strong>Postural Pain</strong><br>
-    <small>Fix pain caused by sitting and work habits</small>
-  </div>
+    <div class="card">💆 Neck Pain Treatment</div>
 
-  <div class="card">
-    🔄 <strong>Injury Rehabilitation</strong><br>
-    <small>Structured rehab plans to prevent re-injury</small>
-  </div>
+  </a>
+
+  <a href="sciatica-treatment.html" class="card-link">
+
+    <div class="card">🧠 Sciatica Treatment</div>
+
+  </a>
+
+  <a href="shoulder-pain-physio.html" class="card-link">
+
+    <div class="card">🦴 Shoulder Pain Treatment</div>
+
+  </a>
+
+  <a href="knee-pain-physio.html" class="card-link">
+
+    <div class="card">🦵 Knee Pain Treatment</div>
+
+  </a>
+
+  <a href="sports-injury-physio.html" class="card-link">
+
+    <div class="card">🏃 Sports Injury Rehab</div>
+
+  </a>
+
+  <a href="running-injury-physio.html" class="card-link">
+
+    <div class="card">👟 Running Injury Treatment</div>
+
+  </a>
+
+  <a href="plantar-fasciitis-treatment.html" class="card-link">
+
+    <div class="card">🦶 Plantar Fasciitis Treatment</div>
+
+  </a>
+
+  <a href="tennis-elbow-treatment.html" class="card-link">
+
+    <div class="card">💪 Tennis Elbow Treatment</div>
+
+  </a>
+
+  <a href="carpal-tunnel-treatment.html" class="card-link">
+
+    <div class="card">✋ Carpal Tunnel Treatment</div>
+
+  </a>
+
+  <a href="post-op-rehab.html" class="card-link">
+
+    <div class="card">🔄 Post Surgery Rehab</div>
+
+  </a>
 
 </section>
 
 <!-- PRICING -->
+
 <section id="pricing">
+
   <h2>Pricing & Treatments</h2>
 
   <div class="card">
-    <strong>Initial Assessment & Treatment (60 mins)</strong><br>
-    <small>Full assessment, diagnosis and first treatment</small><br><br>
+
+    <strong>Initial Assessment & Treatment (60 mins)</strong><br><br>
+
     £60
+
   </div>
 
   <div class="card">
-    <strong>Follow-Up Treatment (30 mins)</strong><br>
-    <small>Hands-on treatment and rehab progression</small><br><br>
+
+    <strong>Follow-Up Treatment (30 mins)</strong><br><br>
+
     £40
-  </div>
 
+  </div>
+  
+<div class="card">
+
+    <strong>Follow-Up Treatment (45 mins)</strong><br><br>
+
+    £50
+
+  </div>
+  
   <div class="card">
-    <strong>Physio MOT & Service (60 mins)</strong><br>
-    <small>Movement check, mobility work and injury prevention</small><br><br>
+
+    <strong>Physio MOT & Service (60 mins)</strong><br><br>
+
     £60
+
   </div>
 
   <div class="card">
-    <strong>Cupping Therapy (Dry & Hijama)</strong><br>
-    <small>Improve circulation, reduce tension and aid recovery</small><br><br>
+
+    <strong>Cupping Therapy</strong><br><br>
 
     5 Cups – £35<br>
+
     10 Cups – £40<br>
+
     15 Cups – £45<br>
+
     20 Cups – £50
+
   </div>
 
   <div style="text-align:center;">
+
     <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+
       Book Your Appointment
+
     </a>
+
   </div>
+
 </section>
 
 <footer>
+
   <p>© 2026 Primus Physio</p>
+
 </footer>
 
 <script>
+
 function toggleMenu() {
+
   var sidebar = document.getElementById("sidebar");
+
   var overlay = document.getElementById("overlay");
+
   var icon = document.getElementById("menuIcon");
 
   if (sidebar.style.right === "0px") {
+
     sidebar.style.right = "-300px";
+
     overlay.style.display = "none";
+
     icon.innerHTML = "☰";
+
   } else {
+
     sidebar.style.right = "0px";
+
     overlay.style.display = "block";
+
     icon.innerHTML = "✕";
+
   }
+
 }
+
 </script>
 
 </body>
+
 </html>
