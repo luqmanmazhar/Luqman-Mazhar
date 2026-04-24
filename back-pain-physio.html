@@ -64,6 +64,13 @@ body {
   padding-left: 30px;
   transition: 0.2s;
 }
+
+.sidebar a.active {
+  background:#f1f4f8;
+  font-weight:bold;
+  border-left:4px solid #1abc9c;
+}
+
 .menu-book {
   position: absolute;
   bottom: 30px;
@@ -93,6 +100,10 @@ h1 {
   font-size:2.2em;
 }
 
+h2 {
+  color:#0d2b45;
+}
+
 .btn {
   background:#1abc9c;
   color:white;
@@ -117,10 +128,6 @@ section {
   border-radius:10px;
   margin-bottom:15px;
   box-shadow:0px 4px 12px rgba(0,0,0,0.06);
-}
-
-h2 {
-  color:#0d2b45;
 }
 
 /* Sticky button */
@@ -157,7 +164,7 @@ footer {
 <div id="sidebar" class="sidebar">
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
-  <a href="services.html">Services</a>
+  <a href="services.html" class="active">Services</a>
   <a href="sports-injury-physio.html">Sports Rehab</a>
   <a href="faq.html">FAQ</a>
   <a href="contact.html">Contact</a>
@@ -214,11 +221,11 @@ Book Back Pain Assessment
 <section>
 <h2>How We Treat Back Pain</h2>
 
-<div class="card">Detailed assessment</div>
-<div class="card">Clear diagnosis</div>
-<div class="card">Hands-on treatment</div>
-<div class="card">Exercise rehab plan</div>
-<div class="card">Long-term prevention strategies</div>
+<div class="card">✔ Hands-on treatment for pain relief</div>
+<div class="card">✔ Mobility exercises to improve movement</div>
+<div class="card">✔ Strength rehabilitation</div>
+<div class="card">✔ Return to gym/work plans</div>
+<div class="card">✔ Long-term flare-up prevention</div>
 </section>
 
 <!-- REVIEW -->
@@ -293,7 +300,7 @@ Book Now
 </section>
 
 <footer>
-Primus Physio | Back Pain Physiotherapy
+Primus Physio | Back Pain Physiotherapy Stoke-on-Trent & Newcastle-under-Lyme
 </footer>
 
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">
