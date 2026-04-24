@@ -1,1 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Neck Pain Physiotherapy | Primus Physio Stoke-on-Trent</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Expert neck pain physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme. Treatment for stiffness, trapped nerves, headaches and whiplash.">
+
+<style>
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#f8f9fb;
+}
+
+/* MENU */
+.menu-btn {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1400;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100%;
+    background: white;
+    padding-top: 80px;
+    transition: 0.3s ease;
+    z-index: 1500;
+}
+
+.sidebar a {
+    display:block;
+    padding:18px 25px;
+    text-decoration:none;
+    font-size:18px;
+    color:#0d2b45;
+    border-bottom:1px solid #eee;
+}
+
+.sidebar a:hover {
+    background:#f1f4f8;
+    padding-left:30px;
+    transition:0.2s;
+}
+
+.menu-book {
+    position:absolute;
+    bottom:30px;
+    left:20px;
+    right:20px;
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background:
+    linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+h1{
+    font-size:2.3em;
+}
+
+h2{
+    color:#0d2b45;
+}
+
+.btn{
+    background:#1abc9c;
+    color:white;
+    padding:14px 28px;
+    text-decoration:none;
+    border-radius:8px;
+    display:inline-block;
+    margin-top:20px;
+    font-weight:bold;
+}
+
+section{
+    padding:70px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+}
+
+footer{
+    background:#0d2b45;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+.sticky-book{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    padding:16px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:2000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENU -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+
+<div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="sports-injury-physio.html">Sports Rehab</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+        Book Appointment
+    </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Neck Pain Physiotherapy in Stoke-on-Trent</h1>
+
+    <p>
+        Treatment for neck pain, stiffness, trapped nerves, headaches and posture-related pain.
+    </p>
+
+    <p>Evening & weekend appointments available</p>
+
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+        Book Your Assessment
+    </a>
+</section>
+
+<!-- CONDITIONS -->
+<section>
+<h2>Common Neck Problems We Treat</h2>
+
+<div class="card">Neck stiffness</div>
+<div class="card">Trapped nerves</div>
+<div class="card">Whiplash injuries</div>
+<div class="card">Headaches caused by neck tension</div>
+<div class="card">Posture-related pain</div>
+<div class="card">Gym-related neck injuries</div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+<section>
+<h2>Why Choose Primus Physio?</h2>
+
+<div class="card">
+<p>✔ HCPC Registered Physiotherapist</p>
+<p>✔ NHS MSK Experience</p>
+<p>✔ GP First Contact Practitioner</p>
+<p>✔ PureGym Stoke East Partner</p>
+<p>✔ Evening & weekend appointments</p>
+</div>
+</section>
+
+<!-- CTA -->
+<section>
+<h2>Book Your Neck Pain Assessment</h2>
+
+<p>Get expert treatment in Stoke-on-Trent & Newcastle-under-Lyme.</p>
+
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+Book Now
+</a>
+</section>
+
+<footer>
+Primus Physio | Neck Pain Physiotherapy Stoke-on-Trent
+</footer>
+
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">
+Book Appointment
+</a>
+
+<script>
+function toggleMenu() {
+    var sidebar = document.getElementById("sidebar");
+    var overlay = document.getElementById("overlay");
+
+    if (sidebar.style.right === "0px") {
+        sidebar.style.right = "-300px";
+        overlay.style.display = "none";
+    } else {
+        sidebar.style.right = "0px";
+        overlay.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
