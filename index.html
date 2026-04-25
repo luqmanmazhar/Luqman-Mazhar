@@ -2,77 +2,62 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Physiotherapy Stoke-on-Trent & Newcastle | Primus Physio</title>
-
+<title>Physiotherapy Stoke-on-Trent | Primus Physio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Expert physiotherapy in Stoke-on-Trent for back pain, sports injuries, sciatica, knee pain and rehabilitation. Book today.">
-
-<meta name="keywords" content="physio Stoke-on-Trent, physio Newcastle-under-Lyme, back pain physio, sciatica treatment, sports injury rehab">
+<meta name="description" content="Expert physiotherapy in Stoke-on-Trent for back pain, sciatica, sports injuries, knee pain and rehabilitation. Book online today.">
 
 <style>
-body {
+body{
     margin:0;
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     background:#f8f9fb;
+    color:#222;
 }
 
-/* MENU */
-.menu-btn {
-    position: fixed;
-    top: 18px;
-    right: 20px;
-    color: white;
-    font-size: 28px;
-    z-index: 2000;
-    cursor: pointer;
+/* NAV */
+.menu-btn{
+    position:fixed;
+    top:25px;
+    right:25px;
+    color:white;
+    font-size:28px;
+    z-index:3000;
+    cursor:pointer;
 }
 
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 1400;
+#overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    background:rgba(0,0,0,0.5);
+    z-index:1400;
 }
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 280px;
-    height: 100%;
-    background: white;
-    padding-top: 80px;
-    transition: 0.3s ease;
-    z-index: 1500;
+.sidebar{
+    position:fixed;
+    top:0;
+    right:-300px;
+    width:280px;
+    height:100%;
+    background:white;
+    padding-top:80px;
+    transition:0.3s;
+    z-index:1500;
 }
 
-.sidebar a {
+.sidebar a{
     display:block;
     padding:18px 25px;
     text-decoration:none;
-    font-size:18px;
     color:#0d2b45;
     border-bottom:1px solid #eee;
 }
 
-.sidebar a:hover {
-    background:#f1f4f8;
-    padding-left:30px;
-    transition:0.2s;
-}
-
-.sidebar a.active {
-    background:#f1f4f8;
-    font-weight:bold;
-    border-left:4px solid #1abc9c;
-}
-
-.menu-book {
+.menu-book{
     position:absolute;
     bottom:30px;
     left:20px;
@@ -87,74 +72,149 @@ body {
 }
 
 /* HERO */
-.hero {
-    text-align:center;
-    padding:100px 20px;
+.hero{
+    position:relative;
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    padding:40px 8%;
     background:
-    linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
-    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+    linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+    url("hero.jpg");
     background-size:cover;
     background-position:center;
     color:white;
 }
 
-.logo-hero {
-    width:140px;
-    margin-bottom:20px;
+.hero-brand{
+    position:absolute;
+    top:25px;
+    left:8%;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-h1 {
-    font-size:2.3em;
+.hero-logo{
+    width:65px;
 }
 
-h2 {
-    color:#0d2b45;
-}
-
-.btn {
-    background:#1abc9c;
-    color:white;
-    padding:14px 28px;
-    text-decoration:none;
-    border-radius:8px;
-    display:inline-block;
-    margin-top:20px;
+.brand-text{
+    color:#1abc9c;
+    font-size:22px;
     font-weight:bold;
 }
 
-section {
-    padding:70px 20px;
+.hero-content{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:56px;
+    line-height:1.1;
+}
+
+.hero p{
+    font-size:22px;
+    line-height:1.5;
+}
+
+.service-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px 0;
+}
+
+.service-tags span{
+    background:rgba(255,255,255,0.15);
+    padding:10px 16px;
+    border-radius:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.book-btn{
+    background:#1abc9c;
+    color:white;
+    padding:15px 28px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.call-btn{
+    border:2px solid white;
+    color:white;
+    padding:15px 28px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* TRUST BAR */
+.trust-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:35px;
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    border-radius:12px;
+}
+
+.trust-bar h3{
+    color:#1abc9c;
+}
+
+/* GENERAL */
+section{
     max-width:1000px;
     margin:auto;
+    padding:70px 20px;
 }
 
-.card {
+h2{
+    color:#0d2b45;
+}
+
+.card{
     background:white;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:15px;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
 
-.card-link {
+.card-link{
     text-decoration:none;
     color:inherit;
-    display:block;
 }
 
-.card-link:hover .card {
-    transform:translateY(-3px);
-    transition:0.3s;
-    box-shadow:0px 5px 20px rgba(0,0,0,0.08);
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
-footer {
-    background:#0d2b45;
-    color:white;
+/* IMAGE */
+.feature-img{
+    width:100%;
+    max-width:500px;
+    border-radius:12px;
+}
+
+/* CTA */
+.cta-section{
     text-align:center;
-    padding:30px;
 }
 
-.sticky-book {
+/* FLOATING BUTTON */
+.sticky-book{
     position:fixed;
     bottom:20px;
     left:20px;
@@ -168,6 +228,37 @@ footer {
     font-weight:bold;
     z-index:2000;
 }
+
+/* FOOTER */
+footer{
+    background:#0d2b45;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:768px){
+.hero{
+    min-height:70vh;
+    padding:80px 20px 40px;
+}
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.trust-bar{
+    flex-direction:column;
+}
+}
 </style>
 </head>
 
@@ -178,40 +269,64 @@ footer {
 <div id="overlay" onclick="toggleMenu()"></div>
 
 <div id="sidebar" class="sidebar">
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="sports-injury-physio.html">Sports Rehab</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="sports-injury-physio.html">Sports Rehab</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
 
-    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
-        Book Appointment
-    </a>
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+Book Appointment
+</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
+<div class="hero-brand">
+<img src="logo.jpg" class="hero-logo">
+<span class="brand-text">PRIMUS PHYSIO</span>
+</div>
 
-    <img src="logo.jpg" class="logo-hero" alt="Primus Physio logo">
+<div class="hero-content">
+<h1>Expert Physiotherapy in Stoke-on-Trent</h1>
 
-    <h1>Expert Physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme</h1>
+<p>
+Helping active adults recover from back pain, sciatica, sports injuries and movement limitations.
+</p>
 
-    <p>Helping you recover from pain, injuries and movement limitations.</p>
+<div class="service-tags">
+<span>Back Pain</span>
+<span>Sciatica</span>
+<span>Sports Injuries</span>
+<span>Knee Pain</span>
+</div>
 
-    <p>⭐ 4.9 Google Rating | 34 Reviews</p>
+<div class="hero-buttons">
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">Book Online</a>
+<a href="tel:07867782786" class="call-btn">Call Now</a>
+</div>
 
-    <p>Evening, Saturday & Sunday appointments available</p>
+<div class="trust-bar">
+<div>
+<h3>4.9★ Rated</h3>
+<p>34 Google Reviews</p>
+</div>
 
-    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
-        Book Your Initial Assessment
-    </a>
+<div>
+<h3>HCPC & CSP Registered</h3>
+<p>Evidence-based treatment</p>
+</div>
 
-    <p>Takes less than 60 seconds to book online</p>
-
+<div>
+<h3>Flexible Hours</h3>
+<p>Evenings + weekends available</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- SERVICES -->
+<!-- CONDITIONS -->
 <section>
 <h2>Common Conditions We Treat</h2>
 
@@ -221,42 +336,55 @@ footer {
 <a href="shoulder-pain-physio.html" class="card-link"><div class="card">Shoulder Pain</div></a>
 <a href="knee-pain-physio.html" class="card-link"><div class="card">Knee Pain</div></a>
 <a href="sports-injury-physio.html" class="card-link"><div class="card">Sports Injuries</div></a>
-
-<p>
-Helping patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Longton, Tunstall, Burslem and surrounding areas.
-</p>
 </section>
 
-<!-- PUREGYM PARTNERSHIP -->
+<!-- WHY CHOOSE -->
+<section>
+<h2>Why Choose Primus Physio?</h2>
+
+<div class="features">
+<div class="card">1-to-1 treatment sessions</div>
+<div class="card">Personalised rehab plans</div>
+<div class="card">No GP referral needed</div>
+<div class="card">Fast appointment availability</div>
+</div>
+</section>
+
+<!-- AUTHORITY -->
+<section>
+<h2>Why Patients Trust Primus Physio</h2>
+
+<div class="features">
+<div class="card">Band 6 NHS Physiotherapist</div>
+<div class="card">GP First Contact Practitioner</div>
+<div class="card">Head Academy Physio at Port Vale FC</div>
+<div class="card">Private Practice Experience</div>
+</div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+<h2>How Treatment Works</h2>
+
+<div class="features">
+<div class="card">1. Book online</div>
+<div class="card">2. Full assessment</div>
+<div class="card">3. Treatment plan</div>
+<div class="card">4. Long-term recovery</div>
+</div>
+</section>
+
+<!-- PUREGYM -->
 <section>
 <h2>Official Partner of PureGym Stoke East</h2>
 
-<div class="card" style="text-align:center; border:2px solid #1abc9c;">
+<div class="card">
+<img src="IMG_1214.jpeg" class="feature-img">
+<p>PureGym members receive 10% off treatment.</p>
 
-    <img 
-        src="./IMG_1214.jpeg"
-        alt="Primus Physio official partner of PureGym Stoke East"
-        style="width:100%; max-width:500px; border-radius:12px; margin-bottom:20px;"
-    >
-
-    <p>
-        Primus Physio proudly supports members of PureGym Stoke East 
-        with injury rehab, pain treatment and performance recovery.
-    </p>
-
-    <p>
-        Whether you're dealing with gym injuries, running injuries, back pain or recovery issues —
-        we help you return stronger.
-    </p>
-
-    <p>
-        <strong>PureGym members receive 10% off treatment.</strong>
-    </p>
-
-    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
-        Claim Your Discount
-    </a>
-
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
+Claim Discount
+</a>
 </div>
 </section>
 
@@ -266,36 +394,65 @@ Helping patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Lo
 
 <div class="card">
 ⭐⭐⭐⭐⭐<br><br>
-"Persistent sciatica improved quickly and I learned how to manage it long-term."
-<br><br>
-<strong>- Jawad</strong>
+"Persistent sciatica improved quickly and I learned how to manage it long term."
 </div>
 
 <div class="card">
 ⭐⭐⭐⭐⭐<br><br>
-"Recovered from knee pain while training for a marathon."
-<br><br>
-<strong>- Fati</strong>
+"Recovered from knee pain while marathon training."
 </div>
-
 </section>
 
-<!-- BOOK -->
+<!-- FAQ -->
 <section>
-<h2>Book Your Appointment</h2>
+<h2>Frequently Asked Questions</h2>
 
-<p>
-Choose a time that suits you.<br>
-Evening, Saturday & Sunday appointments available.
-</p>
+<div class="card">
+<strong>Do I need a GP referral?</strong><br><br>
+No — you can book directly.
+</div>
 
-<a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
-Book Now
+<div class="card">
+<strong>How quickly can I get an appointment?</strong><br><br>
+Often same-week appointments available.
+</div>
+
+<div class="card">
+<strong>Do you treat sports injuries?</strong><br><br>
+Yes — from everyday gym injuries to athletes.
+</div>
+
+<div class="card">
+<strong>Do you offer weekend appointments?</strong><br><br>
+Yes — evenings, Saturdays and Sundays available.
+</div>
+</section>
+
+<!-- LOCAL SEO -->
+<section>
+<h2>Physiotherapy Near You</h2>
+
+<div class="card">
+We help patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Longton, Burslem, Tunstall and surrounding areas.
+</div>
+
+<div class="card">
+Easy parking available with evening and weekend appointments.
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+<h2>Book Your Assessment Today</h2>
+<p>Appointments available evenings and weekends.</p>
+
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
+Book Appointment
 </a>
 </section>
 
 <footer>
-Primus Physio | Physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme
+Primus Physio | Physiotherapy Stoke-on-Trent
 </footer>
 
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">
@@ -303,17 +460,17 @@ Book Appointment
 </a>
 
 <script>
-function toggleMenu() {
-    var sidebar = document.getElementById("sidebar");
-    var overlay = document.getElementById("overlay");
+function toggleMenu(){
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
 
-    if (sidebar.style.right === "0px") {
-        sidebar.style.right = "-300px";
-        overlay.style.display = "none";
-    } else {
-        sidebar.style.right = "0px";
-        overlay.style.display = "block";
-    }
+if(sidebar.style.right === "0px"){
+sidebar.style.right = "-300px";
+overlay.style.display = "none";
+} else {
+sidebar.style.right = "0px";
+overlay.style.display = "block";
+}
 }
 </script>
 
