@@ -3,74 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <title>Neck Pain Physiotherapy | Stoke-on-Trent & Newcastle-under-Lyme | Primus Physio</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Expert neck pain physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme. Treatment for stiffness, trapped nerves, headaches and whiplash.">
+<meta name="description" content="Expert neck pain physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme. Treatment for stiffness, trapped nerves, headaches and whiplash injuries.">
 
 <style>
 body{
     margin:0;
     font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
     background:#f8f9fb;
+    color:#222;
 }
 
-/* MENU */
-.menu-btn {
-    position: fixed;
-    top: 18px;
-    right: 20px;
-    color: white;
-    font-size: 28px;
-    z-index: 2000;
-    cursor: pointer;
+/* NAV */
+.menu-btn{
+    position:fixed;
+    top:25px;
+    right:25px;
+    color:white;
+    font-size:28px;
+    z-index:3000;
+    cursor:pointer;
 }
 
-#overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: none;
-    z-index: 1400;
+#overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    background:rgba(0,0,0,0.5);
+    z-index:1400;
 }
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    right: -300px;
-    width: 280px;
-    height: 100%;
-    background: white;
-    padding-top: 80px;
-    transition: 0.3s ease;
-    z-index: 1500;
+.sidebar{
+    position:fixed;
+    top:0;
+    right:-300px;
+    width:280px;
+    height:100%;
+    background:white;
+    padding-top:80px;
+    transition:0.3s;
+    z-index:1500;
 }
 
-.sidebar a {
+.sidebar a{
     display:block;
     padding:18px 25px;
     text-decoration:none;
-    font-size:18px;
     color:#0d2b45;
     border-bottom:1px solid #eee;
 }
 
-.sidebar a:hover {
-    background:#f1f4f8;
-    padding-left:30px;
-    transition:0.2s;
-}
-
-.sidebar a.active {
+.sidebar a.active{
     background:#f1f4f8;
     font-weight:bold;
     border-left:4px solid #1abc9c;
 }
 
-.menu-book {
+.menu-book{
     position:absolute;
     bottom:30px;
     left:20px;
@@ -86,39 +79,74 @@ body{
 
 /* HERO */
 .hero{
-    text-align:center;
-    padding:100px 20px;
+    position:relative;
+    min-height:70vh;
+    display:flex;
+    align-items:center;
+    padding:40px 8%;
     background:
-    linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
-    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
+    linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
+    url("hero.jpg");
     background-size:cover;
     background-position:center;
     color:white;
 }
 
-h1{
-    font-size:2.3em;
+/* HERO BRAND */
+.hero-brand{
+    position:absolute;
+    top:25px;
+    left:8%;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.hero-logo{
+    width:65px;
+}
+
+.brand-text{
+    color:#1abc9c;
+    font-size:22px;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.hero-content{
+    max-width:650px;
+}
+
+.hero h1{
+    font-size:52px;
+    line-height:1.1;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.5;
+}
+
+.book-btn{
+    background:#1abc9c;
+    color:white;
+    padding:15px 28px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    display:inline-block;
+    margin-top:20px;
+}
+
+/* GENERAL */
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 20px;
 }
 
 h2{
     color:#0d2b45;
-}
-
-.btn{
-    background:#1abc9c;
-    color:white;
-    padding:14px 28px;
-    text-decoration:none;
-    border-radius:8px;
-    display:inline-block;
-    margin-top:20px;
-    font-weight:bold;
-}
-
-section{
-    padding:70px 20px;
-    max-width:1000px;
-    margin:auto;
 }
 
 .card{
@@ -126,16 +154,21 @@ section{
     padding:25px;
     border-radius:12px;
     margin-bottom:20px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.06);
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
 
-footer{
-    background:#0d2b45;
-    color:white;
+.card a{
+    color:#0d2b45;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* CTA */
+.cta-section{
     text-align:center;
-    padding:30px;
 }
 
+/* FLOATING BOOK BUTTON */
 .sticky-book{
     position:fixed;
     bottom:20px;
@@ -145,10 +178,51 @@ footer{
     color:white;
     text-align:center;
     padding:16px;
-    border-radius:10px;
     text-decoration:none;
+    border-radius:10px;
     font-weight:bold;
     z-index:2000;
+}
+
+/* FOOTER */
+footer{
+    background:#0d2b45;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+
+.hero{
+    min-height:60vh;
+    padding:80px 20px 40px;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero-brand{
+    left:20px;
+}
+
+.hero-logo{
+    width:50px;
+}
+
+.brand-text{
+    font-size:18px;
+}
+
+.sticky-book{
+    bottom:10px;
+}
 }
 </style>
 </head>
@@ -174,170 +248,190 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Neck Pain Physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme</h1>
 
-    <p>
-        Treatment for neck pain, stiffness, trapped nerves, headaches and posture-related pain.
-    </p>
+    <div class="hero-brand">
+        <img src="logo.jpg" class="hero-logo" alt="Primus Physio Logo">
+        <span class="brand-text">PRIMUS PHYSIO</span>
+    </div>
 
-    <p>Evening & weekend appointments available</p>
+    <div class="hero-content">
+        <h1>Neck Pain Physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme</h1>
 
-    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
-        Book Your Assessment
-    </a>
+        <p>
+            Expert treatment for neck pain, stiffness, trapped nerves, headaches and whiplash injuries.
+        </p>
+
+        <p>Evening & weekend appointments available</p>
+
+        <a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
+            Book Your Assessment
+        </a>
+    </div>
 </section>
 
 <!-- CONDITIONS -->
 <section>
-<h2>Common Neck Problems We Treat</h2>
+    <h2>Common Neck Problems We Treat</h2>
 
-<div class="card">Neck stiffness</div>
-<div class="card">Trapped nerves</div>
-<div class="card">Whiplash injuries</div>
-<div class="card">Headaches caused by neck tension</div>
-<div class="card">Posture-related pain</div>
-<div class="card">Gym-related neck injuries</div>
+    <div class="card">Neck stiffness</div>
+    <div class="card">Trapped nerves</div>
+    <div class="card">Whiplash injuries</div>
+    <div class="card">Headaches caused by neck tension</div>
+    <div class="card">Posture-related neck pain</div>
+    <div class="card">Gym-related neck injuries</div>
 </section>
 
 <!-- CAUSES -->
 <section>
-<h2>Common Causes of Neck Pain</h2>
+    <h2>Common Causes of Neck Pain</h2>
 
-<div class="card">
-<p>
-Neck pain can be caused by poor posture, desk work, gym injuries, sleeping positions, stress-related tension or whiplash injuries.
-</p>
+    <div class="card">
+        <p>
+            Neck pain can be caused by poor posture, desk work, sleeping positions,
+            stress-related tension, gym injuries or whiplash injuries.
+        </p>
 
-<p>
-Neck pain can also contribute to shoulder pain and headaches.
-You may also benefit from our 
-<a href="shoulder-pain-physio.html">shoulder pain treatment</a> 
-or 
-<a href="sports-injury-physio.html">sports injury rehab</a>.
-</p>
-</div>
+        <p>
+            Neck pain can also contribute to shoulder pain and headaches.
+            You may also benefit from our 
+            <a href="shoulder-pain-physio.html">shoulder pain treatment</a> 
+            or 
+            <a href="sports-injury-physio.html">sports injury rehab</a>.
+        </p>
+    </div>
 </section>
 
 <!-- HOW WE HELP -->
 <section>
-<h2>How Primus Physio Can Help</h2>
+    <h2>How Primus Physio Can Help</h2>
 
-<div class="card">
-<p>
-We assess the root cause of your neck pain and create a personalised treatment plan to help you recover quickly and prevent future flare-ups.
-</p>
+    <div class="card">
+        <p>
+            We assess the root cause of your neck pain and create a personalised rehab plan.
+        </p>
 
-<ul>
-<li>Manual therapy</li>
-<li>Mobility exercises</li>
-<li>Strength rehabilitation</li>
-<li>Posture correction</li>
-<li>Return to gym/sport plans</li>
-</ul>
-</div>
+        <ul>
+            <li>Manual therapy</li>
+            <li>Mobility exercises</li>
+            <li>Strength rehabilitation</li>
+            <li>Posture correction</li>
+            <li>Return to gym/sport plans</li>
+        </ul>
+    </div>
 </section>
 
-<!-- WHY CHOOSE US -->
+<!-- WHY CHOOSE -->
 <section>
-<h2>Why Choose Primus Physio?</h2>
+    <h2>Why Choose Primus Physio?</h2>
 
-<div class="card">
-<p>✔ HCPC Registered Physiotherapist</p>
-<p>✔ NHS MSK Experience</p>
-<p>✔ GP First Contact Practitioner</p>
-<p>✔ PureGym Stoke East Partner</p>
-<p>✔ Evening & weekend appointments</p>
-</div>
+    <div class="card">
+        <p>✔ HCPC Registered Physiotherapist</p>
+        <p>✔ NHS MSK Experience</p>
+        <p>✔ GP First Contact Practitioner</p>
+        <p>✔ Sports Injury Rehabilitation Experience</p>
+        <p>✔ Evening & weekend appointments</p>
+    </div>
 </section>
 
 <!-- REVIEW -->
 <section>
-<h2>Real Patient Results</h2>
+    <h2>Real Patient Results</h2>
 
-<div class="card">
-⭐⭐⭐⭐⭐
+    <div class="card">
+        ⭐⭐⭐⭐⭐
 
-<p>
-“Luqman made me feel at ease, gave me follow-up exercises and resolved my neck issue in just 3–4 sessions. Keep up the excellent work.”
-</p>
+        <p>
+            “Luqman made me feel at ease, gave me follow-up exercises and resolved my neck issue in just 3–4 sessions. Keep up the excellent work.”
+        </p>
 
-<strong>- Michele</strong>
-</div>
+        <strong>- Michele</strong>
+    </div>
 </section>
 
 <!-- FAQ -->
 <section>
-<h2>Neck Pain FAQs</h2>
+    <h2>Neck Pain FAQs</h2>
 
-<div class="card">
-<strong>How many sessions will I need?</strong><br><br>
-Many patients improve within a few sessions depending on how long symptoms have been present.
-</div>
+    <div class="card">
+        <strong>Why is my neck pain causing headaches?</strong><br><br>
+        Tension in the neck muscles and joints can commonly trigger headaches.
+    </div>
 
-<div class="card">
-<strong>Can physio help trapped nerves?</strong><br><br>
-Yes — physiotherapy can help reduce irritation and improve mobility.
-</div>
+    <div class="card">
+        <strong>Can physio help trapped nerves in the neck?</strong><br><br>
+        Yes — physiotherapy can reduce irritation and improve mobility.
+    </div>
 
-<div class="card">
-<strong>Do I need a GP referral?</strong><br><br>
-No referral is required.
-</div>
+    <div class="card">
+        <strong>Can gym training cause neck pain?</strong><br><br>
+        Yes — poor lifting technique and upper body overload can trigger symptoms.
+    </div>
+
+    <div class="card">
+        <strong>How long does neck pain take to recover?</strong><br><br>
+        Many patients improve within a few sessions depending on severity.
+    </div>
 </section>
 
-<!-- LOCAL -->
+<!-- LOCAL SEO -->
 <section>
-<h2>Neck Pain Physio Near You</h2>
+    <h2>Neck Pain Physio Near You</h2>
 
-<div class="card">
-We help patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Longton, Tunstall, Burslem and surrounding areas.
-</div>
+    <div class="card">
+        We help patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley,
+        Fenton, Longton, Tunstall, Burslem and surrounding areas.
+    </div>
 
-<div class="card">
-Easy parking available with evening and weekend appointments.
-</div>
+    <div class="card">
+        Free parking available with evening and weekend appointments.
+    </div>
 </section>
 
 <!-- RELATED -->
 <section>
-<h2>Related Treatments</h2>
+    <h2>Related Treatments</h2>
 
-<div class="card">
-<a href="shoulder-pain-physio.html">Shoulder Pain Treatment</a>
-</div>
+    <div class="card">
+        <a href="shoulder-pain-physio.html">Shoulder Pain Treatment</a>
+    </div>
 
-<div class="card">
-<a href="sports-injury-physio.html">Sports Injury Rehab</a>
-</div>
+    <div class="card">
+        <a href="sports-injury-physio.html">Sports Injury Rehab</a>
+    </div>
+
+    <div class="card">
+        <a href="services.html">View All Treatments</a>
+    </div>
 </section>
 
-<!-- CTA -->
-<section>
-<h2>Book Your Neck Pain Assessment</h2>
+<!-- FINAL CTA -->
+<section class="cta-section">
+    <h2>Book Your Neck Pain Assessment</h2>
 
-<p>
-Get expert treatment in Stoke-on-Trent & Newcastle-under-Lyme.
-</p>
+    <p>
+        Get expert treatment in Stoke-on-Trent & Newcastle-under-Lyme today.
+    </p>
 
-<a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
-Book Now
-</a>
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
+        Book Now
+    </a>
 </section>
 
 <footer>
-Primus Physio | Neck Pain Physiotherapy Stoke-on-Trent & Newcastle-under-Lyme
+    Primus Physio | Neck Pain Physiotherapy Stoke-on-Trent & Newcastle-under-Lyme
 </footer>
 
+<!-- FLOATING CTA -->
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">
-Book Appointment
+    Book Appointment
 </a>
 
 <script>
-function toggleMenu() {
-    var sidebar = document.getElementById("sidebar");
-    var overlay = document.getElementById("overlay");
+function toggleMenu(){
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
 
-    if (sidebar.style.right === "0px") {
+    if(sidebar.style.right === "0px"){
         sidebar.style.right = "-300px";
         overlay.style.display = "none";
     } else {
