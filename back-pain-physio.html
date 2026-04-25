@@ -2,155 +2,250 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<title>Back Pain Physiotherapy | Primus Physio Stoke-on-Trent & Newcastle-under-Lyme</title>
-
+<title>Back Pain Physiotherapy | Stoke-on-Trent & Newcastle-under-Lyme | Primus Physio</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Expert back pain physiotherapy in Stoke-on-Trent and Newcastle-under-Lyme. Treatment for lower back pain, sciatica, disc injuries and recurring back pain. Evening and weekend appointments available.">
+<meta name="description" content="Expert back pain physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme. Treatment for lower back pain, sciatica, disc injuries and recurring back pain.">
 
 <style>
-body {
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  background:#f8f9fb;
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    background:#f8f9fb;
+    color:#222;
 }
 
-/* MENU */
-.menu-btn {
-  position: fixed;
-  top: 18px;
-  right: 20px;
-  font-size: 28px;
-  color: white;
-  z-index: 2000;
-  cursor: pointer;
+/* NAV */
+.menu-btn{
+    position:fixed;
+    top:25px;
+    right:25px;
+    color:white;
+    font-size:28px;
+    z-index:3000;
+    cursor:pointer;
 }
 
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  z-index: 1400;
+#overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:none;
+    background:rgba(0,0,0,0.5);
+    z-index:1400;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -300px;
-  width: 280px;
-  height: 100%;
-  background: white;
-  padding-top: 80px;
-  transition: 0.3s ease;
-  z-index: 1500;
+.sidebar{
+    position:fixed;
+    top:0;
+    right:-300px;
+    width:280px;
+    height:100%;
+    background:white;
+    padding-top:80px;
+    transition:0.3s;
+    z-index:1500;
 }
 
-.sidebar a {
-  display: block;
-  padding: 18px 25px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #0d2b45;
-  border-bottom: 1px solid #eee;
+.sidebar a{
+    display:block;
+    padding:18px 25px;
+    text-decoration:none;
+    color:#0d2b45;
+    border-bottom:1px solid #eee;
 }
 
-.sidebar a:hover {
-  background: #f1f4f8;
-  padding-left: 30px;
-  transition: 0.2s;
+.sidebar a.active{
+    background:#f1f4f8;
+    font-weight:bold;
+    border-left:4px solid #1abc9c;
 }
 
-.sidebar a.active {
-  background:#f1f4f8;
-  font-weight:bold;
-  border-left:4px solid #1abc9c;
-}
-
-.menu-book {
-  position: absolute;
-  bottom: 30px;
-  left: 20px;
-  right: 20px;
-  background: #1abc9c;
-  color: white;
-  text-align: center;
-  padding: 14px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
+.menu-book{
+    position:absolute;
+    bottom:30px;
+    left:20px;
+    right:20px;
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    padding:14px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
 }
 
 /* HERO */
-.hero {
-  text-align:center;
-  padding:90px 20px;
-  background:linear-gradient(rgba(13,43,69,0.85), rgba(13,43,69,0.85)),
-  url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b');
-  background-size:cover;
-  background-position:center;
-  color:white;
+.hero{
+    position:relative;
+    min-height:75vh;
+    display:flex;
+    align-items:center;
+    padding:40px 8%;
+    background:
+    linear-gradient(
+        to right,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.3)
+    ),
+    url("hero.jpg");
+    background-size:cover;
+    background-position:center;
+    color:white;
 }
 
-h1 {
-  font-size:2.2em;
+.hero-brand{
+    position:absolute;
+    top:25px;
+    left:8%;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
-h2 {
-  color:#0d2b45;
+.hero-logo{
+    width:65px;
 }
 
-.btn {
-  background:#1abc9c;
-  color:white;
-  padding:14px 28px;
-  text-decoration:none;
-  border-radius:8px;
-  display:inline-block;
-  margin-top:20px;
-  font-weight:bold;
+.brand-text{
+    color:#1abc9c;
+    font-size:22px;
+    font-weight:bold;
 }
 
-/* SECTIONS */
-section {
-  padding:70px 20px;
-  max-width:1000px;
-  margin:auto;
+.hero-content{
+    max-width:650px;
 }
 
-.card {
-  background:white;
-  padding:20px;
-  border-radius:10px;
-  margin-bottom:15px;
-  box-shadow:0px 4px 12px rgba(0,0,0,0.06);
+.hero h1{
+    font-size:56px;
+    line-height:1.1;
 }
 
-/* Sticky button */
-.sticky-book {
-  position:fixed;
-  bottom:20px;
-  left:20px;
-  right:20px;
-  background:#1abc9c;
-  color:white;
-  text-align:center;
-  padding:16px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  z-index:2000;
+.hero p{
+    font-size:22px;
+    line-height:1.5;
 }
 
-footer {
-  background:#0d2b45;
-  color:white;
-  text-align:center;
-  padding:30px;
+.service-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px 0;
+}
+
+.service-tags span{
+    background:rgba(255,255,255,0.15);
+    padding:10px 16px;
+    border-radius:25px;
+    font-size:14px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+}
+
+.book-btn{
+    background:#1abc9c;
+    color:white;
+    padding:15px 28px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.call-btn{
+    border:2px solid white;
+    color:white;
+    padding:15px 28px;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+/* GENERAL */
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+h2{
+    color:#0d2b45;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    margin-bottom:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.05);
+}
+
+.card a{
+    color:#0d2b45;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* CTA */
+.cta-section{
+    text-align:center;
+}
+
+/* FOOTER */
+footer{
+    background:#0d2b45;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* FLOATING BUTTON */
+.sticky-book{
+    position:fixed;
+    bottom:20px;
+    left:20px;
+    right:20px;
+    background:#1abc9c;
+    color:white;
+    text-align:center;
+    padding:16px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    z-index:2000;
+}
+
+@media(min-width:768px){
+    .sticky-book{
+        width:250px;
+        left:auto;
+        right:20px;
+    }
+}
+
+@media(max-width:768px){
+    .hero{
+        min-height:70vh;
+        padding:80px 20px 40px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
 }
 </style>
 </head>
@@ -158,47 +253,64 @@ footer {
 <body>
 
 <!-- MENU -->
-<div class="menu-btn" onclick="toggleMenu()" id="menuIcon">☰</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 <div id="overlay" onclick="toggleMenu()"></div>
 
 <div id="sidebar" class="sidebar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html" class="active">Services</a>
-  <a href="sports-injury-physio.html">Sports Rehab</a>
-  <a href="faq.html">FAQ</a>
-  <a href="contact.html">Contact</a>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html" class="active">Services</a>
+<a href="sports-injury-physio.html">Sports Rehab</a>
+<a href="faq.html">FAQ</a>
+<a href="contact.html">Contact</a>
 
-  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
-    Book Appointment
-  </a>
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">
+Book Appointment
+</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
+
+<div class="hero-brand">
+<img src="logo.jpg" class="hero-logo">
+<span class="brand-text">PRIMUS PHYSIO</span>
+</div>
+
+<div class="hero-content">
 <h1>Back Pain Physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme</h1>
 
 <p>
-Helping people recover from lower back pain, sciatica and recurring flare ups.
+Expert treatment for lower back pain, sciatica, disc injuries and recurring back pain.
 </p>
 
-<p>
-Evening, Saturday & Sunday appointments available
-</p>
+<div class="service-tags">
+<span>Lower Back Pain</span>
+<span>Sciatica</span>
+<span>Disc Pain</span>
+<span>Sports Injuries</span>
+</div>
 
-<a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
-Book Back Pain Assessment
+<div class="hero-buttons">
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
+Book Assessment
 </a>
+
+<a href="tel:07867782786" class="call-btn">
+Call Now
+</a>
+</div>
+</div>
 </section>
 
-<!-- SYMPTOMS -->
+<!-- CONDITIONS -->
 <section>
-<h2>Common Back Pain Problems We Treat</h2>
+<h2>Common Back Problems We Treat</h2>
 
 <div class="card">Lower back pain</div>
 <div class="card">Sciatica pain</div>
-<div class="card">Pain bending forward</div>
 <div class="card">Disc injuries</div>
+<div class="card">Pain bending forward</div>
 <div class="card">Pain after gym injuries</div>
 <div class="card">Pain when sitting</div>
 <div class="card">Morning stiffness</div>
@@ -221,11 +333,25 @@ Book Back Pain Assessment
 <section>
 <h2>How We Treat Back Pain</h2>
 
-<div class="card">✔ Hands-on treatment for pain relief</div>
-<div class="card">✔ Mobility exercises to improve movement</div>
-<div class="card">✔ Strength rehabilitation</div>
-<div class="card">✔ Return to gym/work plans</div>
-<div class="card">✔ Long-term flare-up prevention</div>
+<div class="card">
+✔ Hands-on treatment for pain relief
+</div>
+
+<div class="card">
+✔ Mobility exercises to improve movement
+</div>
+
+<div class="card">
+✔ Strength rehabilitation
+</div>
+
+<div class="card">
+✔ Return to gym/work plans
+</div>
+
+<div class="card">
+✔ Long-term flare-up prevention
+</div>
 </section>
 
 <!-- REVIEWS -->
@@ -233,45 +359,48 @@ Book Back Pain Assessment
 <h2>Real Back Pain Recovery Stories</h2>
 
 <div class="card">
-⭐⭐⭐⭐⭐ <br><br>
-"Luqman has been my choice of physio after my back operation. His professionalism, attitude and attention to detail make him my first choice going forward."
+⭐⭐⭐⭐⭐<br><br>
+"Luqman has been my choice of physio after my back operation. His professionalism and attention to detail make him my first choice."
 <br><br>
 <strong>- Robert</strong>
 </div>
 
 <div class="card">
-⭐⭐⭐⭐⭐ <br><br>
-"Luqman helped me greatly with my recovery after breaking my lower back. I highly recommend him. He is an excellent physiotherapist."
+⭐⭐⭐⭐⭐<br><br>
+"Luqman helped me recover after breaking my lower back. I highly recommend him."
 <br><br>
 <strong>- Paul</strong>
 </div>
 
 <div class="card">
-⭐⭐⭐⭐⭐ <br><br>
-"I came in with severe mid to high back pain that was stopping me from working and enjoying life. The exercises have already eased my pain and I can see huge improvements."
+⭐⭐⭐⭐⭐<br><br>
+"My back pain stopped me from working and enjoying life. The exercises helped massively."
 <br><br>
 <strong>- Tegan</strong>
 </div>
-
 </section>
 
-<!-- FAQ -->
 <section>
 <h2>Back Pain FAQs</h2>
 
 <div class="card">
-<strong>How many sessions will I need?</strong><br><br>
-This depends on your condition, but many patients improve within a few sessions.
+<strong>Can physio help slipped discs?</strong><br><br>
+Yes — many disc injuries improve with the right rehab plan, movement advice and gradual strengthening.
 </div>
 
 <div class="card">
-<strong>Do I need a GP referral?</strong><br><br>
-No referral is required to book with Primus Physio.
+<strong>Why is my back pain worse when sitting?</strong><br><br>
+This is often caused by disc irritation, posture issues or prolonged desk work. We assess the exact cause.
 </div>
 
 <div class="card">
-<strong>Can physio help sciatica?</strong><br><br>
-Yes — physiotherapy can help reduce nerve irritation and improve movement.
+<strong>Can I still go to the gym with back pain?</strong><br><br>
+In many cases yes — but certain exercises may need modifying while your back settles.
+</div>
+
+<div class="card">
+<strong>When should I see a physio for back pain?</strong><br><br>
+If your pain keeps returning, affects work, gym training or daily life, it’s worth getting assessed early.
 </div>
 </section>
 
@@ -280,11 +409,11 @@ Yes — physiotherapy can help reduce nerve irritation and improve movement.
 <h2>Back Pain Physio Near You</h2>
 
 <div class="card">
-We help patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Longton, Burslem, Tunstall and surrounding areas recover from back pain.
+We help patients across Stoke-on-Trent, Newcastle-under-Lyme, Hanley, Fenton, Longton, Tunstall, Burslem and surrounding areas.
 </div>
 
 <div class="card">
-Easy parking available with evening, Saturday and Sunday appointments.
+Free parking available with evening and weekend appointments.
 </div>
 </section>
 
@@ -302,14 +431,14 @@ Easy parking available with evening, Saturday and Sunday appointments.
 </section>
 
 <!-- CTA -->
-<section style="text-align:center;">
-<h2>Book Your Back Pain Appointment</h2>
+<section class="cta-section">
+<h2>Book Your Back Pain Assessment</h2>
 
 <p>
-Get expert help for your back pain today.
+Get expert treatment and start moving pain-free again.
 </p>
 
-<a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn">
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
 Book Now
 </a>
 </section>
@@ -323,20 +452,17 @@ Book Appointment
 </a>
 
 <script>
-function toggleMenu() {
-  var sidebar = document.getElementById("sidebar");
-  var overlay = document.getElementById("overlay");
-  var icon = document.getElementById("menuIcon");
+function toggleMenu(){
+    const sidebar=document.getElementById("sidebar");
+    const overlay=document.getElementById("overlay");
 
-  if (sidebar.style.right === "0px") {
-    sidebar.style.right = "-300px";
-    overlay.style.display = "none";
-    icon.innerHTML = "☰";
-  } else {
-    sidebar.style.right = "0px";
-    overlay.style.display = "block";
-    icon.innerHTML = "✕";
-  }
+    if(sidebar.style.right==="0px"){
+        sidebar.style.right="-300px";
+        overlay.style.display="none";
+    } else{
+        sidebar.style.right="0px";
+        overlay.style.display="block";
+    }
 }
 </script>
 
