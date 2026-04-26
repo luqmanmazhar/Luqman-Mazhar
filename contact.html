@@ -7,6 +7,9 @@
 
 <meta name="description" content="Book physiotherapy in Stoke-on-Trent with Primus Physio. Contact us for expert injury rehabilitation and physiotherapy appointments.">
 
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
 <style>
 body{
     margin:0;
@@ -85,11 +88,7 @@ body{
     align-items:center;
     padding:40px 8%;
     background:
-    linear-gradient(
-        to right,
-        rgba(0,0,0,0.8),
-        rgba(0,0,0,0.3)
-    ),
+    linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.3)),
     url("hero.jpg");
     background-size:cover;
     background-position:center;
@@ -192,6 +191,7 @@ h2{
     box-shadow:0 4px 20px rgba(0,0,0,0.05);
 }
 
+/* SOCIAL */
 .social-icons{
     text-align:center;
 }
@@ -199,6 +199,11 @@ h2{
 .social-icons img{
     width:50px;
     margin:10px;
+}
+
+/* CTA */
+.cta-section{
+    text-align:center;
 }
 
 /* STICKY BUTTON */
@@ -239,6 +244,7 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
+
 .hero{
     min-height:70vh;
     padding:80px 20px 40px;
@@ -265,6 +271,7 @@ footer{
 
 <body>
 
+<!-- MENU -->
 <div class="menu-btn" onclick="toggleMenu()">☰</div>
 <div id="overlay" onclick="toggleMenu()"></div>
 
@@ -336,6 +343,19 @@ footer{
     </div>
 </section>
 
+<!-- WHY CHOOSE -->
+<section>
+    <h2>Why Patients Choose Primus Physio</h2>
+
+    <div class="card">
+        <p>✔ HCPC Registered Physiotherapist</p>
+        <p>✔ Band 6 NHS Physiotherapist</p>
+        <p>✔ GP First Contact Practitioner</p>
+        <p>✔ Sports Injury Rehabilitation Experience</p>
+        <p>✔ Evening & Weekend Appointments</p>
+    </div>
+</section>
+
 <!-- SOCIAL -->
 <section>
     <h2>Follow Primus Physio</h2>
@@ -351,6 +371,16 @@ footer{
             <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
         </a>
     </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+    <h2>Ready To Start Recovery?</h2>
+    <p>Book online in under 60 seconds.</p>
+
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="book-btn">
+        Book Appointment
+    </a>
 </section>
 
 <footer>
