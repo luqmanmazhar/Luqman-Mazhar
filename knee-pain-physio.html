@@ -7,6 +7,9 @@
 
 <meta name="description" content="Expert knee pain physiotherapy in Stoke-on-Trent & Newcastle-under-Lyme. Treatment for runner’s knee, ligament injuries, meniscus pain, arthritis and gym-related knee pain.">
 
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
 <style>
 body{
     margin:0;
@@ -219,8 +222,10 @@ footer{
     text-decoration:none;
     font-weight:bold;
     z-index:2000;
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
 }
 
+/* Desktop */
 @media(min-width:768px){
     .sticky-book{
         width:250px;
@@ -229,6 +234,7 @@ footer{
     }
 }
 
+/* Mobile */
 @media(max-width:768px){
     .hero{
         min-height:70vh;
@@ -245,6 +251,18 @@ footer{
 
     .hero-buttons{
         flex-direction:column;
+    }
+
+    .hero-brand{
+        left:20px;
+    }
+
+    .hero-logo{
+        width:50px;
+    }
+
+    .brand-text{
+        font-size:18px;
     }
 }
 </style>
@@ -273,7 +291,7 @@ footer{
 <section class="hero">
 
 <div class="hero-brand">
-    <img src="logo.jpg" class="hero-logo">
+    <img src="logo.jpg" class="hero-logo" alt="Primus Physio Logo">
     <span class="brand-text">PRIMUS PHYSIO</span>
 </div>
 
@@ -459,6 +477,21 @@ function toggleMenu(){
         overlay.style.display = "block";
     }
 }
+
+/* Hide sticky button near footer */
+window.addEventListener("scroll", function() {
+    const button = document.querySelector(".sticky-book");
+    const footer = document.querySelector("footer");
+
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (footerTop < windowHeight) {
+        button.style.display = "none";
+    } else {
+        button.style.display = "block";
+    }
+});
 </script>
 
 </body>
