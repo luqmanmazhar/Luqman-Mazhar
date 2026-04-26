@@ -7,6 +7,9 @@
 
 <meta name="description" content="Sports rehabilitation in Stoke-on-Trent. Helping footballers, runners and athletes recover from injury and return to peak performance.">
 
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
 <style>
 body{
     margin:0;
@@ -184,6 +187,16 @@ h2{
     text-decoration:none;
     font-weight:bold;
     z-index:2000;
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
+}
+
+/* Desktop sticky button */
+@media(min-width:768px){
+    .sticky-book{
+        width:250px;
+        left:auto;
+        right:20px;
+    }
 }
 
 /* FOOTER */
@@ -196,6 +209,7 @@ footer{
 
 /* MOBILE */
 @media(max-width:768px){
+
 .hero{
     min-height:60vh;
     padding:80px 20px 40px;
@@ -206,6 +220,18 @@ footer{
 }
 
 .hero p{
+    font-size:18px;
+}
+
+.hero-brand{
+    left:20px;
+}
+
+.hero-logo{
+    width:50px;
+}
+
+.brand-text{
     font-size:18px;
 }
 }
@@ -235,7 +261,7 @@ Book Appointment
 <section class="hero">
 
 <div class="hero-brand">
-    <img src="logo.jpg" class="hero-logo">
+    <img src="logo.jpg" class="hero-logo" alt="Primus Physio Logo">
     <span class="brand-text">PRIMUS PHYSIO</span>
 </div>
 
@@ -270,7 +296,7 @@ Experience working with footballers competing across academy and professional en
 <h2>Real Pitch-Based Rehabilitation</h2>
 
 <div class="card">
-<img src="IMG_1177.jpeg" class="feature-img">
+<img src="IMG_1177.jpeg" class="feature-img" alt="Pitch based sports rehabilitation">
 
 <p style="margin-top:20px;">
 Pitch-based rehabilitation progressing athletes safely through return-to-play demands.
@@ -399,6 +425,21 @@ sidebar.style.right = "0px";
 overlay.style.display = "block";
 }
 }
+
+/* Hide sticky button near footer */
+window.addEventListener("scroll", function() {
+    const button = document.querySelector(".sticky-book");
+    const footer = document.querySelector("footer");
+
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (footerTop < windowHeight) {
+        button.style.display = "none";
+    } else {
+        button.style.display = "block";
+    }
+});
 </script>
 
 </body>
