@@ -22,19 +22,1046 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0b1f35;--navy-mid:#122840;--teal:#1abc9c;--teal-dim:#159a7e;--cream:#f5f2ed;--cream-dark:#eae5dc;--text-muted:#5a6a7a;--card-bg:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);font-size:16px;line-height:1.7;font-weight:300}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.15}
-h1{font-size:clamp(32px,5vw,54px)}h2{font-size:clamp(22px,3vw,32px);color:var(--navy)}h3{font-size:17px}
-.menu-btn{position:fixed;top:20px;right:22px;width:44px;height:44px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3000;color:white;font-size:20px;transition:background .2s}
-.menu-btn:hover{background:rgba(255,255,255,.25)}
-#overlay{position:fixed;inset:0;display:none;background:rgba(11,31,53,.55);backdrop-filter:blur(3px);z-index:1400}
-.sidebar{position:fixed;top:0;right:-320px;width:300px;height:100%;background:var(--navy);padding-top:80px;transition:right .35s cubic-bezier(.4,0,.2,1);z-index:1500}
-.sidebar a{display:block;padding:16px 28px;text-decoration:none;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.07);font-size:15px;transition:color .2s,padding-left .2s}
-.sidebar a:hover{color:var(--teal);padding-left:36px}.sidebar a.active{color:var(--teal);font-weight:500}
-.menu-book{position:absolute;bottom:30px;left:20px;right:20px;background:var(--teal);color:white;text-align:center;padding:15px;border-radius:10px;text-decoration:none;font-weight:500;font-size:15px;transition:background .2s}
-.menu-book:hover{background:var(--teal-dim)}
+
+:root {
+  --navy: #0b1f35;
+  --navy-mid: #122840;
+  --teal: #1abc9c;
+  --teal-dim: #159a7e;
+  --cream: #f5f2ed;
+  --cream-dark: #eae5dc;
+  --text-muted: #5a6a7a;
+  --card-bg: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(34px, 5vw, 58px); }
+h2 { font-size: clamp(26px, 3.5vw, 38px); color: var(--navy); }
+h3 { font-size: 18px; }
+
+/* ── NAV ── */
+.menu-btn {
+  position: fixed;
+  top: 20px; right: 22px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 3000;
+  color: white;
+  font-size: 20px;
+  transition: background 0.2s;
+}
+.menu-btn:hover { background: rgba(255,255,255,0.25); }
+
+#overlay {
+  position: fixed; inset: 0;
+  display: none;
+  background: rgba(11,31,53,0.55);
+  backdrop-filter: blur(3px);
+  z-index: 1400;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0; right: -320px;
+  width: 300px; height: 100%;
+  background: var(--navy);
+  padding-top: 80px;
+  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1500;
+}
+
+.sidebar a {
+  display: block;
+  padding: 16px 28px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 15px;
+  transition: color 0.2s, padding-left 0.2s;
+}
+.sidebar a:hover { color: var(--teal); padding-left: 36px; }
+.sidebar a.active { color: var(--teal); font-weight: 500; }
+
+.menu-book {
+  position: absolute;
+  bottom: 30px; left: 20px; right: 20px;
+  background: var(--teal);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+.menu-book:hover { background: var(--teal-dim); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 110px 8% 90px;
+  background:
+    linear-gradient(135deg, rgba(11,31,53,0.94) 0%, rgba(11,31,53,0.68) 55%, rgba(11,31,53,0.38) 100%),
+    url("hero.webp");
+  background-size: cover;
+  background-position: center 30%;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--cream));
+  pointer-events: none;
+}
+
+.hero-brand {
+  position: absolute;
+  top: 26px; left: 8%;
+  display: flex; align-items: center; gap: 14px;
+  z-index: 2;
+}
+
+.hero-logo {
+  width: 50px; height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.brand-text {
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  opacity: 0.9;
+}
+
+.hero-content { max-width: 680px; position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26,188,156,0.15);
+  border: 1px solid rgba(26,188,156,0.38);
+  color: #5ee8c6;
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.eyebrow-dot {
+  width: 7px; height: 7px;
+  background: var(--teal);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.hero h1 { color: white; margin-bottom: 22px; }
+.hero h1 em { font-style: italic; color: var(--teal); }
+
+.hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.68);
+  font-weight: 300;
+  margin-bottom: 34px;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.service-pills {
+  display: flex; flex-wrap: wrap; gap: 9px;
+  margin-bottom: 34px;
+}
+
+.service-pills span {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.17);
+  color: rgba(255,255,255,0.8);
+  padding: 6px 15px;
+  border-radius: 100px;
+  font-size: 13px;
+}
+
+.hero-buttons {
+  display: flex; gap: 12px;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--teal-dim); transform: translateY(-1px); }
+
+.btn-ghost {
+  border: 1.5px solid rgba(255,255,255,0.32);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.07); }
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  background: rgba(255,255,255,0.06);
+}
+
+.trust-item {
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.trust-item:last-child { border-right: none; }
+
+.trust-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.trust-item p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.48);
+  margin: 0;
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 88px 24px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal-dim);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ── CONDITIONS ── */
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.condition-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px 18px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 15px;
+  border: 1px solid rgba(11,31,53,0.08);
+  transition: all 0.22s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.condition-card:hover {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+  transform: translateY(-2px);
+}
+.arrow { font-size: 18px; color: var(--teal); transition: transform 0.2s; }
+.condition-card:hover .arrow { transform: translateX(4px); }
+
+/* ── PAIN CYCLE (dark section) ── */
+.dark-section { background: var(--navy); }
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.pain-text h2 { color: white; }
+.pain-text .section-label { color: rgba(26,188,156,0.65); }
+
+.pain-text p {
+  color: rgba(255,255,255,0.58);
+  margin-bottom: 16px;
+  font-size: 15.5px;
+}
+.pain-text p strong { color: white; font-weight: 500; }
+
+.cycle-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.cycle-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.cycle-step:last-child { margin-bottom: 0; }
+
+.cycle-num {
+  width: 30px; height: 30px;
+  background: rgba(26,188,156,0.15);
+  border: 1px solid rgba(26,188,156,0.32);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 500;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+.cycle-step h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: white; margin-bottom: 3px;
+}
+.cycle-step p { font-size: 13px; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.5; }
+
+/* ── FEATURE CARDS ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 26px 22px;
+  border: 1px solid rgba(11,31,53,0.08);
+}
+
+.feature-icon {
+  width: 42px; height: 42px;
+  background: rgba(26,188,156,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: var(--teal);
+}
+
+.feature-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  margin-bottom: 9px; color: var(--navy);
+}
+.feature-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ── CREDENTIALS ── */
+.alt-bg { background: var(--cream-dark); }
+
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.cred-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 26px 22px;
+  border: 1px solid rgba(11,31,53,0.07);
+  border-top: 3px solid var(--teal);
+}
+.cred-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--navy); margin-bottom: 9px;
+}
+.cred-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ── PROCESS ── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: calc(12.5% + 12px);
+  right: calc(12.5% + 12px);
+  height: 1px;
+  background: linear-gradient(to right, var(--teal), rgba(26,188,156,0.15));
+}
+
+.process-step { padding: 0 14px; position: relative; z-index: 1; }
+
+.process-num {
+  width: 54px; height: 54px;
+  background: var(--navy);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: 2px solid var(--teal);
+}
+
+.process-step h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--navy); margin-bottom: 8px;
+}
+.process-step p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ── PUREGYM ── */
+.puregym-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.puregym-text .section-label { color: rgba(26,188,156,0.65); }
+.puregym-text h2 { color: white; }
+.puregym-text p { color: rgba(255,255,255,0.58); margin: 14px 0; font-size: 15px; }
+.puregym-text strong { color: white; }
+
+.puregym-img {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.puregym-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* ── INSURANCE ── */
+.insurance-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.insurance-text p { color: var(--text-muted); margin-bottom: 13px; font-size: 15px; }
+.insurance-text strong { color: var(--navy); }
+
+.insurance-box {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+
+.insurance-box h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--teal); margin-bottom: 16px;
+}
+
+.insurance-box ul { list-style: none; padding: 0; }
+.insurance-box li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex; align-items: center; gap: 10px;
+}
+.insurance-box li:last-child { border-bottom: none; }
+.insurance-box li::before { content: '✓'; color: var(--teal); font-weight: 600; flex-shrink: 0; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 38px; }
+
+.faq-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin-bottom: 9px;
+  border: 1px solid rgba(11,31,53,0.08);
+  overflow: hidden;
+}
+
+.faq-q {
+  padding: 19px 22px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--navy);
+  user-select: none;
+}
+
+.faq-icon {
+  font-size: 22px;
+  color: var(--teal);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  padding: 0 22px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* ── LOCAL ── */
+.local-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 38px;
+}
+
+.local-text p { color: rgba(255,255,255,0.58); margin-bottom: 13px; font-size: 15px; }
+
+.area-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+.area-tag {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.52);
+  padding: 4px 13px;
+  border-radius: 100px;
+  font-size: 12px;
+}
+
+.map-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.09);
+}
+.map-wrap iframe {
+  display: block; width: 100%; height: 300px; border: none;
+}
+
+/* ── CTA ── */
+.cta-wrap {
+  text-align: center;
+  padding: 100px 24px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.cta-wrap h2 { margin-bottom: 14px; }
+.cta-wrap p { color: var(--text-muted); margin-bottom: 34px; }
+
+/* ── STICKY + FOOTER ── */
+.sticky-book {
+  position: fixed;
+  bottom: 18px; left: 18px; right: 18px;
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 15px;
+  z-index: 2000;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: none;
+}
+
+footer {
+  background: var(--navy-mid);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer address {
+  font-style: normal;
+  font-size: 13px;
+  line-height: 2;
+}
+
+footer a { color: var(--teal); text-decoration: none; }
+
+.footer-badges {
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.45;
+  letter-spacing: 0.03em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 880px) {
+  .pain-grid, .puregym-inner, .insurance-grid, .local-grid {
+    grid-template-columns: 1fr; gap: 36px;
+  }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .process-grid::before { display: none; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 100px 20px 60px; min-height: 100svh; }
+  .hero-brand { left: 20px; }
+  .trust-strip { grid-template-columns: 1fr; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; }
+  .process-grid { grid-template-columns: 1fr; }
+  .sticky-book { display: block; }
+}
+
+
+/* ── CONDITION PAGE COMPONENTS ── */
+
+.cause-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:22px 20px}
+
+.causes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:32px}
+
+.cond-card{background:var(--card-bg);border-radius:12px;padding:18px 16px;border:1px solid rgba(11,31,53,.08);font-size:14px;font-weight:400;color:var(--navy);display:flex;align-items:center;gap:10px}
+
+.cond-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:32px}
+
+.related-card{background:var(--card-bg);border-radius:12px;padding:18px 20px;border:1px solid rgba(11,31,53,.08);text-decoration:none;color:var(--navy);font-weight:500;font-size:14px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px}
+
+.review-card{background:var(--card-bg);border-radius:14px;padding:24px 20px;border:1px solid rgba(11,31,53,.08);border-top:3px solid var(--teal)}
+
+.review-name{font-size:13px;font-weight:500;color:var(--navy)}
+
+.review-stars{color:var(--teal);font-size:15px;margin-bottom:12px;letter-spacing:2px}
+
+.review-text{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:14px;font-style:italic}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:32px}
+
+.treat-check{width:30px;height:30px;flex-shrink:0;background:rgba(26,188,156,.1);border:1px solid rgba(26,188,156,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:13px;margin-top:1px}
+
+.treat-item{background:var(--card-bg);border-radius:12px;padding:22px 20px;border:1px solid rgba(11,31,53,.08);display:flex;align-items:flex-start;gap:16px}
+
+.treat-list{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+
+.wrap-narrow{max-width:780px;margin:0 auto;padding:80px 24px}
+
+
+/* ── UTILITY CLASSES — standardise inline patterns ── */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.phase-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.phase-num {
+  width: 38px; height: 38px;
+  background: rgba(26,188,156,0.15);
+  border: 1px solid rgba(26,188,156,0.32);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 500;
+  margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+}
+.phase-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: white; margin-bottom: 8px;
+}
+.phase-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.6; margin: 0;
+}
+.dark-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 24px 20px;
+}
+.dark-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: white; margin-bottom: 8px;
+}
+.dark-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.6; margin: 0;
+}
+.dark-card .tag {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(26,188,156,0.75);
+  margin-bottom: 10px; display: block;
+}
+.inline-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+.inline-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.p-muted {
+  color: var(--text-muted);
+  margin-bottom: 13px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.p-muted strong { color: var(--navy); font-weight: 500; }
+.p-dark {
+  color: rgba(255,255,255,0.58);
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.p-dark strong { color: white; font-weight: 500; }
+.section-intro {
+  color: rgba(255,255,255,0.52);
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.section-intro-light {
+  color: var(--text-muted);
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+/* Insurance box standardised */
+.insurance-requirement-box {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.insurance-requirement-box h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--teal); margin-bottom: 16px;
+}
+.insurance-requirement-box ul { list-style: none; padding: 0; }
+.insurance-requirement-box li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex; align-items: center; gap: 10px;
+}
+.insurance-requirement-box li:last-child { border-bottom: none; }
+.insurance-requirement-box li::before {
+  content: '✓'; color: var(--teal); font-weight: 600; flex-shrink: 0;
+}
+/* Why card — standardised */
+.why-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 24px 20px;
+  border: 1px solid rgba(11,31,53,0.08);
+}
+.why-card .icon { font-size: 24px; margin-bottom: 12px; display: block; }
+.why-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: var(--navy); margin-bottom: 8px;
+}
+.why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+/* Footer grid */
+footer { background: var(--navy-mid, #122840); }
+.footer-grid {
+  max-width: 1060px; margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+.footer-col-heading {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 12px;
+}
+.footer-link {
+  display: block; font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none; margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--teal); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; gap: 12px;
+}
+@media (max-width: 880px) {
+  .inline-grid-2 { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+<div class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu" role="button">☰</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+<nav id="sidebar" class="sidebar" aria-label="Site navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html" class="active">Services</a>
+  <a href="sports-injury-physio.html">Sports Rehab</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="stoke-on-trent-physio.html">Physio in Stoke</a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">Book Appointment</a>
+</nav>
+<header class="hero">
+  <div class="hero-brand"><img src="logo.jpg" class="hero-logo" alt="Primus Physio — physiotherapy Newcastle-under-Lyme" width="50" height="50"><span class="brand-text">PRIMUS PHYSIO</span></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Ankle Pain & Sprain Treatment</div>
+    <h1>Ankle Pain &amp; Sprain <em>Physiotherapy</em></h1>
+    <p class="hero-sub">Expert treatment for ankle sprains, Achilles tendinopathy, chronic instability and ankle injuries — getting patients in Newcastle-under-Lyme and Stoke-on-Trent back on their feet.</p>
+    <div class="service-pills"><span>Ankle Sprains</span><span>Achilles Pain</span><span>Chronic Instability</span><span>Sports Injuries</span><span>Fracture Rehab</span></div>
+    <div class="hero-buttons">
+      <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn-primary">Book Assessment</a>
+      <a href="tel:07867782786" class="btn-ghost">Call Now</a>
+    </div>
+  </div>
+</header>
+
+<section><div class="wrap-narrow" aria-labelledby="intro-h">
+  <span class="section-label">About this condition</span>
+  <h2 id="intro-h">Ankle Conditions We Treat</h2>
+  <p style="color:var(--text-muted);margin-top:14px;font-size:15.5px;line-height:1.75;">Ankle injuries are among the most common musculoskeletal problems — and among the most undertreated. Most people rest a sprained ankle until the pain settles, then return to activity before full strength and balance have been restored. This is the main reason ankle sprains keep recurring. Proper physiotherapy makes the difference between a one-off injury and a chronic, recurring problem.</p>
+  <div class="cond-grid">
+    <div class="cond-card">Ankle sprains (lateral & medial)</div><div class="cond-card">Achilles tendinopathy</div><div class="cond-card">Chronic ankle instability</div><div class="cond-card">Peroneal tendon pain</div><div class="cond-card">Ankle fracture rehabilitation</div><div class="cond-card">Posterior tibial tendon pain</div><div class="cond-card">Ankle impingement</div><div class="cond-card">Os trigonum syndrome</div><div class="cond-card">Ankle pain in runners</div><div class="cond-card">High ankle sprain (syndesmosis)</div><div class="cond-card">Stiff ankle after injury</div><div class="cond-card">Recurrent ankle sprains</div>
+  </div>
+</div></section>
+
+<div class="dark-section"><div class="wrap" aria-labelledby="causes-h">
+  <span class="section-label" style="color:rgba(26,188,156,.65);">Condition breakdown</span>
+  <h2 id="causes-h" style="color:white;">Common Ankle Conditions Explained</h2>
+  <div class="causes-grid">
+    <div class="cause-card"><h3>Lateral Ankle Sprain</h3><p>The most common ankle injury — a roll outward stretches or tears the lateral ligaments (ATFL, CFL). Most people return to activity once pain settles but without restoring proprioception and strength, re-injury is very likely. Rehab takes 6–12 weeks regardless of pain.</p></div>
+    <div class="cause-card"><h3>Achilles Tendinopathy</h3><p>Pain, stiffness and swelling in the Achilles tendon, typically worse in the morning or early in exercise. Caused by overload rather than inflammation — responds best to progressive loading exercises, not rest or stretching alone.</p></div>
+    <div class="cause-card"><h3>Chronic Ankle Instability</h3><p>Persistent feeling of the ankle 'giving way' — usually a result of inadequate rehabilitation after one or more sprains. Balance, proprioception and peroneal muscle strength are all compromised. Highly responsive to targeted physiotherapy.</p></div>
+    <div class="cause-card"><h3>Peroneal Tendinopathy</h3><p>Pain on the outer ankle or foot, distinct from ligament sprain. The peroneal tendons run behind the lateral malleolus and are commonly overloaded in runners or after ankle sprain. Responds well to progressive tendon loading.</p></div>
+    <div class="cause-card"><h3>Ankle Fracture Rehabilitation</h3><p>Following surgical or conservative management of an ankle fracture, physiotherapy restores range of motion, strength, balance and confidence — the four elements that determine how well you return to normal activity.</p></div>
+    <div class="cause-card"><h3>High Ankle Sprain (Syndesmosis)</h3><p>An injury to the ligaments connecting the tibia and fibula above the ankle joint. More serious than a typical lateral sprain with a longer recovery timeline. Requires careful progression through physiotherapy to ensure the syndesmosis is fully stable before return to sport.</p></div>
+  </div>
+</div></div>
+
+<section><div class="wrap" aria-labelledby="treat-h">
+  <span class="section-label">How we help</span>
+  <h2 id="treat-h">How We Treat Ankle Pain</h2>
+  <div class="treat-list">
+    <div class="treat-item"><div class="treat-check">✓</div><div><h3>Accurate assessment and diagnosis</h3><p>We identify exactly which structures are injured and assess contributing factors — including calf flexibility, hip strength and movement patterns — that will influence recovery.</p></div></div>
+    <div class="treat-item"><div class="treat-check">✓</div><div><h3>Swelling and pain management</h3><p>Hands-on treatment, appropriate loading advice and taping techniques to manage swelling, protect healing structures and maintain as much movement as possible in the early stages.</p></div></div>
+    <div class="treat-item"><div class="treat-check">✓</div><div><h3>Mobility restoration</h3><p>Restoring full ankle dorsiflexion and range of motion is critical for normal walking, running and sport. Stiffness after ankle injury is common and directly increases re-injury risk if not addressed.</p></div></div>
+    <div class="treat-item"><div class="treat-check">✓</div><div><h3>Strength rehabilitation</h3><p>Progressive calf, peroneal and lower limb strengthening to restore the muscle support around the ankle and reduce load on healing ligaments and tendons.</p></div></div>
+    <div class="treat-item"><div class="treat-check">✓</div><div><h3>Balance and proprioception retraining</h3><p>Often neglected in ankle rehabilitation — proprioception (the ankle's ability to sense position) is significantly impaired after sprain and must be specifically retrained to prevent recurrence.</p></div></div>
+    <div class="treat-item"><div class="treat-check">✓</div><div><h3>Return to sport and running</h3><p>Graded return-to-running and sport-specific progressions with clear criteria — ensuring you return to full activity with the strength and stability to stay there.</p></div></div>
+  </div>
+</div></section>
+
+<div class="alt-bg"><div class="wrap" aria-labelledby="reviews-h">
+  <span class="section-label">Patient results</span>
+  <h2 id="reviews-h">What Patients Say</h2>
+  <div class="reviews-grid">
+    <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Luqman provided an excellent physio service. Helped me return to running after my ankle injury with a clear and structured plan."</p><span class="review-name">— Gary</span></div>
+    <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"I kept rolling the same ankle. Luqman identified why it kept happening and gave me exercises that have made my ankle feel completely stable for the first time."</p><span class="review-name">— Google Review</span></div>
+    <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"After my ankle fracture I wasn't sure I'd get back to football. The rehab programme was thorough and I was back playing within the timeline I was given."</p><span class="review-name">— Google Review</span></div>
+  </div>
+</div></div>
+
+<section><div class="wrap-narrow" aria-labelledby="faq-h">
+  <span class="section-label">Questions</span>
+  <h2 id="faq-h">Ankle Pain FAQs</h2>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Should I see a physio for a sprained ankle? <span class="faq-icon">+</span></div><div class="faq-a">Yes — and the sooner the better. Poorly rehabilitated ankle sprains are the most common cause of chronic instability, ongoing weakness and repeated sprains. Physiotherapy restores full strength, balance and proprioception — not just pain relief.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How long does an ankle sprain take to heal? <span class="faq-icon">+</span></div><div class="faq-a">Minor sprains may feel better in 2–3 weeks, but full rehabilitation of ligament strength and proprioception takes 6–12 weeks. Rushing back to sport without completing rehabilitation significantly increases re-injury risk.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why does my ankle keep giving way? <span class="faq-icon">+</span></div><div class="faq-a">Repeated giving way is a sign of chronic ankle instability — usually caused by inadequate rehabilitation after one or more sprains. The proprioceptive system and peroneal muscles that stabilise the ankle have not been properly retrained. Physiotherapy directly addresses this.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can physio help Achilles tendinopathy? <span class="faq-icon">+</span></div><div class="faq-a">Yes — Achilles tendinopathy responds very well to progressive tendon loading exercises. This is more effective long term than rest, stretching or injection. Most patients see significant improvement within 6–10 weeks with the right programme.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">I fractured my ankle — when should I start physio? <span class="faq-icon">+</span></div><div class="faq-a">As soon as your surgeon or fracture clinic gives clearance — this is usually 6–8 weeks post-injury for non-operative management, or earlier for surgically fixed fractures. Early physiotherapy consistently produces better long-term outcomes.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can ankle problems cause knee or hip pain? <span class="faq-icon">+</span></div><div class="faq-a">Yes — ankle stiffness and poor proprioception after injury alter how load travels up through the leg. This is a well-recognised cause of knee pain and hip problems in runners and active patients. We assess the full lower limb, not just the ankle in isolation.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a GP referral? <span class="faq-icon">+</span></div><div class="faq-a">No — you can book directly at Primus Physio without a GP referral and be seen the same week, including evenings and weekends.</div></div>
+  </div>
+</div></section>
+
+<div class="dark-section"><div class="wrap" aria-labelledby="related-h">
+  <span class="section-label" style="color:rgba(26,188,156,.65);">Also relevant</span>
+  <h2 id="related-h" style="color:white;">Related Treatments</h2>
+  <div class="related-grid" style="margin-top:28px;">
+    <a href="knee-pain-physio.html" class="related-card">Knee Pain Treatment <span class="arrow">→</span></a>
+    <a href="plantar-fasciitis-treatment.html" class="related-card">Plantar Fasciitis Treatment <span class="arrow">→</span></a>
+    <a href="running-injury-physio.html" class="related-card">Running Injury Physio <span class="arrow">→</span></a>
+    <a href="sports-injury-physio.html" class="related-card">Sports Injury Rehab <span class="arrow">→</span></a>
+    <a href="services.html" class="related-card">View All Services <span class="arrow">→</span></a>
+  </div>
+</div></div>
+
+<div class="cta-wrap">
+  <span class="section-label" style="display:block;text-align:center;">Ready to start?</span>
+  <h2>Book Your Ankle Assessment</h2>
+  <p>Same-week appointments in Newcastle-under-Lyme. No GP referral needed.</p>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn-primary" style="font-size:16px;padding:16px 40px;">Book Now</a>
+</div>
+
+<footer>
+  <div style="max-width:1060px;margin:0 auto;padding:40px 24px 24px;">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;margin-bottom:36px;text-align:left;">
+
+      <div>
+        <p style="font-family:'Playfair Display',serif;color:white;font-size:16px;margin-bottom:14px;">Primus Physio</p>
+        <p style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.45);">
+          Newcastle-under-Lyme<br>Staffordshire, UK<br>
+          <a href="tel:07867782786" style="color:var(--teal);text-decoration:none;">07867 782786</a><br>
+          <a href="mailto:info@primusphysio.co.uk" style="color:var(--teal);text-decoration:none;">info@primusphysio.co.uk</a>
+        </p>
+      </div>
+
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Clinic</p>
+        <nav aria-label="Clinic pages">
+          <a href="index.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;transition:color .2s;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Home</a>
+          <a href="about.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">About Luqman</a>
+          <a href="services.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Services &amp; Prices</a>
+          <a href="sports-injury-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Sports Rehab</a>
+          <a href="faq.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">FAQ</a>
+          <a href="contact.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Contact &amp; Directions</a>
+          <a href="stoke-on-trent-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Physio in Stoke-on-Trent</a>
+        </nav>
+      </div>
+
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Conditions</p>
+        <nav aria-label="Condition pages">
+          <a href="back-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Back Pain</a>
+          <a href="sciatica-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Sciatica</a>
+          <a href="neck-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Neck Pain</a>
+          <a href="shoulder-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Shoulder Pain</a>
+          <a href="knee-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Knee Pain</a>
+          <a href="hip-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Hip Pain</a>
+          <a href="ankle-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Ankle Pain</a>
+        </nav>
+      </div>
+
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Treatments</p>
+        <nav aria-label="Treatment pages">
+          <a href="plantar-fasciitis-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Plantar Fasciitis</a>
+          <a href="running-injury-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Running Injuries</a>
+          <a href="tennis-elbow-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Tennis &amp; Golfer's Elbow</a>
+          <a href="carpal-tunnel-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Carpal Tunnel</a>
+          <a href="post-op-rehab.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Post-Surgery Rehab</a>
+          <a href="sports-injury-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Sports Rehabilitation</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+      <address style="font-style:normal;font-size:12px;color:rgba(255,255,255,.35);">
+        Newcastle-under-Lyme, Staffordshire &nbsp;·&nbsp;
+        <a href="tel:07867782786" style="color:rgba(255,255,255,.35);text-decoration:none;">07867 782786</a> &nbsp;·&nbsp;
+        <a href="mailto:info@primusphysio.co.uk" style="color:rgba(255,255,255,.35);text-decoration:none;">info@primusphysio.co.uk</a>
+      </address>
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">HCPC &amp; CSP Registered &nbsp;·&nbsp; AXA Health · WPA · Aviva · Vitality Recognised</p>
+    </div>
+
+  </div>
+</footer>
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book">Book Appointment</a>
+<script>
+function toggleMenu(){const s=document.getElementById("sidebar"),o=document.getElementById("overlay"),open=s.style.right==="0px";s.style.right=open?"-320px":"0px";o.style.display=open?"none":"block"}
+function toggleFaq(el){const item=el.parentElement,isOpen=item.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));if(!isOpen)item.classList.add("open")}
+window.addEventListener("scroll",function(){const btn=document.querySelector(".sticky-book"),footer=document.querySelector("footer");if(!btn||!footer)return;btn.style.display=footer.getBoundingClientRect().top<window.innerHeight?"none":"block"})
+</script>
+</body></html>.menu-book:hover{background:var(--teal-dim)}
 .hero{position:relative;min-height:70vh;display:flex;align-items:center;padding:40px 8% 90px;background:linear-gradient(135deg,rgba(11,31,53,.94) 0%,rgba(11,31,53,.68) 55%,rgba(11,31,53,.38) 100%),url("hero.webp");background-size:cover;background-position:center 30%;color:white;overflow:hidden}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--cream));pointer-events:none}
 .hero-brand{position:absolute;top:26px;left:8%;display:flex;align-items:center;gap:14px}
