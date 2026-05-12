@@ -21,6 +21,7 @@
 <meta name="apple-mobile-web-app-title" content="Primus Physio">
 <link rel="manifest" href="/site.webmanifest">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":"Back Pain Physiotherapy","description":"Expert physiotherapy for back pain, sciatica and disc injuries in Newcastle-under-Lyme and Stoke-on-Trent.","url":"https://www.primusphysio.co.uk/back-pain-physio.html","about":{"@type":"MedicalCondition","name":"Back Pain"},"specialty": "Physiotherapy",
+  "provider": {"@type": "MedicalBusiness", "name": "Primus Physio", "url": "https://www.primusphysio.co.uk", "telephone": "+447867782786"},
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
@@ -701,7 +702,7 @@ footer a { color: var(--teal); text-decoration: none; }
 
 /* ── CONDITION PAGE COMPONENTS ── */
 
-.cause-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:22px 20px}
+.cause-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:22px 20px}
 
 .causes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:32px}
 
@@ -893,6 +894,10 @@ footer { background: var(--navy-mid, #122840); }
 @media (max-width: 880px) {
   .inline-grid-2 { grid-template-columns: 1fr; }
 }
+
+.cause-card h3 { color: white; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; margin-bottom: 8px; }
+.cause-card p  { color: rgba(255,255,255,0.62); font-size: 13.5px; line-height: 1.65; margin: 0; }
+
 </style>
 
 <script type="application/ld+json">
