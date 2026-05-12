@@ -23,18 +23,1097 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0b1f35;--navy-mid:#122840;--teal:#1abc9c;--teal-dim:#159a7e;--cream:#f5f2ed;--cream-dark:#eae5dc;--text-muted:#5a6a7a;--card-bg:#fff}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);font-size:16px;line-height:1.7;font-weight:300}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.15}
-h1{font-size:clamp(32px,5vw,54px)}h2{font-size:clamp(22px,3vw,32px);color:var(--navy)}h3{font-size:17px}
-.menu-btn{position:fixed;top:20px;right:22px;width:44px;height:44px;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3000;color:white;font-size:20px;transition:background .2s}
-.menu-btn:hover{background:rgba(255,255,255,.25)}
-#overlay{position:fixed;inset:0;display:none;background:rgba(11,31,53,.55);backdrop-filter:blur(3px);z-index:1400}
-.sidebar{position:fixed;top:0;right:-320px;width:300px;height:100%;background:var(--navy);padding-top:80px;transition:right .35s cubic-bezier(.4,0,.2,1);z-index:1500}
-.sidebar a{display:block;padding:16px 28px;text-decoration:none;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.07);font-size:15px;transition:color .2s,padding-left .2s}
-.sidebar a:hover{color:var(--teal);padding-left:36px}.sidebar a.active{color:var(--teal);font-weight:500}
-.menu-book{position:absolute;bottom:30px;left:20px;right:20px;background:var(--teal);color:white;text-align:center;padding:15px;border-radius:10px;text-decoration:none;font-weight:500;font-size:15px;transition:background .2s}
+
+:root {
+  --navy: #0b1f35;
+  --navy-mid: #122840;
+  --teal: #1abc9c;
+  --teal-dim: #159a7e;
+  --cream: #f5f2ed;
+  --cream-dark: #eae5dc;
+  --text-muted: #5a6a7a;
+  --card-bg: #ffffff;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 16px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(34px, 5vw, 58px); }
+h2 { font-size: clamp(26px, 3.5vw, 38px); color: var(--navy); }
+h3 { font-size: 18px; }
+
+/* ── NAV ── */
+.menu-btn {
+  position: fixed;
+  top: 20px; right: 22px;
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 3000;
+  color: white;
+  font-size: 20px;
+  transition: background 0.2s;
+}
+.menu-btn:hover { background: rgba(255,255,255,0.25); }
+
+#overlay {
+  position: fixed; inset: 0;
+  display: none;
+  background: rgba(11,31,53,0.55);
+  backdrop-filter: blur(3px);
+  z-index: 1400;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0; right: -320px;
+  width: 300px; height: 100%;
+  background: var(--navy);
+  padding-top: 80px;
+  transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+  z-index: 1500;
+}
+
+.sidebar a {
+  display: block;
+  padding: 16px 28px;
+  text-decoration: none;
+  color: rgba(255,255,255,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 15px;
+  transition: color 0.2s, padding-left 0.2s;
+}
+.sidebar a:hover { color: var(--teal); padding-left: 36px; }
+.sidebar a.active { color: var(--teal); font-weight: 500; }
+
+.menu-book {
+  position: absolute;
+  bottom: 30px; left: 20px; right: 20px;
+  background: var(--teal);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: background 0.2s;
+}
+.menu-book:hover { background: var(--teal-dim); }
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  padding: 110px 8% 90px;
+  background:
+    linear-gradient(135deg, rgba(11,31,53,0.94) 0%, rgba(11,31,53,0.68) 55%, rgba(11,31,53,0.38) 100%),
+    url("hero.webp");
+  background-size: cover;
+  background-position: center 30%;
+  color: white;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 120px;
+  background: linear-gradient(to bottom, transparent, var(--cream));
+  pointer-events: none;
+}
+
+.hero-brand {
+  position: absolute;
+  top: 26px; left: 8%;
+  display: flex; align-items: center; gap: 14px;
+  z-index: 2;
+}
+
+.hero-logo {
+  width: 50px; height: 50px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.brand-text {
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  opacity: 0.9;
+}
+
+.hero-content { max-width: 680px; position: relative; z-index: 1; }
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(26,188,156,0.15);
+  border: 1px solid rgba(26,188,156,0.38);
+  color: #5ee8c6;
+  padding: 6px 18px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.eyebrow-dot {
+  width: 7px; height: 7px;
+  background: var(--teal);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.hero h1 { color: white; margin-bottom: 22px; }
+.hero h1 em { font-style: italic; color: var(--teal); }
+
+.hero-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.68);
+  font-weight: 300;
+  margin-bottom: 34px;
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.service-pills {
+  display: flex; flex-wrap: wrap; gap: 9px;
+  margin-bottom: 34px;
+}
+
+.service-pills span {
+  background: rgba(255,255,255,0.09);
+  border: 1px solid rgba(255,255,255,0.17);
+  color: rgba(255,255,255,0.8);
+  padding: 6px 15px;
+  border-radius: 100px;
+  font-size: 13px;
+}
+
+.hero-buttons {
+  display: flex; gap: 12px;
+  margin-bottom: 48px;
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--teal-dim); transform: translateY(-1px); }
+
+.btn-ghost {
+  border: 1.5px solid rgba(255,255,255,0.32);
+  color: white;
+  padding: 14px 30px;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+  display: inline-block;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.07); }
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  background: rgba(255,255,255,0.06);
+}
+
+.trust-item {
+  padding: 18px 20px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.trust-item:last-child { border-right: none; }
+
+.trust-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  color: var(--teal);
+  margin-bottom: 4px;
+}
+
+.trust-item p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.48);
+  margin: 0;
+}
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 88px 24px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal-dim);
+  margin-bottom: 12px;
+  display: block;
+}
+
+/* ── CONDITIONS ── */
+.conditions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  gap: 10px;
+  margin-top: 36px;
+}
+
+.condition-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px 18px;
+  text-decoration: none;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 15px;
+  border: 1px solid rgba(11,31,53,0.08);
+  transition: all 0.22s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.condition-card:hover {
+  background: var(--navy);
+  color: white;
+  border-color: var(--navy);
+  transform: translateY(-2px);
+}
+.arrow { font-size: 18px; color: var(--teal); transition: transform 0.2s; }
+.condition-card:hover .arrow { transform: translateX(4px); }
+
+/* ── PAIN CYCLE (dark section) ── */
+.dark-section { background: var(--navy); }
+
+.pain-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.pain-text h2 { color: white; }
+.pain-text .section-label { color: rgba(26,188,156,0.65); }
+
+.pain-text p {
+  color: rgba(255,255,255,0.58);
+  margin-bottom: 16px;
+  font-size: 15.5px;
+}
+.pain-text p strong { color: white; font-weight: 500; }
+
+.cycle-box {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 16px;
+  padding: 32px 28px;
+}
+
+.cycle-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.cycle-step:last-child { margin-bottom: 0; }
+
+.cycle-num {
+  width: 30px; height: 30px;
+  background: rgba(26,188,156,0.15);
+  border: 1px solid rgba(26,188,156,0.32);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 500;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+.cycle-step h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: white; margin-bottom: 3px;
+}
+.cycle-step p { font-size: 13px; color: rgba(255,255,255,0.45); margin: 0; line-height: 1.5; }
+
+/* ── FEATURE CARDS ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 26px 22px;
+  border: 1px solid rgba(11,31,53,0.08);
+}
+
+.feature-icon {
+  width: 42px; height: 42px;
+  background: rgba(26,188,156,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+  font-size: 18px;
+  color: var(--teal);
+}
+
+.feature-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  margin-bottom: 9px; color: var(--navy);
+}
+.feature-card p { font-size: 13.5px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ── CREDENTIALS ── */
+.alt-bg { background: var(--cream-dark); }
+
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+
+.cred-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 26px 22px;
+  border: 1px solid rgba(11,31,53,0.07);
+  border-top: 3px solid var(--teal);
+}
+.cred-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--navy); margin-bottom: 9px;
+}
+.cred-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ── PROCESS ── */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  position: relative;
+}
+
+.process-grid::before {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: calc(12.5% + 12px);
+  right: calc(12.5% + 12px);
+  height: 1px;
+  background: linear-gradient(to right, var(--teal), rgba(26,188,156,0.15));
+}
+
+.process-step { padding: 0 14px; position: relative; z-index: 1; }
+
+.process-num {
+  width: 54px; height: 54px;
+  background: var(--navy);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-bottom: 20px;
+  border: 2px solid var(--teal);
+}
+
+.process-step h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--navy); margin-bottom: 8px;
+}
+.process-step p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+/* ── PUREGYM ── */
+.puregym-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.puregym-text .section-label { color: rgba(26,188,156,0.65); }
+.puregym-text h2 { color: white; }
+.puregym-text p { color: rgba(255,255,255,0.58); margin: 14px 0; font-size: 15px; }
+.puregym-text strong { color: white; }
+
+.puregym-img {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.puregym-img img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* ── INSURANCE ── */
+.insurance-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 36px;
+  align-items: start;
+  margin-top: 38px;
+}
+
+.insurance-text p { color: var(--text-muted); margin-bottom: 13px; font-size: 15px; }
+.insurance-text strong { color: var(--navy); }
+
+.insurance-box {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+
+.insurance-box h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--teal); margin-bottom: 16px;
+}
+
+.insurance-box ul { list-style: none; padding: 0; }
+.insurance-box li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex; align-items: center; gap: 10px;
+}
+.insurance-box li:last-child { border-bottom: none; }
+.insurance-box li::before { content: '✓'; color: var(--teal); font-weight: 600; flex-shrink: 0; }
+
+/* ── FAQ ── */
+.faq-list { margin-top: 38px; }
+
+.faq-item {
+  background: var(--card-bg);
+  border-radius: 12px;
+  margin-bottom: 9px;
+  border: 1px solid rgba(11,31,53,0.08);
+  overflow: hidden;
+}
+
+.faq-q {
+  padding: 19px 22px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--navy);
+  user-select: none;
+}
+
+.faq-icon {
+  font-size: 22px;
+  color: var(--teal);
+  transition: transform 0.25s;
+  flex-shrink: 0;
+  line-height: 1;
+  font-weight: 300;
+}
+
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  padding: 0 22px;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 22px 18px; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* ── LOCAL ── */
+.local-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 38px;
+}
+
+.local-text p { color: rgba(255,255,255,0.58); margin-bottom: 13px; font-size: 15px; }
+
+.area-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+.area-tag {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.52);
+  padding: 4px 13px;
+  border-radius: 100px;
+  font-size: 12px;
+}
+
+.map-wrap {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.09);
+}
+.map-wrap iframe {
+  display: block; width: 100%; height: 300px; border: none;
+}
+
+/* ── CTA ── */
+.cta-wrap {
+  text-align: center;
+  padding: 100px 24px;
+  max-width: 560px;
+  margin: 0 auto;
+}
+.cta-wrap h2 { margin-bottom: 14px; }
+.cta-wrap p { color: var(--text-muted); margin-bottom: 34px; }
+
+/* ── STICKY + FOOTER ── */
+.sticky-book {
+  position: fixed;
+  bottom: 18px; left: 18px; right: 18px;
+  background: var(--navy);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 15px;
+  z-index: 2000;
+  border: 1px solid rgba(255,255,255,0.1);
+  display: none;
+}
+
+footer {
+  background: var(--navy-mid);
+  color: rgba(255,255,255,0.45);
+  text-align: center;
+  padding: 40px 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+footer address {
+  font-style: normal;
+  font-size: 13px;
+  line-height: 2;
+}
+
+footer a { color: var(--teal); text-decoration: none; }
+
+.footer-badges {
+  margin-top: 14px;
+  font-size: 12px;
+  opacity: 0.45;
+  letter-spacing: 0.03em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 880px) {
+  .pain-grid, .puregym-inner, .insurance-grid, .local-grid {
+    grid-template-columns: 1fr; gap: 36px;
+  }
+  .process-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .process-grid::before { display: none; }
+  .trust-strip { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 100px 20px 60px; min-height: 100svh; }
+  .hero-brand { left: 20px; }
+  .trust-strip { grid-template-columns: 1fr; }
+  .hero-buttons { flex-direction: column; }
+  .hero-buttons a { text-align: center; }
+  .process-grid { grid-template-columns: 1fr; }
+  .sticky-book { display: block; }
+}
+
+
+/* ── CONDITION PAGE COMPONENTS ── */
+
+.cause-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:22px 20px}
+
+.causes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:32px}
+
+.cond-card{background:var(--card-bg);border-radius:12px;padding:18px 16px;border:1px solid rgba(11,31,53,.08);font-size:14px;font-weight:400;color:var(--navy);display:flex;align-items:center;gap:10px}
+
+.cond-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:32px}
+
+.related-card{background:var(--card-bg);border-radius:12px;padding:18px 20px;border:1px solid rgba(11,31,53,.08);text-decoration:none;color:var(--navy);font-weight:500;font-size:14px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:32px}
+
+.review-card{background:var(--card-bg);border-radius:14px;padding:24px 20px;border:1px solid rgba(11,31,53,.08);border-top:3px solid var(--teal)}
+
+.review-name{font-size:13px;font-weight:500;color:var(--navy)}
+
+.review-stars{color:var(--teal);font-size:15px;margin-bottom:12px;letter-spacing:2px}
+
+.review-text{font-size:14px;color:var(--text-muted);line-height:1.7;margin-bottom:14px;font-style:italic}
+
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:32px}
+
+.treat-check{width:30px;height:30px;flex-shrink:0;background:rgba(26,188,156,.1);border:1px solid rgba(26,188,156,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:13px;margin-top:1px}
+
+.treat-item{background:var(--card-bg);border-radius:12px;padding:22px 20px;border:1px solid rgba(11,31,53,.08);display:flex;align-items:flex-start;gap:16px}
+
+.treat-list{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+
+.wrap-narrow{max-width:780px;margin:0 auto;padding:80px 24px}
+
+
+/* ── UTILITY CLASSES — standardise inline patterns ── */
+.phase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.phase-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.phase-num {
+  width: 38px; height: 38px;
+  background: rgba(26,188,156,0.15);
+  border: 1px solid rgba(26,188,156,0.32);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 500;
+  margin-bottom: 16px;
+  font-family: 'Playfair Display', serif;
+}
+.phase-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: white; margin-bottom: 8px;
+}
+.phase-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.6; margin: 0;
+}
+.dark-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  padding: 24px 20px;
+}
+.dark-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: white; margin-bottom: 8px;
+}
+.dark-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.6; margin: 0;
+}
+.dark-card .tag {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(26,188,156,0.75);
+  margin-bottom: 10px; display: block;
+}
+.inline-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+}
+.inline-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.p-muted {
+  color: var(--text-muted);
+  margin-bottom: 13px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.p-muted strong { color: var(--navy); font-weight: 500; }
+.p-dark {
+  color: rgba(255,255,255,0.58);
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.p-dark strong { color: white; font-weight: 500; }
+.section-intro {
+  color: rgba(255,255,255,0.52);
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.section-intro-light {
+  color: var(--text-muted);
+  margin-top: 10px;
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+/* Insurance box standardised */
+.insurance-requirement-box {
+  background: var(--navy);
+  border-radius: 14px;
+  padding: 26px 22px;
+}
+.insurance-requirement-box h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px; font-weight: 500;
+  color: var(--teal); margin-bottom: 16px;
+}
+.insurance-requirement-box ul { list-style: none; padding: 0; }
+.insurance-requirement-box li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 14px;
+  color: rgba(255,255,255,0.65);
+  display: flex; align-items: center; gap: 10px;
+}
+.insurance-requirement-box li:last-child { border-bottom: none; }
+.insurance-requirement-box li::before {
+  content: '✓'; color: var(--teal); font-weight: 600; flex-shrink: 0;
+}
+/* Why card — standardised */
+.why-card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 24px 20px;
+  border: 1px solid rgba(11,31,53,0.08);
+}
+.why-card .icon { font-size: 24px; margin-bottom: 12px; display: block; }
+.why-card h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 500;
+  color: var(--navy); margin-bottom: 8px;
+}
+.why-card p { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin: 0; }
+/* Footer grid */
+footer { background: var(--navy-mid, #122840); }
+.footer-grid {
+  max-width: 1060px; margin: 0 auto;
+  padding: 40px 24px 24px;
+}
+.footer-col-heading {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: rgba(255,255,255,0.35); margin-bottom: 12px;
+}
+.footer-link {
+  display: block; font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none; margin-bottom: 8px;
+  transition: color 0.2s;
+}
+.footer-link:hover { color: var(--teal); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 20px;
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; gap: 12px;
+}
+@media (max-width: 880px) {
+  .inline-grid-2 { grid-template-columns: 1fr; }
+}
+</style>
+
+</head>
+<body>
+<div class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu" role="button">☰</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+<nav id="sidebar" class="sidebar" aria-label="Site navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html" class="active">Services</a>
+  <a href="sports-injury-physio.html">Sports Rehab</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="stoke-on-trent-physio.html">Physio in Stoke</a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">Book Appointment</a>
+</nav>
+<header class="hero">
+  <div class="hero-brand">
+    <img src="logo.jpg" class="hero-logo" alt="Primus Physio — physiotherapy Newcastle-under-Lyme" width="50" height="50">
+    <span class="brand-text">PRIMUS PHYSIO</span>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Carpal Tunnel Treatment</div>
+    <h1>Carpal Tunnel <em>Syndrome Treatment</em></h1>
+    <p class="hero-sub">Expert physiotherapy for carpal tunnel syndrome — treating hand pain, numbness, wrist tingling and weak grip in Newcastle-under-Lyme and Stoke-on-Trent.</p>
+    <div class="service-pills"><span>Hand Numbness</span><span>Wrist Pain</span><span>Tingling Fingers</span><span>Weak Grip</span><span>Night Pain</span></div>
+    <div class="hero-buttons">
+      <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn-primary">Book Assessment</a>
+      <a href="tel:07867782786" class="btn-ghost">Call Now</a>
+    </div>
+  </div>
+</header>
+
+<section><div class="wrap-narrow" aria-labelledby="intro-h">
+  <span class="section-label">About this condition</span>
+  <h2 id="intro-h">What is Carpal Tunnel Syndrome?</h2>
+  <p style="color:var(--text-muted);margin-top:14px;font-size:15.5px;line-height:1.75;">Carpal tunnel syndrome (CTS) occurs when the median nerve is compressed as it passes through the carpal tunnel — a narrow passage in the wrist. It causes pain, numbness, tingling and weakness in the hand and fingers, particularly the thumb, index and middle fingers.</p>
+  <p style="color:var(--text-muted);margin-top:12px;font-size:15.5px;line-height:1.75;">It is one of the most common nerve compression conditions and is particularly prevalent in office workers, manual labourers, pregnant women and those with repetitive hand and wrist tasks. Mild to moderate carpal tunnel syndrome responds very well to physiotherapy — often avoiding the need for surgery entirely.</p>
+  <div class="cond-grid">
+    <div class="cond-card">Numbness in thumb, index & middle fingers</div><div class="cond-card">Tingling in the hand</div><div class="cond-card">Wrist pain</div><div class="cond-card">Weak grip</div><div class="cond-card">Dropping objects</div><div class="cond-card">Symptoms worse at night</div><div class="cond-card">Pain radiating up the forearm</div><div class="cond-card">Morning hand stiffness</div>
+  </div>
+</div></section>
+
+<div class="dark-section"><div class="wrap" aria-labelledby="causes-h">
+  <span class="section-label" style="color:rgba(26,188,156,.65);">Why it happens</span>
+  <h2 id="causes-h" style="color:white;">Common Causes of Carpal Tunnel Syndrome</h2>
+  <div class="causes-grid">
+    <div class="cause-card"><h3>Repetitive hand and wrist use</h3><p>Typing, mouse use, assembly work or any repetitive gripping action can increase pressure within the carpal tunnel over time.</p></div>
+    <div class="cause-card"><h3>Pregnancy</h3><p>Fluid retention during pregnancy commonly causes swelling that compresses the median nerve. CTS during pregnancy often resolves after delivery.</p></div>
+    <div class="cause-card"><h3>Wrist position</h3><p>Working or sleeping with the wrist in a bent or extended position increases pressure within the tunnel, aggravating the nerve.</p></div>
+    <div class="cause-card"><h3>Underlying health conditions</h3><p>Diabetes, thyroid conditions, rheumatoid arthritis and obesity are all associated with increased risk of carpal tunnel syndrome.</p></div>
+    <div class="cause-card"><h3>Previous wrist injury</h3><p>Fractures or injuries to the wrist can alter the anatomy of the carpal tunnel and increase nerve compression.</p></div>
+    <div class="cause-card"><h3>Overloaded neck or shoulder</h3><p>Nerve sensitivity often starts higher up — tension in the neck, thoracic spine or shoulder can contribute to symptoms felt in the hand.</p></div>
+  </div>
+</div></div>
+
+<section><div class="wrap" aria-labelledby="treat-h">
+  <span class="section-label">How we help</span>
+  <h2 id="treat-h">How We Treat Carpal Tunnel Syndrome</h2>
+  <div class="treat-list">
+    <div class="treat-item">
+        <div class="treat-check">✓</div>
+        <div><h3>Accurate nerve assessment</h3><p>We assess the median nerve throughout its full pathway — from the neck and shoulder to the wrist — to identify where compression or sensitisation is occurring and what is driving the symptoms.</p></div>
+      </div>
+    <div class="treat-item">
+        <div class="treat-check">✓</div>
+        <div><h3>Nerve mobilisation exercises</h3><p>Specific neural mobilisation techniques to improve median nerve movement and reduce sensitivity — one of the most effective non-surgical treatments for carpal tunnel syndrome.</p></div>
+      </div>
+    <div class="treat-item">
+        <div class="treat-check">✓</div>
+        <div><h3>Wrist splinting advice</h3><p>Night splints are highly effective for carpal tunnel syndrome, keeping the wrist in a neutral position during sleep and reducing overnight symptoms. We advise on correct fit and usage.</p></div>
+      </div>
+    <div class="treat-item">
+        <div class="treat-check">✓</div>
+        <div><h3>Strengthening and loading</h3><p>Progressive exercises to strengthen the hand, wrist and forearm muscles — reducing the load placed on the carpal tunnel structures during daily tasks.</p></div>
+      </div>
+    <div class="treat-item">
+        <div class="treat-check">✓</div>
+        <div><h3>Activity and ergonomic advice</h3><p>Practical guidance on modifying workstation setup, keyboard and mouse position, gripping technique and task pacing to reduce nerve irritation throughout the day.</p></div>
+      </div>
+    <div class="treat-item">
+        <div class="treat-check">✓</div>
+        <div><h3>Return to full function</h3><p>A clear plan for returning to pain-free work, sport or daily activity — with strategies to prevent recurrence long term.</p></div>
+      </div>
+  </div>
+</div></section>
+
+<div class="alt-bg"><div class="wrap" aria-labelledby="reviews-h">
+  <span class="section-label">Patient results</span>
+  <h2 id="reviews-h">What Patients Say</h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Luqman resolved my issue in just a few sessions. He gave me follow-up exercises and I haven't had any problems since. Highly recommend."</p>
+        <span class="review-name">— Michele</span>
+      </div>
+    <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excellent service from start to finish. I came in with wrist and hand pain affecting my work — clear diagnosis and treatment plan that actually worked."</p>
+        <span class="review-name">— Google Review</span>
+      </div>
+    <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I'd been told I'd need surgery. Luqman worked through the problem properly and I avoided the operation entirely with the right physio."</p>
+        <span class="review-name">— Google Review</span>
+      </div>
+  </div>
+</div></div>
+
+<section><div class="wrap-narrow" aria-labelledby="faq-h">
+  <span class="section-label">Questions</span>
+  <h2 id="faq-h">Carpal Tunnel FAQs</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can physiotherapy treat carpal tunnel syndrome? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Yes — physiotherapy is highly effective for mild to moderate carpal tunnel syndrome. Treatment including nerve mobilisation, splinting advice and strengthening often avoids the need for surgery. Severe cases with significant muscle wasting may need a surgical opinion.</div>
+      </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need surgery for carpal tunnel syndrome? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Not necessarily. Surgery is typically considered only when symptoms are severe, persistent or accompanied by significant muscle wasting. Many patients avoid surgery with the right conservative physiotherapy treatment.</div>
+      </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Why are my symptoms worse at night? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Night symptoms are classic for carpal tunnel syndrome. During sleep, the wrist often bends into a position that increases pressure within the tunnel. A night splint to keep the wrist neutral is one of the most effective first steps in managing symptoms.</div>
+      </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can carpal tunnel syndrome come back after treatment? <span class="faq-icon">+</span></div>
+        <div class="faq-a">It can if the underlying causes are not addressed. We focus on identifying and correcting contributing factors — ergonomics, technique, strength — to prevent recurrence alongside treating the current symptoms.</div>
+      </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is my carpal tunnel caused by my job or computer use? <span class="faq-icon">+</span></div>
+        <div class="faq-a">Repetitive keyboard and mouse use is a common contributing factor, but it is rarely the sole cause. Wrist position, sitting posture, neck and shoulder tension and overall hand strength all play a role. A full assessment identifies all contributing factors.</div>
+      </div>
+    <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need a GP referral? <span class="faq-icon">+</span></div>
+        <div class="faq-a">No — you can book directly at Primus Physio without a GP referral and be seen the same week.</div>
+      </div>
+  </div>
+</div></section>
+
+<div class="dark-section"><div class="wrap" aria-labelledby="related-h">
+  <span class="section-label" style="color:rgba(26,188,156,.65);">Also relevant</span>
+  <h2 id="related-h" style="color:white;">Related Treatments</h2>
+  <div class="related-grid" style="margin-top:28px;">
+    <a href="tennis-elbow-treatment.html" class="related-card">Tennis &amp; Golfer's Elbow <span class="arrow">→</span></a>
+    <a href="neck-pain-physio.html" class="related-card">Neck Pain Treatment <span class="arrow">→</span></a>
+    <a href="shoulder-pain-physio.html" class="related-card">Shoulder Pain Treatment <span class="arrow">→</span></a>
+    <a href="services.html" class="related-card">View All Services <span class="arrow">→</span></a>
+  </div>
+</div></div>
+
+<div class="cta-wrap">
+  <span class="section-label" style="display:block;text-align:center;">Ready to start?</span>
+  <h2>Book Your Carpal Tunnel Assessment</h2>
+  <p>Same-week appointments in Newcastle-under-Lyme. No GP referral needed.</p>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn-primary" style="font-size:16px;padding:16px 40px;">Book Now</a>
+</div>
+
+<footer>
+  <div style="max-width:1060px;margin:0 auto;padding:40px 24px 24px;">
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:32px;margin-bottom:36px;text-align:left;">
+
+      <div>
+        <p style="font-family:'Playfair Display',serif;color:white;font-size:16px;margin-bottom:14px;">Primus Physio</p>
+        <p style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.45);">
+          Newcastle-under-Lyme<br>Staffordshire, UK<br>
+          <a href="tel:07867782786" style="color:var(--teal);text-decoration:none;">07867 782786</a><br>
+          <a href="mailto:info@primusphysio.co.uk" style="color:var(--teal);text-decoration:none;">info@primusphysio.co.uk</a>
+        </p>
+      </div>
+
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Clinic</p>
+        <nav aria-label="Clinic pages">
+          <a href="index.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;transition:color .2s;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Home</a>
+          <a href="about.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">About Luqman</a>
+          <a href="services.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Services &amp; Prices</a>
+          <a href="sports-injury-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Sports Rehab</a>
+          <a href="faq.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">FAQ</a>
+          <a href="contact.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Contact &amp; Directions</a>
+          <a href="stoke-on-trent-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Physio in Stoke-on-Trent</a>
+        </nav>
+      </div>
+
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Conditions</p>
+        <nav aria-label="Condition pages">
+          <a href="back-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Back Pain</a>
+          <a href="sciatica-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Sciatica</a>
+          <a href="neck-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Neck Pain</a>
+          <a href="shoulder-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Shoulder Pain</a>
+          <a href="knee-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Knee Pain</a>
+          <a href="hip-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Hip Pain</a>
+          <a href="ankle-pain-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Ankle Pain</a>
+        </nav>
+      </div>
+
+      <div>
+        <p style="font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:12px;">Treatments</p>
+        <nav aria-label="Treatment pages">
+          <a href="plantar-fasciitis-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Plantar Fasciitis</a>
+          <a href="running-injury-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Running Injuries</a>
+          <a href="tennis-elbow-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Tennis &amp; Golfer's Elbow</a>
+          <a href="carpal-tunnel-treatment.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Carpal Tunnel</a>
+          <a href="post-op-rehab.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;margin-bottom:8px;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Post-Surgery Rehab</a>
+          <a href="sports-injury-physio.html" style="display:block;font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;" onmouseover="this.style.color='#1abc9c'" onmouseout="this.style.color='rgba(255,255,255,.55)'">Sports Rehabilitation</a>
+        </nav>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
+      <address style="font-style:normal;font-size:12px;color:rgba(255,255,255,.35);">
+        Newcastle-under-Lyme, Staffordshire &nbsp;·&nbsp;
+        <a href="tel:07867782786" style="color:rgba(255,255,255,.35);text-decoration:none;">07867 782786</a> &nbsp;·&nbsp;
+        <a href="mailto:info@primusphysio.co.uk" style="color:rgba(255,255,255,.35);text-decoration:none;">info@primusphysio.co.uk</a>
+      </address>
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">HCPC &amp; CSP Registered &nbsp;·&nbsp; AXA Health · WPA · Aviva · Vitality Recognised</p>
+    </div>
+
+  </div>
+</footer>
+<a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book" aria-label="Book appointment">Book Appointment</a>
+<script>
+function toggleMenu(){const s=document.getElementById("sidebar"),o=document.getElementById("overlay"),open=s.style.right==="0px";s.style.right=open?"-320px":"0px";o.style.display=open?"none":"block"}
+function toggleFaq(el){const item=el.parentElement,isOpen=item.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));if(!isOpen)item.classList.add("open")}
+window.addEventListener("scroll",function(){const btn=document.querySelector(".sticky-book"),footer=document.querySelector("footer");if(!btn||!footer)return;btn.style.display=footer.getBoundingClientRect().top<window.innerHeight?"none":"block"})
+</script>
+</body>
+</html>.menu-book{position:absolute;bottom:30px;left:20px;right:20px;background:var(--teal);color:white;text-align:center;padding:15px;border-radius:10px;text-decoration:none;font-weight:500;font-size:15px;transition:background .2s}
 .menu-book:hover{background:var(--teal-dim)}
 .hero{position:relative;min-height:70vh;display:flex;align-items:center;padding:40px 8% 90px;background:linear-gradient(135deg,rgba(11,31,53,.94) 0%,rgba(11,31,53,.68) 55%,rgba(11,31,53,.38) 100%),url("hero.webp");background-size:cover;background-position:center 30%;color:white;overflow:hidden}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:120px;background:linear-gradient(to bottom,transparent,var(--cream));pointer-events:none}
