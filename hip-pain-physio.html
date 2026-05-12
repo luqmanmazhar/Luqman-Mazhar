@@ -123,8 +123,8 @@ h3 { font-size: 18px; }
   position: relative;
   min-height: 92vh;
   display: flex;
-  align-items: center;
-  padding: 110px 8% 90px;
+  align-items: flex-start;
+  padding: 30px 8% 90px;
   background:
     linear-gradient(135deg, rgba(11,31,53,0.94) 0%, rgba(11,31,53,0.68) 55%, rgba(11,31,53,0.38) 100%),
     url("hero.webp");
@@ -144,10 +144,12 @@ h3 { font-size: 18px; }
 }
 
 .hero-brand {
-  position: absolute;
-  top: 26px; left: 8%;
-  display: flex; align-items: center; gap: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
   z-index: 2;
+  max-width: 280px;
 }
 
 .hero-logo {
@@ -678,8 +680,8 @@ footer a { color: var(--teal); text-decoration: none; }
 }
 
 @media (max-width: 600px) {
-  .hero { padding: 100px 20px 60px; min-height: 100svh; }
-  .hero-brand { left: 20px; }
+  .hero { padding: 30px 20px 60px; min-height: 100svh; }
+  
   .trust-strip { grid-template-columns: 1fr; }
   .hero-buttons { flex-direction: column; }
   .hero-buttons a { text-align: center; }
@@ -899,8 +901,8 @@ footer { background: var(--navy-mid, #122840); }
   <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">Book Appointment</a>
 </nav>
 <header class="hero">
-  <div class="hero-brand"><img src="logo.jpg" class="hero-logo" alt="Primus Physio — physiotherapy Newcastle-under-Lyme" width="50" height="50"><span class="brand-text">PRIMUS PHYSIO</span></div>
   <div class="hero-content">
+    <div class="hero-brand"><img src="logo.jpg" class="hero-logo" alt="Primus Physio — physiotherapy Newcastle-under-Lyme" width="50" height="50"><span class="brand-text">PRIMUS PHYSIO</span></div>
     <div class="hero-eyebrow"><span class="eyebrow-dot"></span>Hip Pain Treatment</div>
     <h1>Hip Pain <em>Physiotherapy</em></h1>
     <p class="hero-sub">Expert treatment for hip arthritis, bursitis, hip flexor strains, greater trochanteric pain and hip impingement — helping patients in Newcastle-under-Lyme and Stoke-on-Trent move freely again.</p>
