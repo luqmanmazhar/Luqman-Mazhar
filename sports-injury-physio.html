@@ -41,11 +41,12 @@
     {"@type": "MedicalCondition", "name": "Groin Strain"},
     {"@type": "MedicalCondition", "name": "Rotator Cuff Injury"},
     {"@type": "MedicalCondition", "name": "Stress Fracture"},
-    {"@type": "MedicalCondition", "name": "Meniscal Injury"}
+    {"@type": "MedicalCondition", "name": "Meniscal Injury"},
+    {"@type": "MedicalCondition", "name": "Patella Tendinopathy"}
   ],
   "specialty": "Sports Physiotherapy",
   "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "42", "bestRating": "5"},
-  "provider": {"@type": "MedicalBusiness", "name": "Primus Physio", "url": "https://www.primusphysio.co.uk", "telephone": "+447867782786", "address": {"@type": "PostalAddress", "streetAddress": "Copthall House, King Street", "addressLocality": "Newcastle-under-Lyme", "addressRegion": "Staffordshire", "postalCode": "ST5 1EL", "addressCountry": "GB"}}
+  "provider": {"@type": "MedicalBusiness", "name": "Primus Physio", "url": "https://www.primusphysio.co.uk", "telephone": "+447867782786", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5", "reviewCount": "42", "bestRating": "5"}, "address": {"@type": "PostalAddress", "streetAddress": "Copthall House, King Street", "addressLocality": "Newcastle-under-Lyme", "addressRegion": "Staffordshire", "postalCode": "ST5 1EL", "addressCountry": "GB"}}
 }
 </script>
 
@@ -58,7 +59,8 @@
     {"@type": "Question", "name": "Can you help me return to sport after a hamstring injury?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — hamstring strains respond well to structured physiotherapy. Recovery depends on the grade of injury; Grade 1 strains may resolve in 2–3 weeks, Grade 2–3 injuries typically take 4–12 weeks. A progressive loading programme and criteria-based return to running is essential to prevent re-injury, which is very common without proper rehabilitation."}},
     {"@type": "Question", "name": "What is return-to-sport criteria and why does it matter?", "acceptedAnswer": {"@type": "Answer", "text": "Return-to-sport criteria are objective tests that confirm you are physically ready to return to training and competition — not just pain-free. This includes strength symmetry tests, functional movement tests and sport-specific performance criteria. Returning without meeting these criteria is the leading cause of repeat sports injuries."}},
     {"@type": "Question", "name": "Do I need a GP referral for sports injury physiotherapy?", "acceptedAnswer": {"@type": "Answer", "text": "No — you can book directly at Primus Physio without a GP referral and be seen the same week, including evenings and weekends."}},
-    {"@type": "Question", "name": "Do you work with non-professional athletes?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. The same high-performance rehabilitation principles used at Port Vale FC Academy are applied to every patient — from weekend footballers to parkrun regulars and gym-goers."}}
+    {"@type": "Question", "name": "Do you work with non-professional athletes?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. The same high-performance rehabilitation principles used at Port Vale FC Academy are applied to every patient — from weekend footballers to parkrun regulars and gym-goers."}},
+    {"@type": "Question", "name": "How much does sports physiotherapy cost?", "acceptedAnswer": {"@type": "Answer", "text": "The first session is £60 (60 minutes) — including full assessment, diagnosis and hands-on treatment. Follow-up sessions are £40 (30 minutes). No GP referral needed."}}
   ]
 }
 </script>
@@ -237,6 +239,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
       <div class="elite-text">
         <span class="section-label">Elite experience</span>
         <h2 id="elite-heading">Pitch-Based Rehabilitation from Port Vale FC</h2>
+        <p style="margin-top:16px;color:var(--text-muted);font-size:15px;">Your first session is <strong style="color:var(--navy);">£60 (60 minutes)</strong> — full assessment, diagnosis and hands-on treatment combined. Follow-up sessions are <strong style="color:var(--navy);">£40 (30 minutes)</strong>. No GP referral needed.</p>
         <p style="margin-top:16px;">As Head Academy Physiotherapist at Port Vale FC, rehabilitation is taken beyond the clinic and onto the pitch, gym and sport-specific environment — where the real demands of your sport are replicated.</p>
         <p>This includes <strong>graded return-to-running, change of direction work, strength progressions and sport-specific criteria testing</strong> — ensuring you return confident, strong and ready to perform.</p>
         <p>The same evidence-based protocols used to rehabilitate professional academy footballers are applied to every patient — whether you play Sunday league, compete in marathons or train in the gym.</p>
@@ -303,6 +306,11 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
         <h3>Meniscal Injuries</h3>
         <p>Meniscal tears are common in contact sport and pivoting activities. Treatment depends on the type and location of the tear — many respond well to physiotherapy without surgery. Post-surgical rehab following meniscus repair requires a carefully graded return to sport.</p>
         <span class="timeline">6–16 weeks depending on management</span>
+      </div>
+      <div class="injury-card">
+        <h3>Patella Tendon (Jumper's Knee)</h3>
+        <p>Overuse injury of the patella tendon common in jumping sports — basketball, volleyball and football. Responds well to progressive tendon loading programmes. Often mismanaged with rest alone, which delays recovery significantly.</p>
+        <span class="timeline">6–12 weeks with correct loading</span>
       </div>
     </div>
   </div>
@@ -415,7 +423,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
     <div class="reviews-grid">
       <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Knee pain from a running injury had stopped my training. Luqman reduced the pain both during and after running, gave me exercises in between sessions and I ran the Stafford Half at almost 100%. Very happy with the results."</p><span class="review-name">— Gary Lovell</span></div>
       <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Sorted my injury quickly and got me back to the gym with a clear plan. Knew exactly what was causing the problem."</p><span class="review-name">— Balal B</span></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Excellent service — professional, knowledgeable and got results. Back playing football ahead of the timeline I was given."</p><span class="review-name">— Google Review</span></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"My goal was to run the London Marathon with aggravated knee pain. Without visiting Luqman I'm not sure I would have achieved that goal. Incredible knowledge and action plans for every session."</p><span class="review-name">— Thomas Hulme</span></div>
     </div>
   </div>
 </section>
@@ -463,6 +471,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do you work with non-professional athletes? <span class="faq-icon">+</span></div><div class="faq-a">Absolutely. The same high-performance rehabilitation protocols used at Port Vale FC are applied to every patient — whether you're a Sunday league footballer, parkrun regular or gym-goer. Your level doesn't change the quality of rehabilitation you receive.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I keep training during rehabilitation? <span class="faq-icon">+</span></div><div class="faq-a">In most cases yes — modified training that doesn't aggravate the injury is encouraged throughout rehabilitation. Staying active maintains fitness and speeds recovery. We'll advise exactly what to continue, what to modify and what to avoid at each stage.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a GP referral? <span class="faq-icon">+</span></div><div class="faq-a">No — you can book directly without a GP referral and be seen the same week, including evenings and weekends at Copthall House, King Street, Newcastle-under-Lyme.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does sports physiotherapy cost? <span class="faq-icon">+</span></div><div class="faq-a">Your first session is £60 (60 minutes) — this includes a full assessment, diagnosis and hands-on treatment all in one appointment. Follow-up sessions are £40 (30 minutes). No GP referral or NHS waiting list required.</div></div>
     </div>
   </div>
 </section>
