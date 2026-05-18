@@ -30,7 +30,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "5",
-    "reviewCount": "42",
+    "reviewCount": "41",
     "bestRating": "5"
   }}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -903,21 +903,6 @@ footer { background: var(--navy-mid, #122840); }
 .cause-card h3 { color: white; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; margin-bottom: 8px; }
 .cause-card p  { color: rgba(255,255,255,0.62); font-size: 13.5px; line-height: 1.65; margin: 0; }
 
-
-/* ── PROGRESS BAR ── */
-.progress-bar {
-  position: fixed;
-  top: 0; left: 0;
-  height: 3px;
-  width: 0%;
-  background: linear-gradient(to right, var(--teal), #5ee8c6);
-  z-index: 9999;
-  transition: width 0.1s linear;
-  border-radius: 0 2px 2px 0;
-}
-
-
-
 </style>
 
 <script type="application/ld+json">
@@ -978,8 +963,6 @@ footer { background: var(--navy-mid, #122840); }
 </script>
 </head>
 <body>
-<div class="progress-bar" id="progressBar"></div>
-
 <div class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu" role="button">☰</div>
 <div id="overlay" onclick="toggleMenu()"></div>
 <nav id="sidebar" class="sidebar" aria-label="Site navigation">
@@ -1006,7 +989,6 @@ footer { background: var(--navy-mid, #122840); }
     </div>
   </div>
 </header>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.primusphysio.co.uk/index.html"},{"@type":"ListItem","position":2,"name":"Conditions","item":"https://www.primusphysio.co.uk/services.html"},{"@type":"ListItem","position":3,"name":"Back Pain","item":"https://www.primusphysio.co.uk/back-pain-physio.html"}]}</script>
 
 <!-- INTRO -->
 <section><div class="wrap-narrow" aria-labelledby="intro-h">
@@ -1160,19 +1142,6 @@ footer { background: var(--navy-mid, #122840); }
     </div>
 
   </div>
-
-  <!-- TRUST BADGES -->
-  <div style="border-top:1px solid rgba(255,255,255,.08);padding:28px 24px;max-width:1060px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:36px;">
-    <img src="logo-hcpc.png" alt="HCPC Registered" height="36" style="opacity:.5;filter:brightness(0) invert(1);object-fit:contain;">
-    <img src="logo-csp.gif" alt="Chartered Society of Physiotherapy" height="36" style="opacity:.5;filter:brightness(0) invert(1);object-fit:contain;">
-    <img src="logo-puregym.png" alt="PureGym Partner" height="28" style="opacity:.5;filter:brightness(0) invert(1);object-fit:contain;">
-    <div style="display:flex;align-items:center;gap:8px;opacity:.5;">
-      <span style="color:#f5c518;font-size:14px;letter-spacing:1px;">★★★★★</span>
-      <span style="font-size:12px;color:rgba(255,255,255,.75);font-weight:500;letter-spacing:.04em;">5.0 · 42 Google Reviews</span>
-    </div>
-    <img src="logo-port-vale.png" alt="Port Vale FC — Academy Physiotherapist" height="44" style="opacity:.45;filter:brightness(0) invert(1);object-fit:contain;">
-  </div>
-
 </footer>
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book" aria-label="Book appointment">Book Appointment</a>
 <script>
