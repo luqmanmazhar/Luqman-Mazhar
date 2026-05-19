@@ -36,7 +36,7 @@
     {"@type":"Question","name":"What happens in the first session?","acceptedAnswer":{"@type":"Answer","text":"Your first session includes a full assessment, diagnosis, hands-on treatment and a personalised rehabilitation plan."}},
     {"@type":"Question","name":"How much does physiotherapy cost?","acceptedAnswer":{"@type":"Answer","text":"Initial assessment is £60 (60 minutes), follow-up sessions are £40 (30 minutes) and extended follow-ups are £50 (45 minutes)."}},
     {"@type":"Question","name":"How many sessions will I need?","acceptedAnswer":{"@type":"Answer","text":"Many patients begin to see improvement within a few sessions. Acute injuries may resolve quickly while longer-term problems may require a structured rehabilitation programme."}},
-    {"@type":"Question","name":"Can I use private health insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We are registered with AXA Health, WPA, Aviva and Vitality Health."}},
+    {"@type":"Question","name":"Can I use private health insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We are registered with AXA Health, Bupa, WPA, Aviva and Vitality Health."}},
     {"@type":"Question","name":"Do you offer weekend appointments?","acceptedAnswer":{"@type":"Answer","text":"Yes — flexible appointments are available including evenings and weekends."}}
   ]
 }
@@ -131,9 +131,26 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
   .trust-item:last-child{border-bottom:none}
   .sticky-book{display:block}
 }
+
+/* ── PROGRESS BAR ── */
+.progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(to right, var(--teal), #5ee8c6);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  border-radius: 0 2px 2px 0;
+}
+
+
+
 </style>
 </head>
 <body>
+<div class="progress-bar" id="progressBar"></div>
+
 
 <div class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu" role="button">☰</div>
 <div id="overlay" onclick="toggleMenu()"></div>
@@ -168,6 +185,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
     </div>
   </div>
 </header>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.primusphysio.co.uk/index.html"},{"@type":"ListItem","position":2,"name":"FAQ","item":"https://www.primusphysio.co.uk/faq.html"}]}</script>
 
 <section>
   <div class="wrap-narrow" aria-labelledby="faq-heading">
@@ -218,7 +236,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
       </div>
       <div class="faq-item" data-cat="insurance">
         <div class="faq-q" onclick="toggleFaq(this)">Can I use my private health insurance? <span class="faq-icon">+</span></div>
-        <div class="faq-a">Yes. Primus Physio is registered with <strong style="color:var(--navy);">AXA Health, WPA, Aviva and Vitality Health</strong>.<br><br>Bring your membership number and authorisation code to your appointment and we'll handle all the clinical coding and reporting on your behalf.</div>
+        <div class="faq-a">Yes. Primus Physio is registered with <strong style="color:var(--navy);">AXA Health, Bupa, WPA, Aviva and Vitality Health</strong>.<br><br>Bring your membership number and authorisation code to your appointment and we'll handle all the clinical coding and reporting on your behalf.</div>
       </div>
       <div class="faq-item" data-cat="appointments">
         <div class="faq-q" onclick="toggleFaq(this)">Do you offer evening and weekend appointments? <span class="faq-icon">+</span></div>
@@ -248,7 +266,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
       <div class="quick-card"><h3>No referral needed</h3><p>Book directly — no GP appointment or waiting list required.</p></div>
       <div class="quick-card"><h3>Same-week availability</h3><p>Evenings and weekends included. Start recovery fast.</p></div>
       <div class="quick-card"><h3>First session: £60</h3><p>Full assessment, diagnosis, treatment and rehab plan included.</p></div>
-      <div class="quick-card"><h3>Insurance accepted</h3><p>AXA, WPA, Aviva and Vitality Health recognised provider.</p></div>
+      <div class="quick-card"><h3>Insurance accepted</h3><p>AXA, Bupa, WPA, Aviva and Vitality Health recognised provider.</p></div>
     </div>
   </div>
 </div>
@@ -307,9 +325,10 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
     </div>
     <div style="border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;">
       <address style="font-style:normal;font-size:12px;color:rgba(255,255,255,.35);">Copthall House, King Street, Newcastle-under-Lyme ST5 1EL &nbsp;·&nbsp; <a href="tel:07867782786" style="color:rgba(255,255,255,.35);text-decoration:none;">07867 782786</a> &nbsp;·&nbsp; <a href="mailto:info@primusphysio.co.uk" style="color:rgba(255,255,255,.35);text-decoration:none;">info@primusphysio.co.uk</a></address>
-      <p style="font-size:12px;color:rgba(255,255,255,.3);">HCPC &amp; CSP Registered &nbsp;·&nbsp; AXA Health · WPA · Aviva · Vitality Recognised</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">HCPC &amp; CSP Registered &nbsp;·&nbsp; AXA Health · Bupa · WPA · Aviva · Vitality Recognised</p>
     </div>
-  </div>
+  </div>  </div>
+
 </footer>
 
 <a href="https://primus-physio.uk3.cliniko.com/bookings" class="sticky-book" aria-label="Book a physiotherapy appointment">Book Appointment</a>
