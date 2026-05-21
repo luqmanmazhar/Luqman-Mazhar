@@ -973,10 +973,38 @@ footer { background: var(--navy-mid, #122840); }
 
 
 
+
+/* ── COOKIE BANNER ── */
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);padding:16px 24px;z-index:9998;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+#cookie-banner.show{transform:translateY(0)}
+#cookie-banner p{font-size:13px;color:rgba(255,255,255,.7);margin:0;max-width:600px;line-height:1.5}
+#cookie-banner a{color:var(--teal);text-decoration:none}
+#cookie-banner a:hover{text-decoration:underline}
+.cookie-buttons{display:flex;gap:10px;flex-shrink:0}
+.cookie-accept{background:var(--teal);color:white;border:none;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;transition:background .2s}
+.cookie-accept:hover{background:var(--teal-dim)}
+.cookie-decline{background:transparent;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:10px 22px;border-radius:8px;font-size:13px;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s}
+.cookie-decline:hover{border-color:rgba(255,255,255,.45);color:rgba(255,255,255,.8)}
+@media(max-width:600px){
+  #cookie-banner{flex-direction:column;align-items:flex-start}
+  .cookie-buttons{width:100%}
+  .cookie-accept,.cookie-decline{flex:1;text-align:center}
+}
+
 </style>
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>We use cookies for Google Analytics and our reviews widget to improve your experience. See our <a href="privacy-policy.html">Privacy Policy</a> for details.</p>
+  <div class="cookie-buttons">
+    <button class="cookie-decline" onclick="cookieDecline()">Decline</button>
+    <button class="cookie-accept" onclick="cookieAccept()">Accept cookies</button>
+  </div>
+</div>
+
 
 
 <div class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu" role="button">☰</div>
@@ -1351,6 +1379,7 @@ footer { background: var(--navy-mid, #122840); }
         <a href="mailto:info@primusphysio.co.uk" style="color:rgba(255,255,255,.35);text-decoration:none;">info@primusphysio.co.uk</a>
       </address>
       <p style="font-size:12px;color:rgba(255,255,255,.3);">HCPC &amp; CSP Registered &nbsp;·&nbsp; AXA Health · Bupa · WPA · Aviva · Vitality Recognised</p>
+      <p style="font-size:12px;color:rgba(255,255,255,.25);margin-top:8px;"><a href="privacy-policy.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Privacy Policy</a> &nbsp;·&nbsp; ICO Reg: ZC116024</p>
     </div>
 
   </div>  </div>
@@ -1364,5 +1393,33 @@ function toggleMenu(){const s=document.getElementById("sidebar"),o=document.getE
 function toggleFaq(el){const item=el.parentElement,isOpen=item.classList.contains("open");document.querySelectorAll(".faq-item.open").forEach(i=>i.classList.remove("open"));if(!isOpen)item.classList.add("open")}
 window.addEventListener("scroll",function(){const btn=document.querySelector(".sticky-book"),footer=document.querySelector("footer");if(!btn||!footer)return;btn.style.display=footer.getBoundingClientRect().top<window.innerHeight?"none":"block"})
 </script>
+
+<script>
+// Cookie consent
+(function(){
+  var consent = localStorage.getItem('cookie-consent');
+  if(!consent){
+    setTimeout(function(){
+      var b = document.getElementById('cookie-banner');
+      if(b) b.classList.add('show');
+    }, 800);
+  }
+})();
+function cookieAccept(){
+  localStorage.setItem('cookie-consent','accepted');
+  hideBanner();
+}
+function cookieDecline(){
+  localStorage.setItem('cookie-consent','declined');
+  hideBanner();
+  // Disable GA if declined
+  window['ga-disable-G-XXXXXXXXXX'] = true;
+}
+function hideBanner(){
+  var b = document.getElementById('cookie-banner');
+  if(b){ b.classList.remove('show'); setTimeout(function(){ b.style.display='none'; }, 400); }
+}
+</script>
+
 </body>
 </html>
