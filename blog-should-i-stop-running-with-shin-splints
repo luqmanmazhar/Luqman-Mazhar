@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Should I Stop Running With Shin Splints? | Primus Physio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery — from a physiotherapist.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://www.primusphysio.co.uk/blog/should-i-stop-running-with-shin-splints.html">
+<meta property="og:title" content="Should I Stop Running With Shin Splints?">
+<meta property="og:description" content="The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.">
+<meta property="og:image" content="https://www.primusphysio.co.uk/hero.webp">
+<meta property="og:url" content="https://www.primusphysio.co.uk/blog/should-i-stop-running-with-shin-splints.html">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Primus Physio">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Should I Stop Running With Shin Splints?">
+<meta name="twitter:description" content="The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.">
+<meta name="twitter:image" content="https://www.primusphysio.co.uk/hero.webp">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Should I Stop Running With Shin Splints?","description":"The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.","author":{"@type":"Person","name":"Luqman Mazhar","jobTitle":"Physiotherapist","affiliation":{"@type":"Organization","name":"Primus Physio"}},"publisher":{"@type":"Organization","name":"Primus Physio","url":"https://www.primusphysio.co.uk"},"datePublished":"2026-05-21","dateModified":"2026-05-21","mainEntityOfPage":"https://www.primusphysio.co.uk/blog/should-i-stop-running-with-shin-splints.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I stop running with shin splints?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. In most cases you can continue running at a reduced load while treating the underlying cause. Complete rest delays recovery and causes fitness loss. A structured load management plan keeps you running while the shin heals."}},{"@type":"Question","name":"How long do shin splints take to heal?","acceptedAnswer":{"@type":"Answer","text":"Mild shin splints often improve in 2–4 weeks with load reduction and the right exercises. More severe cases can take 6–8 weeks. Running through pain without addressing the cause significantly extends recovery time."}},{"@type":"Question","name":"What causes shin splints?","acceptedAnswer":{"@type":"Answer","text":"Shin splints are caused by overload of the tibia — most commonly from increasing mileage too quickly, running on hard surfaces, or weakness in the calf and hip muscles. Addressing these factors is essential for full recovery."}},{"@type":"Question","name":"How do I know if I have shin splints or a stress fracture?","acceptedAnswer":{"@type":"Answer","text":"Both cause shin pain but stress fractures cause pain at a very specific point on the bone, pain that doesn't ease during a run, and pain at rest. If you suspect a stress fracture, stop running and see a physiotherapist for assessment."}}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0b1f35;--navy-mid:#122840;--teal:#1abc9c;--teal-dim:#159a7e;--cream:#f5f2ed;--cream-dark:#eae5dc;--text-muted:#5a6a7a;--card-bg:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--navy);font-size:16px;line-height:1.8;font-weight:300}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.2}
+h1{font-size:clamp(28px,4vw,42px);color:white;margin-bottom:16px}
+h2{font-size:clamp(20px,2.5vw,26px);color:var(--navy);margin:44px 0 14px}
+h3{font-size:18px;color:var(--navy);margin:28px 0 10px;font-family:'DM Sans',sans-serif;font-weight:500}
+p{margin-bottom:16px;color:var(--text-muted);font-size:15.5px;line-height:1.8}
+ul,ol{padding-left:22px;margin-bottom:16px}
+ul li,ol li{color:var(--text-muted);font-size:15px;margin-bottom:8px;line-height:1.7}
+a{color:var(--teal);text-decoration:none}
+a:hover{text-decoration:underline}
+strong{color:var(--navy);font-weight:500}
+.topbar{background:var(--navy);padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.topbar-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.topbar-logo{width:38px;height:38px;border-radius:8px;object-fit:cover}
+.topbar-name{font-family:'DM Sans',sans-serif;color:white;font-size:13px;font-weight:500;letter-spacing:.15em;opacity:.9}
+.topbar-book{background:var(--teal);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:500;transition:background .2s;white-space:nowrap}
+.topbar-book:hover{background:var(--teal-dim)}
+.article-hero{background:var(--navy);padding:52px 24px 64px;position:relative}
+.article-hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to bottom,transparent,var(--cream));pointer-events:none}
+.hero-inner{max-width:760px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(26,188,156,.15);border:1px solid rgba(26,188,156,.38);color:#5ee8c6;padding:5px 16px;border-radius:100px;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.article-meta{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:13px;color:rgba(255,255,255,.5)}
+.article-content{max-width:760px;margin:0 auto;padding:52px 24px 80px}
+.info-box{background:var(--card-bg);border-radius:12px;padding:22px 24px;border:1px solid rgba(11,31,53,.08);border-left:4px solid var(--teal);margin:28px 0}
+.info-box p{margin:0;font-size:14.5px}
+.warning-box{background:#fff8f0;border-radius:12px;padding:22px 24px;border:1px solid rgba(220,100,0,.15);border-left:4px solid #e67e22;margin:28px 0}
+.warning-box p{margin:0;font-size:14.5px;color:#8a4a10}
+.warning-box strong{color:#7a3a00}
+.cta-box{background:var(--navy);border-radius:16px;padding:36px 32px;text-align:center;margin:44px 0}
+.cta-box h3{font-family:'Playfair Display',serif;color:white;font-size:22px;margin-bottom:10px}
+.cta-box p{color:rgba(255,255,255,.6);font-size:14px;margin-bottom:24px}
+.btn-primary{background:var(--teal);color:white;padding:14px 32px;text-decoration:none;border-radius:10px;font-weight:500;font-size:15px;transition:background .2s,transform .15s;display:inline-block}
+.btn-primary:hover{background:var(--teal-dim);transform:translateY(-1px);text-decoration:none}
+.author-box{background:var(--card-bg);border-radius:14px;padding:24px;border:1px solid rgba(11,31,53,.08);display:flex;align-items:flex-start;gap:18px;margin:40px 0}
+.author-logo{width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0}
+.author-info strong{display:block;font-size:15px;color:var(--navy);margin-bottom:4px}
+.author-info p{font-size:13.5px;margin:0;color:var(--text-muted)}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:20px}
+.related-card{background:var(--card-bg);border-radius:12px;padding:18px 20px;border:1px solid rgba(11,31,53,.08);text-decoration:none;color:var(--navy);font-weight:500;font-size:14px;display:flex;align-items:center;justify-content:space-between;transition:all .2s}
+.related-card:hover{background:var(--navy);color:white;border-color:var(--navy)}
+.arrow{font-size:16px;color:var(--teal)}
+hr{border:none;border-top:1px solid rgba(11,31,53,.08);margin:36px 0}
+.progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(to right,var(--teal),#5ee8c6);z-index:9999;transition:width .1s linear;border-radius:0 2px 2px 0}
+footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.06);padding:32px 24px;text-align:center;font-size:13px}
+footer a{color:var(--teal);text-decoration:none}
+@media(max-width:600px){.topbar-name{display:none}.article-content{padding:40px 20px 60px}.author-box{flex-direction:column}.cta-box{padding:28px 20px}}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progressBar"></div>
+<div class="topbar">
+  <a href="../index.html" class="topbar-brand">
+    <img src="../logo.jpg" class="topbar-logo" alt="Primus Physio" width="38" height="38">
+    <span class="topbar-name">PRIMUS PHYSIO</span>
+  </a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="topbar-book">Book Appointment</a>
+</div>
+<div class="article-hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Running · Shin Splints</div>
+    <h1>Should I Stop Running With Shin Splints?</h1>
+    <p style="color:rgba(255,255,255,.65);font-size:16px;max-width:580px;margin-top:12px;line-height:1.7;">The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.</p>
+    <div class="article-meta">
+      <span>✍️ Luqman Mazhar, Physiotherapist</span>
+      <span>📍 Primus Physio, Newcastle-under-Lyme</span>
+      <span>📅 May 2026</span>
+      <span>⏱ 5 min read</span>
+    </div>
+  </div>
+</div>
+<div class="article-content">
+  <p>Shin splints — medically known as medial tibial stress syndrome (MTSS) — is one of the most common running injuries I see, and one of the most frustrating for patients who have a race on the horizon. The question I hear most often is: <strong>do I have to stop running?</strong></p>
+  <p>The honest answer is: not necessarily. In most cases, you can continue running at a reduced load while addressing the underlying cause. Complete rest is rarely the best solution — and often makes things worse in the long run.</p>
+
+  <h2>What Are Shin Splints?</h2>
+  <p>Shin splints refer to pain along the inner edge of the shinbone (tibia), typically in the lower two-thirds of the leg. The pain usually develops during a run, is diffuse along a stretch of the shin (rather than at a single point) and eases with rest — at least initially.</p>
+  <p>The underlying issue is overload of the tibia and the muscles that attach to it. The bone and surrounding tissue are absorbing more stress than they can currently handle. The solution isn't to stop all loading — it's to reduce load to a manageable level and build capacity progressively.</p>
+
+  <h2>Can I Keep Running?</h2>
+  <div class="info-box">
+    <p><strong>In most cases, yes — with modification.</strong> The key is finding a training load that allows symptoms to settle after each run, rather than accumulating over days and weeks. A simple rule: if pain during a run stays below 3 out of 10 and returns to baseline within 24 hours, you can continue at that level.</p>
+  </div>
+  <p>What usually needs to change:</p>
+  <ul>
+    <li><strong>Reduce weekly mileage</strong> by 30–50% initially</li>
+    <li><strong>Avoid back-to-back running days</strong> — give the tibia 48 hours between sessions</li>
+    <li><strong>Avoid hills and speed work</strong> until symptoms settle</li>
+    <li><strong>Switch some runs to lower-impact cross-training</strong> — cycling, swimming or pool running maintain fitness without tibial load</li>
+  </ul>
+  <p>Running through severe pain (5+ out of 10) or continuing when pain doesn't settle within 24 hours is where shin splints become serious. This pattern leads to stress reactions and eventually stress fractures — a much longer recovery.</p>
+
+  <h2>How Long Do Shin Splints Take to Heal?</h2>
+  <p>With proper load management and rehabilitation:</p>
+  <ul>
+    <li><strong>Mild cases:</strong> 2–4 weeks to return to normal training</li>
+    <li><strong>Moderate cases:</strong> 4–8 weeks</li>
+    <li><strong>Severe or long-standing cases:</strong> 8–12 weeks</li>
+  </ul>
+  <p>Runners who ignore shin splints and train through them typically take 3–4 months to recover. Early management is significantly more effective than waiting.</p>
+
+  <h2>What Causes Shin Splints?</h2>
+  <p>Shin splints are almost always caused by a combination of factors — rarely just one thing. The most common:</p>
+  <h3>Too much, too soon</h3>
+  <p>The most common cause. Increasing mileage, frequency or intensity faster than the tibia can adapt. The 10% rule — never increasing weekly mileage by more than 10% — exists for good reason.</p>
+  <h3>Weak calf and hip muscles</h3>
+  <p>Weakness in the calf complex and hip abductors means more stress transfers to the tibia with every footstrike. Strengthening these muscles is the cornerstone of shin splint rehabilitation — not stretching.</p>
+  <h3>Running surface</h3>
+  <p>Hard surfaces (road, concrete) generate higher ground reaction forces than grass or trail. Runners who suddenly switch from mixed terrain to all-road running are at higher risk.</p>
+  <h3>Footwear</h3>
+  <p>Worn-out running shoes lose their shock absorption. As a guide, most running shoes should be replaced every 400–600 miles.</p>
+
+  <h2>Shin Splints vs Stress Fracture — How to Tell the Difference</h2>
+  <div class="warning-box">
+    <p><strong>Important:</strong> If your shin pain is at a very specific point (you can point to it with one finger), doesn't ease during a run, is present at rest or at night, or followed a significant increase in training, you may have a stress fracture rather than shin splints. Stop running and get assessed by a physiotherapist before continuing.</p>
+  </div>
+
+  <h2>What Treatment Actually Works</h2>
+  <p>The evidence for shin splint treatment is clear. What works:</p>
+  <ul>
+    <li><strong>Load management</strong> — reducing training load to a tolerable level while maintaining some running</li>
+    <li><strong>Progressive calf strengthening</strong> — eccentric calf raises are the most evidence-supported exercise for MTSS</li>
+    <li><strong>Hip strengthening</strong> — glute and hip abductor exercises reduce tibial stress significantly</li>
+    <li><strong>Gradual return to full training</strong> — progressive mileage increases once symptoms settle</li>
+  </ul>
+  <p>What doesn't work well in isolation: foam rolling, stretching, ice, rest alone. These may provide temporary relief but don't address the underlying cause.</p>
+
+  <div class="cta-box">
+    <h3>Shin splints stopping your training in Newcastle-under-Lyme or Stoke?</h3>
+    <p>Same-week appointments available. First session £60 — assessment, diagnosis and hands-on treatment combined. No GP referral needed.</p>
+    <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn-primary">Book an Assessment</a>
+    <p style="margin-top:16px;font-size:13px;"><a href="../running-injury-physio.html" style="color:rgba(255,255,255,.5);">Learn more about running injury treatment →</a></p>
+  </div>
+
+  <hr>
+  <div class="author-box">
+    <img src="../logo.jpg" class="author-logo" alt="Primus Physio" width="52" height="52">
+    <div class="author-info">
+      <strong>Luqman Mazhar — Physiotherapist</strong>
+      <p>HCPC & CSP registered physiotherapist and Head Academy Physiotherapist at Port Vale FC. Based at Primus Physio, Copthall House, King Street, Newcastle-under-Lyme, ST5 1EL. <a href="../about.html">Read more about Luqman →</a></p>
+    </div>
+  </div>
+  <hr>
+  <h2>Related Articles & Pages</h2>
+  <div class="related-grid">
+    <a href="../running-injury-physio.html" class="related-card">Running Injuries <span class="arrow">→</span></a>
+    <a href="../ankle-pain-physio.html" class="related-card">Ankle Pain <span class="arrow">→</span></a>
+    <a href="how-long-does-sciatica-take-to-go-away.html" class="related-card">How Long Does Sciatica Last? <span class="arrow">→</span></a>
+    <a href="../blog.html" class="related-card">All Articles <span class="arrow">→</span></a>
+  </div>
+</div>
+<footer>
+  <p>Primus Physio · Copthall House, King Street, Newcastle-under-Lyme, ST5 1EL · <a href="tel:07867782786">07867 782786</a></p>
+  <p style="margin-top:8px;"><a href="../index.html">Home</a> &nbsp;·&nbsp; <a href="../privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; ICO Reg: ZC116024</p>
+</footer>
+<script>(function(){var bar=document.getElementById('progressBar');if(!bar)return;window.addEventListener('scroll',function(){var doc=document.documentElement;var scrolled=doc.scrollTop||document.body.scrollTop;var total=doc.scrollHeight-doc.clientHeight;bar.style.width=total>0?(scrolled/total*100)+'%':'0%';},{passive:true});})();</script>
+</body>
+</html>
