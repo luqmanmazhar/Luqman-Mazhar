@@ -1467,5 +1467,15 @@ function hideBanner(){
 }
 </script>
 
+
+<script>
+window.addEventListener('scroll', function(){
+  var btn = document.querySelector('.sticky-book');
+  var footer = document.querySelector('footer');
+  if(!btn || !footer) return;
+  btn.style.display = footer.getBoundingClientRect().top < window.innerHeight ? 'none' : 'block';
+});
+</script>
+
 </body>
 </html>
