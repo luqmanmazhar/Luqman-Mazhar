@@ -6,11 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery — from a physiotherapist.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://www.primusphysio.co.uk/blog/should-i-stop-running-with-shin-splints.html">
+<link rel="canonical" href="https://www.primusphysio.co.uk/blog-should-i-stop-running-with-shin-splints.html">
 <meta property="og:title" content="Should I Stop Running With Shin Splints?">
 <meta property="og:description" content="The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.">
 <meta property="og:image" content="https://www.primusphysio.co.uk/hero.webp">
-<meta property="og:url" content="https://www.primusphysio.co.uk/blog/should-i-stop-running-with-shin-splints.html">
+<meta property="og:url" content="https://www.primusphysio.co.uk/blog-should-i-stop-running-with-shin-splints.html">
 <meta property="og:locale" content="en_GB">
 <meta property="og:site_name" content="Primus Physio">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Should I Stop Running With Shin Splints?","description":"The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.","author":{"@type":"Person","name":"Luqman Mazhar","jobTitle":"Physiotherapist","affiliation":{"@type":"Organization","name":"Primus Physio"}},"publisher":{"@type":"Organization","name":"Primus Physio","url":"https://www.primusphysio.co.uk"},"datePublished":"2026-05-21","dateModified":"2026-05-21","mainEntityOfPage":"https://www.primusphysio.co.uk/blog/should-i-stop-running-with-shin-splints.html"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Should I Stop Running With Shin Splints?","description":"The answer isn't always rest. Here's how to manage shin splints without losing your fitness or delaying recovery.","author":{"@type":"Person","name":"Luqman Mazhar","jobTitle":"Physiotherapist","affiliation":{"@type":"Organization","name":"Primus Physio"}},"publisher":{"@type":"Organization","name":"Primus Physio","url":"https://www.primusphysio.co.uk"},"datePublished":"2026-05-21","dateModified":"2026-05-21","mainEntityOfPage":"https://www.primusphysio.co.uk/blog-should-i-stop-running-with-shin-splints.html"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should I stop running with shin splints?","acceptedAnswer":{"@type":"Answer","text":"Not necessarily. In most cases you can continue running at a reduced load while treating the underlying cause. Complete rest delays recovery and causes fitness loss. A structured load management plan keeps you running while the shin heals."}},{"@type":"Question","name":"How long do shin splints take to heal?","acceptedAnswer":{"@type":"Answer","text":"Mild shin splints often improve in 2–4 weeks with load reduction and the right exercises. More severe cases can take 6–8 weeks. Running through pain without addressing the cause significantly extends recovery time."}},{"@type":"Question","name":"What causes shin splints?","acceptedAnswer":{"@type":"Answer","text":"Shin splints are caused by overload of the tibia — most commonly from increasing mileage too quickly, running on hard surfaces, or weakness in the calf and hip muscles. Addressing these factors is essential for full recovery."}},{"@type":"Question","name":"How do I know if I have shin splints or a stress fracture?","acceptedAnswer":{"@type":"Answer","text":"Both cause shin pain but stress fractures cause pain at a very specific point on the bone, pain that doesn't ease during a run, and pain at rest. If you suspect a stress fracture, stop running and see a physiotherapist for assessment."}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -76,17 +76,36 @@ hr{border:none;border-top:1px solid rgba(11,31,53,.08);margin:36px 0}
 footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.06);padding:32px 24px;text-align:center;font-size:13px}
 footer a{color:var(--teal);text-decoration:none}
 @media(max-width:600px){.topbar-name{display:none}.article-content{padding:40px 20px 60px}.author-box{flex-direction:column}.cta-box{padding:28px 20px}}
+
+/* ── NAV ── */
+.menu-btn{position:fixed;top:20px;right:22px;width:44px;height:44px;background:rgba(11,31,53,.85);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:3000;color:white;font-size:20px;transition:background .2s}
+.menu-btn:hover{background:rgba(11,31,53,1)}
+#overlay{position:fixed;inset:0;display:none;background:rgba(11,31,53,.55);backdrop-filter:blur(3px);z-index:1400}
+.sidebar{position:fixed;top:0;right:-320px;width:300px;height:100%;background:var(--navy);padding-top:80px;transition:right .35s cubic-bezier(.4,0,.2,1);z-index:1500}
+.sidebar a{display:block;padding:16px 28px;text-decoration:none;color:rgba(255,255,255,.7);border-bottom:1px solid rgba(255,255,255,.07);font-size:15px;transition:color .2s,padding-left .2s}
+.sidebar a:hover{color:var(--teal);padding-left:36px}
+.sidebar a.active{color:var(--teal);font-weight:500}
+.menu-book{position:absolute;bottom:30px;left:20px;right:20px;background:var(--teal);color:white;text-align:center;padding:15px;border-radius:10px;text-decoration:none;font-weight:500;font-size:15px;transition:background .2s}
+.menu-book:hover{background:var(--teal-dim)}
+
 </style>
 </head>
 <body>
 <div class="progress-bar" id="progressBar"></div>
-<div class="topbar">
-  <a href="index.html" class="topbar-brand">
-    <img src="logo.jpg" class="topbar-logo" alt="Primus Physio" width="38" height="38">
-    <span class="topbar-name">PRIMUS PHYSIO</span>
-  </a>
-  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="topbar-book">Book Appointment</a>
-</div>
+<div class="menu-btn" onclick="toggleMenu()" aria-label="Open navigation menu" role="button">☰</div>
+<div id="overlay" onclick="toggleMenu()"></div>
+<nav id="sidebar" class="sidebar" aria-label="Site navigation">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="sports-injury-physio.html">Sports Rehab</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="stoke-on-trent-physio.html">Physio in Stoke</a>
+  <a href="https://primus-physio.uk3.cliniko.com/bookings" class="menu-book">Book Appointment</a>
+</nav>
+
 <div class="article-hero">
   <div class="hero-inner">
     <div class="eyebrow">Running · Shin Splints</div>
@@ -184,6 +203,9 @@ footer a{color:var(--teal);text-decoration:none}
   <p>Primus Physio · Copthall House, King Street, Newcastle-under-Lyme, ST5 1EL · <a href="tel:07867782786">07867 782786</a></p>
   <p style="margin-top:8px;"><a href="index.html">Home</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; ICO Reg: ZC116024</p>
 </footer>
-<script>(function(){var bar=document.getElementById('progressBar');if(!bar)return;window.addEventListener('scroll',function(){var doc=document.documentElement;var scrolled=doc.scrollTop||document.body.scrollTop;var total=doc.scrollHeight-doc.clientHeight;bar.style.width=total>0?(scrolled/total*100)+'%':'0%';},{passive:true});})();</script>
+<script>
+function toggleMenu(){const s=document.getElementById("sidebar"),o=document.getElementById("overlay"),open=s.style.right==="0px";s.style.right=open?"-320px":"0px";o.style.display=open?"none":"block"}
+
+(function(){var bar=document.getElementById('progressBar');if(!bar)return;window.addEventListener('scroll',function(){var doc=document.documentElement;var scrolled=doc.scrollTop||document.body.scrollTop;var total=doc.scrollHeight-doc.clientHeight;bar.style.width=total>0?(scrolled/total*100)+'%':'0%';},{passive:true});})();</script>
 </body>
 </html>
