@@ -64,7 +64,7 @@ h1{font-size:clamp(34px,5vw,56px)}h2{font-size:clamp(24px,3vw,34px);color:var(--
 .btn-primary:hover{background:var(--teal-dim);transform:translateY(-1px)}
 .btn-ghost{border:1.5px solid rgba(255,255,255,.32);color:white;padding:14px 30px;text-decoration:none;border-radius:10px;font-weight:400;font-size:15px;transition:border-color .2s,background .2s;display:inline-block}
 .btn-ghost:hover{border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.07)}
-.trust-strip{display:grid;grid-template-columns:repeat(3,1fr);border-radius:14px;border:1px solid rgba(255,255,255,.1);overflow:hidden;background:rgba(255,255,255,.06)}
+.trust-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));border-radius:14px;border:1px solid rgba(255,255,255,.1);overflow:hidden;background:rgba(255,255,255,.06)}
 .trust-item{padding:18px 20px;border-right:1px solid rgba(255,255,255,.08)}
 .trust-item:last-child{border-right:none}
 .trust-item h3{font-family:'Playfair Display',serif;font-size:16px;color:var(--teal);margin-bottom:4px}
@@ -124,7 +124,7 @@ h1{font-size:clamp(34px,5vw,56px)}h2{font-size:clamp(24px,3vw,34px);color:var(--
 .sticky-book{position:fixed;bottom:18px;left:18px;right:18px;background:var(--navy);color:white;text-align:center;padding:15px;text-decoration:none;border-radius:12px;font-weight:500;font-size:15px;z-index:2000;border:1px solid rgba(255,255,255,.1);display:none}
 footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top:1px solid rgba(255,255,255,.06)}
 
-@media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr;gap:36px}.mobile-stack{grid-template-columns:1fr !important}}
 @media(max-width:600px){
   .hero{padding:30px 20px 60px;min-height:65vh}
   .hero-buttons{flex-direction:column}
@@ -254,14 +254,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
 
 <section>
   <div class="wrap" aria-labelledby="contact-heading">
-    <div style="border-radius:16px;overflow:hidden;border:1px solid rgba(11,31,53,.08);margin-bottom:12px;">
-        <img src="copthall-entrance.jpeg" loading="lazy"
-             alt="Copthall House entrance — Primus Physio Newcastle-under-Lyme"
-             style="width:100%;display:block;object-fit:cover;max-height:520px;">
-      </div>
-      <p style="font-size:12px;color:var(--text-muted);margin-bottom:32px;text-align:center;font-style:italic;">Main entrance — Copthall House, King Street</p>
-
-      <div class="contact-grid">
+    <div class="contact-grid">
       <div>
         <span class="section-label">Get in touch</span>
         <h2 id="contact-heading">Contact Details</h2>
@@ -316,7 +309,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
     <h2 id="location-heading" style="color:white;">Clinic Location</h2>
     <p style="color:rgba(255,255,255,.55);margin-top:10px;max-width:520px;">Based in Newcastle-under-Lyme, just minutes from Stoke-on-Trent with easy access and parking.</p>
     <div style="margin-top:32px;">
-      <div class="map-wrap">
+            <div class="map-wrap">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19203.339253241957!2d-2.2594226891601368!3d53.012859100000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487a69821aa87099%3A0x1d5c1ab3b4162c4f!2sPrimus%20Physio!5e0!3m2!1sen!2suk!4v1777619781183!5m2!1sen!2suk" allowfullscreen="" loading="lazy" title="Primus Physio clinic location — Newcastle-under-Lyme"></iframe>
       </div>
       <div style="margin-top:20px;">
@@ -370,8 +363,16 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
       The clinic is based inside <strong style="color:var(--navy);">Copthall House, King Street, Newcastle-under-Lyme, ST5 1EL</strong> — a large office building on King Street in the town centre. Look for "Copthall House" in large letters above the main double-door entrance.
     </p>
 
-    <!-- Entrance photo + arrival instructions -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+    <!-- Entrance photo -->
+    <div style="border-radius:16px;overflow:hidden;margin-top:28px;margin-bottom:28px;">
+      <img src="copthall-entrance.jpeg" loading="lazy"
+           alt="Copthall House entrance — Primus Physio Newcastle-under-Lyme"
+           style="width:100%;display:block;object-fit:cover;max-height:420px;">
+    </div>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:28px;text-align:center;font-style:italic;">Main entrance — Copthall House, King Street</p>
+
+    <!-- Arrival instructions -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;" class="mobile-stack">
       <div>
 
       <div style="display:flex;flex-direction:column;gap:14px;">
