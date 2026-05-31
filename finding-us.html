@@ -82,7 +82,7 @@ h2{font-size:clamp(22px,3vw,32px);color:var(--navy)}
 .photo-caption{font-size:12px;color:var(--text-muted);text-align:center;font-style:italic}
 
 /* Arrival cards */
-.arrival-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}
+.arrival-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px}@media(max-width:600px){.arrival-grid{grid-template-columns:1fr}}
 .arrival-card{background:var(--card-bg);border-radius:16px;padding:28px 24px;border:1px solid rgba(11,31,53,.08)}
 .arrival-card.before{border-top:4px solid var(--teal)}
 .arrival-card.after{border-top:4px solid var(--navy)}
@@ -205,7 +205,7 @@ footer{background:var(--navy-mid,#122840);color:rgba(255,255,255,.45);border-top
     <div class="entrance-photo">
       <img src="copthall-entrance.jpeg"
            alt="Copthall House entrance — Primus Physio Newcastle-under-Lyme, King Street"
-           width="960">
+           style="width:100%;display:block;height:auto;">
     </div>
     <p class="photo-caption">Main entrance — Copthall House, King Street, Newcastle-under-Lyme</p>
   </div>
