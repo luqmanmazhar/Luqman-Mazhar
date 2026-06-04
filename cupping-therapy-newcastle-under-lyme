@@ -189,7 +189,7 @@ footer a{color:var(--teal);text-decoration:none}
         <li>Performed with full sterile protocol and disposable equipment</li>
         <li>Carried out by a qualified and experienced practitioner</li>
       </ul>
-      <span class="price-tag">From £45</span>
+      <span class="price-tag">From £35</span>
     </div>
   </div>
 </div></section>
@@ -313,7 +313,7 @@ footer a{color:var(--teal);text-decoration:none}
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is cupping therapy painful? <span class="faq-icon">+</span></div><div class="faq-a">Dry cupping is generally not painful — most patients describe a pulling or pressure sensation. Hijama involves small superficial incisions which may cause brief mild discomfort. Both treatments are well tolerated by most patients and the discomfort is temporary.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Why do circular marks appear after cupping? <span class="faq-icon">+</span></div><div class="faq-a">The circular marks are caused by the suction drawing blood to the surface of the skin. They are not bruises and are not caused by injury — they indicate the degree of tissue stagnation in that area. The marks typically fade within 3–7 days and tend to reduce in intensity with repeated sessions.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How many sessions will I need? <span class="faq-icon">+</span></div><div class="faq-a">This depends on your condition and goals. Many patients notice benefit after a single session. For musculoskeletal conditions, cupping is typically most effective when combined with physiotherapy over a course of 3–6 sessions. For general wellbeing and recovery, regular monthly sessions are popular.</div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does cupping cost? <span class="faq-icon">+</span></div><div class="faq-a">Dry cupping starts from £35. Hijama starts from £45. Sessions can be standalone or combined with physiotherapy assessment and treatment. No GP referral needed.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does cupping cost? <span class="faq-icon">+</span></div><div class="faq-a">Dry cupping starts from £35. Hijama starts from £35. Sessions can be standalone or combined with physiotherapy assessment and treatment. No GP referral needed.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Who is hijama not suitable for? <span class="faq-icon">+</span></div><div class="faq-a">Hijama is not suitable during pregnancy, for patients on blood-thinning medication (such as warfarin), those with bleeding disorders, active skin infections in the treatment area, or certain medical conditions. A full health screen is conducted before treatment to ensure suitability.</div></div>
     <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need a GP referral? <span class="faq-icon">+</span></div><div class="faq-a">No — you can book directly at Primus Physio without a GP referral. Same-week appointments are available including evenings and weekends.</div></div>
   </div>
@@ -336,7 +336,7 @@ footer a{color:var(--teal);text-decoration:none}
 <div class="cta-wrap">
   <span class="section-label" style="display:block;text-align:center;">Ready to book?</span>
   <h2>Book Your Cupping Session</h2>
-  <p>Dry cupping from £35 · Hijama from £45 · Same-week appointments in Newcastle-under-Lyme &amp; Stoke-on-Trent</p>
+  <p>Cupping &amp; Hijama from £35 · Same-week appointments in Newcastle-under-Lyme &amp; Stoke-on-Trent</p>
   <a href="https://primus-physio.uk3.cliniko.com/bookings" class="btn-primary" style="font-size:16px;padding:16px 40px;">Book Now</a>
 </div>
 
